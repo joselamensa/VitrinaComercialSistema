@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AutoFlow OS — El sistema que tu agencia de usados necesita</title>
+<meta name="description" content="AutoFlow OS gestiona todo el ciclo de vida de tus autos: inventario, finanzas, gestoría, detailing, visitas y tareas. Personalizado a medida para tu agencia de compraventa de usados.">
+<link rel="icon" href="assets/logo.jpg">
+<style>
+  :root{
+    --primary:#0052cc;
+    --primary-hover:#0040a2;
+    --secondary:#435e94;
+    --bg:#f9f9ff;
+    --surface:#ffffff;
+    --surface-container:#f0f3ff;
+    --on-surface:#0e1c2f;
+    --on-surface-variant:#434654;
+    --outline-variant:#c3c6d6;
+    --whatsapp:#25d366;
+    --whatsapp-dark:#128c7e;
+    --success:#0f9d58;
+    --r-sm:4px;
+    --r:8px;
+    --r-lg:12px;
+    --r-full:999px;
+    --container:1280px;
+    --m-desktop:48px;
+    --m-mobile:20px;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  }
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--bg);color:var(--on-surface);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;}
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  ul{margin:0;padding:0;list-style:none;}
+  .container{max-width:var(--container);margin:0 auto;padding:0 var(--m-desktop);}
+  @media (max-width:768px){.container{padding:0 var(--m-mobile);}}
+  h1,h2,h3,h4{font-family:var(--sans);font-weight:700;letter-spacing:-0.01em;margin:0;color:var(--on-surface);}
+
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:7px;
+    background:rgba(0,82,204,.08);color:var(--primary);
+    font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+    padding:7px 14px;border-radius:var(--r-full);margin-bottom:20px;
+  }
+
+  .card{
+    background:var(--surface);border:1px solid #e7eeff;border-radius:var(--r-lg);
+    box-shadow:0 2px 4px rgba(0,82,204,.04);
+    transition:box-shadow .2s ease,border-color .2s ease,transform .2s ease;
+  }
+  .card:hover{box-shadow:0 14px 28px rgba(0,82,204,.09);border-color:var(--primary);transform:translateY(-3px);}
+
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:13.5px;
+    letter-spacing:.04em;text-transform:uppercase;padding:15px 28px;border-radius:var(--r-sm);
+    border:2px solid transparent;cursor:pointer;transition:background .2s,color .2s,border-color .2s,transform .2s,box-shadow .2s;
+  }
+  .btn-primary{background:var(--primary);color:#fff;}
+  .btn-primary:hover{background:var(--primary-hover);}
+  .btn-outline{background:#fff;border-color:var(--primary);color:var(--primary);}
+  .btn-outline:hover{background:rgba(0,82,204,.05);}
+  .btn-wa{background:var(--whatsapp);color:#06210f;box-shadow:0 8px 22px -6px rgba(37,211,102,.5);}
+  .btn-wa:hover{background:#2fe07a;transform:translateY(-2px);}
+  .btn svg{width:18px;height:18px;flex-shrink:0;}
+
+  /* ---------- NAV ---------- */
+  .nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(195,198,214,.4);}
+  .nav__inner{max-width:var(--container);margin:0 auto;padding:0 var(--m-desktop);height:80px;display:flex;align-items:center;justify-content:space-between;}
+  @media (max-width:768px){.nav__inner{padding:0 var(--m-mobile);}}
+  .nav__logo{display:flex;align-items:center;gap:10px;}
+  .nav__logo-badge{height:38px;width:38px;flex-shrink:0;border-radius:var(--r-sm);overflow:hidden;}
+  .nav__logo-badge img{width:100%;height:100%;object-fit:contain;}
+  .nav__logo-text{font-size:19px;font-weight:800;letter-spacing:-0.01em;color:var(--primary);}
+  .nav__logo-text small{font-size:11px;font-weight:700;color:var(--on-surface-variant);margin-left:2px;}
+  .nav__links{display:flex;align-items:center;gap:32px;}
+  .nav__links a{font-size:14px;font-weight:600;color:var(--on-surface-variant);transition:color .2s;}
+  .nav__links a:hover{color:var(--primary);}
+  .nav__toggle{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:4px;}
+  .nav__toggle span{width:22px;height:2px;background:var(--on-surface);border-radius:1px;}
+  .nav__mobile{display:none;}
+  @media (max-width:900px){
+    .nav__links{display:none;}
+    .nav .nav__cta{display:none;}
+    .nav__toggle{display:flex;}
+    .nav.is-open .nav__mobile{display:flex;flex-direction:column;padding:8px var(--m-mobile) 20px;border-top:1px solid #eef0fa;}
+    .nav__mobile a{padding:13px 0;font-size:14px;font-weight:600;color:var(--on-surface-variant);border-bottom:1px solid #eef0fa;}
+    .nav__mobile .btn{justify-content:center;margin-top:14px;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;min-height:88vh;display:flex;align-items:center;padding-top:80px;overflow:hidden;}
+  .hero__bg{position:absolute;inset:0;background-image:url('assets/hero-showroom.jpg');background-size:cover;background-position:center;}
+  .hero__overlay{position:absolute;inset:0;background:linear-gradient(100deg, rgba(249, 249, 255, 0.733) 38%, rgba(249, 249, 255, 0.849) 55%, rgba(249, 249, 255, 0.616) 78%, rgba(249, 249, 255, .25) 100%);}
+  @media (max-width:900px){.hero__overlay{background:rgba(249,249,255,.93);}}
+  .hero__content{position:relative;z-index:2;width:100%;padding:60px 0;}
+  .hero__text{max-width:640px;margin:0;}
+  .hero h1{font-size:clamp(32px,5vw,52px);line-height:1.1;margin-bottom:22px;max-width:640px;}
+  .hero p.lead{font-size:clamp(16px,1.8vw,18px);color:var(--on-surface-variant);max-width:540px;margin:0 0 32px;}
+  .hero__ctas{display:flex;flex-wrap:wrap;gap:14px;}
+
+  /* ---------- SECTION SHARED ---------- */
+  section{padding:100px 0;}
+  @media (max-width:700px){section{padding:68px 0;}}
+  .section-head{max-width:640px;margin:0 auto 56px;text-align:center;}
+  .section-head h2{font-size:clamp(26px,3.6vw,36px);margin:0 0 14px;line-height:1.2;}
+  .section-head p{color:var(--on-surface-variant);font-size:16px;margin:0;}
+
+  /* ---------- MODULES CAROUSEL ---------- */
+  .modules{background:var(--surface);}
+  .carousel-wrap{position:relative;}
+  .carousel{
+    display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;
+    padding:6px 4px 20px;-webkit-overflow-scrolling:touch;scrollbar-width:none;
+  }
+  .carousel::-webkit-scrollbar{display:none;}
+  .slide{
+    flex:0 0 auto;width:min(700px,80vw);scroll-snap-align:start;
+    background:var(--surface);border:1px solid #e7eeff;border-radius:var(--r-lg);
+    box-shadow:0 2px 4px rgba(0,82,204,.04);padding:28px;display:flex;flex-direction:column;
+  }
+  @media (max-width:600px){.slide{width:90vw;padding:22px;}}
+  .slide__head{display:flex;align-items:center;gap:12px;margin-bottom:18px;}
+  .slide__icon{color:var(--primary);flex-shrink:0;}
+  .slide__icon svg{width:28px;height:28px;}
+  .slide h3{font-size:20px;}
+  .slide p{color:var(--on-surface-variant);font-size:14.5px;margin:0 0 16px;}
+  .slide__badge{
+    padding-top:16px;border-top:1px solid var(--outline-variant);margin-top:auto;
+    font-size:11px;font-weight:800;color:var(--primary);letter-spacing:.08em;text-transform:uppercase;
+  }
+  .shot{
+    position:relative;margin:0 0 18px;border-radius:var(--r-sm);overflow:hidden;cursor:zoom-in;
+    border:1px solid var(--outline-variant);aspect-ratio:1900/935;background:var(--surface-container);
+  }
+  .shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top left;}
+  .shot__dark{opacity:0;transition:opacity .4s ease;}
+  .lightbox__stage:hover #lightboxImgDark{opacity:1;}
+  .slide:hover .shot__dark{opacity:1;}
+  .shot--nodark img{transition:filter .35s ease;}
+  .slide:hover .shot--nodark img{filter:brightness(.5) contrast(1.05) saturate(.9);}
+  .shot::after{
+    content:"";position:absolute;z-index:2;bottom:10px;right:10px;width:34px;height:34px;border-radius:50%;
+    background-color:rgba(14,28,47,.75);
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='M21 21l-4.3-4.3'/%3E%3C/svg%3E");
+    background-repeat:no-repeat;background-position:center;background-size:16px 16px;
+    opacity:0;transition:opacity .2s;pointer-events:none;
+  }
+  .slide:hover .shot::after{opacity:1;}
+
+  /* ---------- LIGHTBOX ---------- */
+  .lightbox{
+    position:fixed;inset:0;z-index:300;background:rgba(8,10,16,.92);
+    display:flex;align-items:center;justify-content:center;padding:32px;
+    opacity:0;pointer-events:none;transition:opacity .25s ease;
+  }
+  .lightbox.is-open{opacity:1;pointer-events:auto;}
+  .lightbox__stage{position:relative;max-width:min(1500px,94vw);max-height:90vh;cursor:zoom-in;}
+  .lightbox__stage.is-zoomed{cursor:zoom-out;}
+  .lightbox__stage img{
+    display:block;max-width:min(1500px,94vw);max-height:90vh;width:auto;height:auto;
+    border-radius:10px;box-shadow:0 40px 90px rgba(0,0,0,.55);object-fit:contain;
+    transition:transform .2s ease;
+  }
+  .lightbox__stage .shot__dark{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;}
+  .lightbox__stage.is-zoomed img{transform:scale(1.9);}
+  .lightbox__hint{
+    position:absolute;left:50%;bottom:-34px;transform:translateX(-50%);
+    font-size:12px;color:rgba(255,255,255,.65);white-space:nowrap;
+  }
+  .lightbox__close{
+    position:absolute;top:24px;right:24px;z-index:2;width:44px;height:44px;border-radius:50%;
+    background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;
+    display:flex;align-items:center;justify-content:center;cursor:pointer;
+  }
+  .lightbox__close:hover{background:rgba(255,255,255,.18);}
+  .lightbox__close svg{width:20px;height:20px;}
+
+  .carousel__btn{
+    position:absolute;top:42%;transform:translateY(-50%);z-index:5;
+    width:44px;height:44px;border-radius:50%;background:#fff;border:1px solid var(--outline-variant);
+    display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--primary);
+    box-shadow:0 6px 18px rgba(0,0,0,.1);transition:background .2s,box-shadow .2s;
+  }
+  .carousel__btn:hover{background:var(--surface-container);}
+  .carousel__btn.prev{left:-8px;}
+  .carousel__btn.next{right:-8px;}
+  .carousel__btn svg{width:20px;height:20px;}
+  @media (max-width:900px){.carousel__btn{display:none;}}
+
+  .carousel__dots{display:flex;justify-content:center;gap:8px;margin:4px 0 8px;}
+  .carousel__dots button{
+    width:8px;height:8px;border-radius:50%;background:var(--outline-variant);
+    border:0;padding:0;cursor:pointer;transition:background .2s,transform .2s;
+  }
+  .carousel__dots button.active{background:var(--primary);transform:scale(1.35);}
+
+  .sync-banner{
+    margin-top:24px;border:1px solid rgba(0,82,204,.18);border-radius:var(--r-lg);background:var(--surface-container);
+    padding:22px 28px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:space-between;
+  }
+  .sync-banner__text{font-size:14.5px;color:var(--on-surface-variant);max-width:560px;}
+  .sync-banner__text strong{color:var(--on-surface);}
+  .sync-flow{font-size:12px;font-weight:700;color:var(--primary);display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+  .sync-flow b{background:#fff;border:1px solid rgba(0,82,204,.25);padding:6px 11px;border-radius:var(--r-sm);}
+
+  /* ---------- ROLES ---------- */
+  .roles{background:var(--surface-container);}
+  .roles-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:36px 24px;}
+  @media (max-width:860px){.roles-grid{grid-template-columns:repeat(2,1fr);}}
+  .role{display:flex;flex-direction:column;align-items:center;text-align:center;}
+  .role__icon{
+    width:64px;height:64px;border-radius:var(--r-lg);background:#fff;border:1px solid rgba(0,82,204,.12);
+    display:flex;align-items:center;justify-content:center;color:var(--primary);margin-bottom:14px;
+  }
+  .role__icon svg{width:26px;height:26px;}
+  .role h4{font-size:14.5px;margin-bottom:6px;}
+  .role p{font-size:12px;color:var(--on-surface-variant);margin:0;}
+
+  /* ---------- PERSONALIZATION ---------- */
+  .personal-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;}
+  @media (max-width:900px){.personal-grid{grid-template-columns:1fr;gap:44px;}}
+  .personal h2{font-size:clamp(26px,3.8vw,36px);line-height:1.25;margin:0 0 20px;}
+  .personal h2 em{font-style:italic;color:var(--primary);}
+  .personal p.lead{color:var(--on-surface-variant);font-size:16.5px;margin:0 0 30px;line-height:1.7;}
+  .checklist{display:flex;flex-direction:column;gap:18px;}
+  .checklist li{display:flex;gap:14px;align-items:flex-start;font-size:15px;color:var(--on-surface);font-weight:500;}
+  .checklist svg{width:22px;height:22px;color:var(--primary);flex-shrink:0;margin-top:1px;}
+
+  .mock{padding:6px;background:var(--surface-container);border-radius:var(--r-lg);}
+  .mock__inner{background:#fff;border-radius:var(--r);padding:24px;border:1px solid var(--outline-variant);}
+  .mock__dots{display:flex;gap:6px;margin-bottom:20px;opacity:.5;}
+  .mock__dots i{width:10px;height:10px;border-radius:50%;}
+  .mock__dots i:nth-child(1){background:#e6494f;}
+  .mock__dots i:nth-child(2){background:#f5a623;}
+  .mock__dots i:nth-child(3){background:var(--success);}
+  .mock__row{display:flex;align-items:center;justify-content:space-between;padding:13px 0;border-bottom:1px solid #eef0fa;}
+  .mock__row:last-child{border-bottom:0;}
+  .mock__row-label{font-size:13.5px;color:var(--on-surface-variant);}
+  .mock__row-label small{display:block;font-size:11px;color:#9aa0b4;margin-top:2px;}
+  .switch{width:38px;height:21px;border-radius:99px;background:#dfe3ef;position:relative;flex-shrink:0;}
+  .switch.on{background:var(--primary);}
+  .switch::after{content:"";position:absolute;top:2px;left:2px;width:17px;height:17px;border-radius:50%;background:#fff;transition:left .2s;box-shadow:0 1px 3px rgba(0,0,0,.2);}
+  .switch.on::after{left:19px;}
+  .swatches{display:flex;gap:7px;}
+  .swatches i{width:20px;height:20px;border-radius:var(--r-sm);border:2px solid #fff;box-shadow:0 0 0 1px var(--outline-variant);}
+
+  /* ---------- PRICING ---------- */
+  .pricing{background:var(--surface-container);}
+  .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch;}
+  @media (max-width:900px){.pricing-grid{grid-template-columns:1fr;max-width:420px;margin:0 auto;}}
+  .plan{background:#fff;padding:32px;display:flex;flex-direction:column;position:relative;}
+  .plan.featured{border:2px solid var(--primary);}
+  .plan__badge{position:absolute;top:0;left:50%;transform:translate(-50%,-50%);background:var(--primary);color:#fff;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:6px 16px;border-radius:var(--r-full);}
+  .plan h3{font-size:19px;margin-bottom:6px;}
+  .plan__desc{font-size:13.5px;color:var(--on-surface-variant);margin-bottom:22px;}
+  .plan__price{font-size:26px;font-weight:800;color:var(--primary);margin-bottom:2px;}
+  .plan__price-note{font-size:12px;color:var(--on-surface-variant);margin-bottom:24px;}
+  .plan ul{display:flex;flex-direction:column;gap:13px;margin-bottom:28px;flex-grow:1;}
+  .plan li{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--on-surface);}
+  .plan li svg{width:17px;height:17px;color:var(--primary);flex-shrink:0;margin-top:1px;}
+
+  /* ---------- CTA ---------- */
+  .cta{background:var(--surface-container);}
+  .cta__card{
+    max-width:760px;margin:0 auto;text-align:center;
+    background:linear-gradient(135deg,#0052cc,#0040a2);
+    border-radius:var(--r-lg);padding:64px 48px;color:#fff;
+    box-shadow:0 24px 48px -20px rgba(0,82,204,.4);
+  }
+  @media (max-width:640px){.cta__card{padding:48px 24px;}}
+  .cta h2{color:#fff;font-size:clamp(24px,4vw,34px);margin:0 0 14px;}
+  .cta p{opacity:.9;font-size:16px;margin:0 0 32px;}
+  .cta__phone{
+    margin-top:18px;font-size:13.5px;color:#fff;opacity:.85;font-weight:600;
+    display:inline-flex;align-items:center;gap:7px;
+  }
+  .cta__phone:hover{opacity:1;text-decoration:underline;}
+  .cta__phone svg{width:15px;height:15px;}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:#fff;padding:44px 0;border-top:1px solid #eef0fa;}
+  .footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;}
+  .footer-logo{display:flex;align-items:center;gap:9px;}
+  .footer-logo-badge{height:32px;width:32px;flex-shrink:0;border-radius:var(--r-sm);overflow:hidden;}
+  .footer-logo-badge img{width:100%;height:100%;object-fit:contain;}
+  .footer-logo-text{font-size:16px;font-weight:800;color:var(--primary);}
+  .footer-note{font-size:12.5px;color:var(--on-surface-variant);margin-top:8px;}
+  .footer-links{display:flex;gap:24px;}
+  .footer-links a{font-size:13px;font-weight:600;color:var(--on-surface-variant);}
+  .footer-links a:hover{color:var(--primary);}
+
+  .float-wa{
+    position:fixed;bottom:24px;right:24px;z-index:90;width:56px;height:56px;border-radius:50%;
+    background:var(--whatsapp);display:flex;align-items:center;justify-content:center;
+    box-shadow:0 10px 26px -6px rgba(37,211,102,.6);transition:transform .2s;
+  }
+  .float-wa:hover{transform:scale(1.08);}
+  .float-wa svg{width:26px;height:26px;color:#06210f;}
+
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="#inicio" class="nav__logo">
+      <span class="nav__logo-badge"><img src="assets/logo.jpg" alt=""></span>
+      <span class="nav__logo-text">AutoFlow<small>OS</small></span>
+    </a>
+    <div class="nav__links">
+      <a href="#modulos">Módulos</a>
+      <a href="#roles">Roles</a>
+      <a href="#personalizacion">Personalización</a>
+      <a href="#precios">Precios</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+    <a class="btn btn-primary nav__cta" href="https://wa.me/5491122699526?text=Hola!%20Quiero%20conocer%20AutoFlow%20para%20mi%20agencia." target="_blank" rel="noopener">Solicitar Demo</a>
+    <button class="nav__toggle" id="navToggle" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav__mobile" id="navMobile">
+    <a href="#modulos">Módulos</a>
+    <a href="#roles">Roles</a>
+    <a href="#personalizacion">Personalización</a>
+    <a href="#precios">Precios</a>
+    <a href="#contacto">Contacto</a>
+    <a class="btn btn-primary" href="https://wa.me/5491122699526?text=Hola!%20Quiero%20conocer%20AutoFlow%20para%20mi%20agencia." target="_blank" rel="noopener">Solicitar Demo</a>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero" id="inicio">
+  <div class="hero__bg"></div>
+  <div class="hero__overlay"></div>
+  <div class="hero__content">
+    <div class="container">
+     <div class="hero__text">
+      <span class="eyebrow">Industria Argentina</span>
+      <h1>El sistema que tu agencia de usados necesita.</h1>
+      <p class="lead">
+        Personalización total para dominar el mercado automotor local. Gestioná inventario, finanzas, gestoría,
+        detailing, visitas y tareas — todo en un solo sistema armado a tu medida.
+      </p>
+      <div class="hero__ctas">
+        <a class="btn btn-wa" href="https://wa.me/5491122699526?text=Hola!%20Quiero%20conocer%20AutoFlow%20para%20mi%20agencia." target="_blank" rel="noopener">
+          Hablar por WhatsApp
+        </a>
+        <a class="btn btn-outline" href="#precios">Ver planes</a>
+      </div>
+     </div>
+    </div>
+  </div>
+</header>
+
+<!-- ================= MODULOS ================= -->
+<section class="modules" id="modulos">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>Todo lo que necesitás en un solo lugar</h2>
+      <p>Módulos pensados específicamente para el flujo real de una agencia de usados en Argentina, no funciones genéricas.</p>
+    </div>
+
+    <div class="carousel-wrap">
+      <button class="carousel__btn prev" id="carPrev" aria-label="Módulo anterior">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+
+      <div class="carousel" id="carTrack">
+        <article class="slide reveal">
+          <div class="slide__head">
+            <span class="slide__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 13l1.5-4.5A2 2 0 0 1 6.4 7h11.2a2 2 0 0 1 1.9 1.5L21 13"/><rect x="2" y="13" width="20" height="6" rx="1.5"/><circle cx="7" cy="19" r="1.5"/><circle cx="17" cy="19" r="1.5"/></svg></span>
+            <h3>Inventario</h3>
+          </div>
+          <div class="shot">
+            <img src="assets/modulos/inventario.png" alt="Módulo de inventario">
+            <img class="shot__dark" src="assets/modulos/inventariodark.png" alt="">
+          </div>
+          <p>Cada auto o moto con su ficha completa: dominio, marca, modelo, año, km y precio en pesos o dólares, con historial de cambios de precio y galería de fotos.</p>
+          <div class="slide__badge">Stock en tiempo real</div>
+        </article>
+
+        <article class="slide reveal">
+          <div class="slide__head">
+            <span class="slide__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="6" width="20" height="14" rx="2"/><path d="M2 10h20"/><path d="M6 15h4"/></svg></span>
+            <h3>Finanzas</h3>
+          </div>
+          <div class="shot">
+            <img src="assets/modulos/finanzas.png" alt="Módulo de finanzas">
+            <img class="shot__dark" src="assets/modulos/finanzasdark.png" alt="">
+          </div>
+          <p>Ingresos y salidas con categoría, monto, moneda, medio de pago y comprobante. Cargás la cotización una vez y el sistema convierte todo solo.</p>
+          <div class="slide__badge">Bimonetario USD / ARS</div>
+        </article>
+
+        <article class="slide reveal">
+          <div class="slide__head">
+            <span class="slide__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 2h6l1 3h3v17H5V5h3l1-3z"/><path d="M9 11h6M9 15h6"/></svg></span>
+            <h3>Gestoría</h3>
+          </div>
+          <div class="shot">
+            <img src="assets/modulos/gestoria.png" alt="Módulo de gestoría">
+            <img class="shot__dark" src="assets/modulos/gestoriadark.png" alt="">
+          </div>
+          <p>Checklist por auto: título, cédula, formulario 08, verificación policial e informe de dominio. Al marcar "Transferido", el auto cambia de estado solo.</p>
+          <div class="slide__badge">Documentación al día</div>
+        </article>
+
+        <article class="slide reveal">
+          <div class="slide__head">
+            <span class="slide__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14.7 6.3a1 1 0 0 0-1.4 0l-6 6a1 1 0 0 0 0 1.4l3 3a1 1 0 0 0 1.4 0l6-6a1 1 0 0 0 0-1.4l-3-3z"/><path d="M17 3l4 4"/><path d="M3 21l4-1 8.5-8.5"/></svg></span>
+            <h3>Detailing</h3>
+          </div>
+          <div class="shot shot--nodark">
+            <img src="assets/modulos/detailing.png" alt="Módulo de detailing">
+          </div>
+          <p>Catálogo de servicios de preparación con precio, asignados a cada auto con seguimiento de si ya se hicieron. Vuelve solo a Disponible al terminar.</p>
+          <div class="slide__badge">Control de calidad</div>
+        </article>
+
+        <article class="slide reveal">
+          <div class="slide__head">
+            <span class="slide__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
+            <h3>Visitas</h3>
+          </div>
+          <div class="shot">
+            <img src="assets/modulos/visitas.png" alt="Módulo de visitas">
+            <img class="shot__dark" src="assets/modulos/visitasdark.png" alt="">
+          </div>
+          <p>Agenda de visitas con fecha, horario, vendedor asignado y soporte que coordina. Horarios por vendedor, con excepciones por fecha.</p>
+          <div class="slide__badge">Agenda coordinada</div>
+        </article>
+
+        <article class="slide reveal">
+          <div class="slide__head">
+            <span class="slide__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span>
+            <h3>Tareas</h3>
+          </div>
+          <div class="shot shot--nodark">
+            <img src="assets/modulos/tareas.png" alt="Módulo de tareas">
+          </div>
+          <p>Tareas internas asignadas entre el equipo, con urgencia, estado y comentarios. Nada se pierde en un chat: queda todo escrito y con responsable.</p>
+          <div class="slide__badge">Equipo sincronizado</div>
+        </article>
+      </div>
+
+      <button class="carousel__btn next" id="carNext" aria-label="Siguiente módulo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+    <div class="carousel__dots" id="carDots"></div>
+
+    <div class="sync-banner reveal">
+      <div class="sync-banner__text">
+        <strong>Vitrina pública sincronizada en tiempo real.</strong>
+        Cada vez que guardás un auto en AutoFlow, tu vitrina web se actualiza sola. Los clientes buscan por marca, carrocería y precio máximo en USD, siempre con el stock real.
+      </div>
+      <div class="sync-flow"><b>Guardás el auto</b><span>→</span><b>Webhook automático</b><span>→</span><b>Vitrina actualizada</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ROLES ================= -->
+<section class="roles" id="roles">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>Un equipo sincronizado</h2>
+      <p>Interfaces optimizadas según el rol de cada integrante — nadie ve más ni menos de lo que le corresponde.</p>
+    </div>
+    <div class="roles-grid">
+      <div class="role reveal"><div class="role__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2l8 4v6c0 5-3.4 8.4-8 10-4.6-1.6-8-5-8-10V6l8-4z"/></svg></div><h4>Administrador</h4><p>Acceso total al sistema.</p></div>
+      <div class="role reveal"><div class="role__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></div><h4>Vendedor</h4><p>Gestiona autos y carga movimientos, sin editar ni borrar.</p></div>
+      <div class="role reveal"><div class="role__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M8 15h4"/></svg></div><h4>Contadora</h4><p>Finanzas completas: carga, edita y borra.</p></div>
+      <div class="role reveal"><div class="role__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div><h4>Visualizador</h4><p>Solo lectura de finanzas.</p></div>
+      <div class="role reveal"><div class="role__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 2h6l1 3h3v17H5V5h3l1-3z"/></svg></div><h4>Gestor</h4><p>Módulo de gestoría y documentación legal.</p></div>
+      <div class="role reveal"><div class="role__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14.7 6.3l-8.4 8.4a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l8.4-8.4"/><path d="M17 3l4 4"/></svg></div><h4>Detailer</h4><p>Módulo de preparación y detailing.</p></div>
+      <div class="role reveal"><div class="role__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg></div><h4>Gerente</h4><p>Todo el negocio operativo, menos la plata.</p></div>
+      <div class="role reveal"><div class="role__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 13a8 8 0 0 1 16 0"/><rect x="2" y="13" width="5" height="7" rx="1.5"/><rect x="17" y="13" width="5" height="7" rx="1.5"/></svg></div><h4>Soporte</h4><p>Coordina visitas y se asigna a autos y movimientos.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PERSONALIZACION ================= -->
+<section class="personal" id="personalizacion">
+  <div class="container">
+    <div class="personal-grid">
+      <div class="reveal">
+        <h2>No es software genérico. <em>Es tu herramienta de trabajo.</em></h2>
+        <p class="lead">AutoFlow se adapta a la mística de tu agencia. No te pedimos que cambies cómo vendés, te ayudamos a hacerlo de forma más eficiente.</p>
+        <ul class="checklist">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg>Roles y permisos ajustados a como se organiza tu equipo</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg>Categorías de finanzas y checklist de gestoría a tu medida</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg>Integración con tu vitrina pública, sincronizada en tiempo real</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg>Lo armamos con vos, hablando módulo por módulo</li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <div class="mock">
+          <div class="mock__inner">
+            <div class="mock__dots"><i></i><i></i><i></i></div>
+            <div class="mock__row"><div class="mock__row-label">Roles activos<small>Admin · Vendedor · Contadora +5</small></div><div class="switch on"></div></div>
+            <div class="mock__row"><div class="mock__row-label">Categorías de finanzas<small>Compra, venta, gastos fijos...</small></div><div class="switch on"></div></div>
+            <div class="mock__row"><div class="mock__row-label">Checklist de gestoría<small>Título, cédula, form. 08...</small></div><div class="switch on"></div></div>
+            <div class="mock__row"><div class="mock__row-label">Color de marca</div><div class="swatches"><i style="background:#0052cc"></i><i style="background:#435e94"></i><i style="background:#25d366"></i></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PRECIOS ================= -->
+<section class="pricing" id="precios">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>Planes pensados para tu crecimiento</h2>
+      <p>Elegí la potencia que tu agencia necesita hoy. Sin letra chica — lo definimos juntos por WhatsApp.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="card plan reveal">
+        <h3>Esencial</h3>
+        <p class="plan__desc">Para agencias que arrancan a digitalizar el lote.</p>
+        <div class="plan__price">Consultar</div>
+        <div class="plan__price-note">Ideal para empezar con inventario y vitrina</div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Inventario completo de autos y motos</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Vendedor asignado por unidad</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Vitrina pública sincronizada</li>
+        </ul>
+        <a class="btn btn-outline" style="justify-content:center;" href="https://wa.me/5491122699526?text=Hola!%20Quiero%20consultar%20por%20el%20plan%20Esencial%20de%20AutoFlow." target="_blank" rel="noopener">Consultar</a>
+      </div>
+      <div class="card plan featured reveal">
+        <span class="plan__badge">Más elegido</span>
+        <h3>Completo</h3>
+        <p class="plan__desc">El sistema de punta a punta, como lo pediste.</p>
+        <div class="plan__price">Consultar</div>
+        <div class="plan__price-note">Gestión bimonetaria (USD/ARS)</div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Todo lo del plan Esencial</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Finanzas, Gestoría y Detailing</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Visitas y Tareas de equipo</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Todos los roles del sistema</li>
+        </ul>
+        <a class="btn btn-primary" style="justify-content:center;" href="https://wa.me/5491122699526?text=Hola!%20Quiero%20consultar%20por%20el%20plan%20Completo%20de%20AutoFlow." target="_blank" rel="noopener">Elegir Completo</a>
+      </div>
+      <div class="card plan reveal">
+        <h3>A Medida</h3>
+        <p class="plan__desc">Para estructuras grandes o multi-sucursal.</p>
+        <div class="plan__price">A Medida</div>
+        <div class="plan__price-note">Roles, flujos e integraciones a definir juntos</div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Módulos y campos personalizados</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Multi-sucursal</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Acompañamiento en la implementación</li>
+        </ul>
+        <a class="btn btn-outline" style="justify-content:center;" href="https://wa.me/5491122699526?text=Hola!%20Quiero%20consultar%20por%20el%20plan%20A%20Medida%20de%20AutoFlow." target="_blank" rel="noopener">Contactar</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="cta" id="contacto">
+  <div class="container">
+   <div class="cta__card">
+    <h2>Empezá a transformar tu agencia hoy.</h2>
+    <p>Sumate a la nueva generación de agencias que digitalizan su operación de punta a punta.</p>
+    <a class="btn btn-wa" style="padding:18px 34px;font-size:14.5px;" href="https://wa.me/5491122699526?text=Hola!%20Quiero%20conocer%20AutoFlow%20para%20mi%20agencia." target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39c1.45.79 3.08 1.21 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2zm5.79 14.06c-.24.68-1.42 1.33-1.96 1.4-.5.07-1.12.1-1.81-.11-.42-.13-.95-.31-1.64-.6-2.88-1.24-4.76-4.14-4.9-4.33-.14-.19-1.17-1.55-1.17-2.96s.72-2.1.98-2.39c.26-.28.56-.35.75-.35h.53c.17 0 .4-.06.62.48.24.58.8 2 .87 2.14.07.14.12.31.02.5-.09.19-.14.31-.28.48-.14.16-.29.36-.42.48-.14.14-.28.29-.12.57.16.28.72 1.19 1.55 1.93 1.06.95 1.96 1.24 2.24 1.38.28.14.44.12.6-.07.16-.19.68-.79.87-1.06.18-.28.37-.23.62-.14.26.1 1.63.77 1.91.91.28.14.47.21.53.33.07.12.07.68-.17 1.36z"/></svg>
+      Contactar por WhatsApp
+    </a>
+    <br>
+    <a class="cta__phone" href="tel:+5491122699526">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      +54 9 11 2269-9526
+    </a>
+   </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-inner">
+    <div>
+      <a href="#inicio" class="footer-logo">
+        <span class="footer-logo-badge"><img src="assets/logo.jpg" alt=""></span>
+        <span class="footer-logo-text">AutoFlow OS</span>
+      </a>
+      <div class="footer-note">Sistema de gestión hecho a medida para agencias de autos usados en Argentina.</div>
+    </div>
+    <div class="footer-links">
+      <a href="https://wa.me/5491122699526" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="#modulos">Módulos</a>
+      <a href="#precios">Precios</a>
+    </div>
+  </div>
+</footer>
+
+<a class="float-wa" href="https://wa.me/5491122699526?text=Hola!%20Quiero%20conocer%20AutoFlow%20para%20mi%20agencia." target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39c1.45.79 3.08 1.21 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2zm5.79 14.06c-.24.68-1.42 1.33-1.96 1.4-.5.07-1.12.1-1.81-.11-.42-.13-.95-.31-1.64-.6-2.88-1.24-4.76-4.14-4.9-4.33-.14-.19-1.17-1.55-1.17-2.96s.72-2.1.98-2.39c.26-.28.56-.35.75-.35h.53c.17 0 .4-.06.62.48.24.58.8 2 .87 2.14.07.14.12.31.02.5-.09.19-.14.31-.28.48-.14.16-.29.36-.42.48-.14.14-.28.29-.12.57.16.28.72 1.19 1.55 1.93 1.06.95 1.96 1.24 2.24 1.38.28.14.44.12.6-.07.16-.19.68-.79.87-1.06.18-.28.37-.23.62-.14.26.1 1.63.77 1.91.91.28.14.47.21.53.33.07.12.07.68-.17 1.36z"/></svg>
+</a>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox__close" id="lightboxClose" aria-label="Cerrar">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+  </button>
+  <div class="lightbox__stage" id="lightboxStage">
+    <img id="lightboxImg" src="" alt="">
+    <img id="lightboxImgDark" class="shot__dark" src="" alt="" style="display:none;">
+    <span class="lightbox__hint">Pasá el mouse para ver el modo oscuro · Click para hacer zoom</span>
+  </div>
+</div>
+
+<script>
+  var navToggle = document.getElementById('navToggle');
+  var nav = document.getElementById('nav');
+  navToggle.addEventListener('click', function(){ nav.classList.toggle('is-open'); });
+  document.querySelectorAll('.nav__mobile a').forEach(function(a){
+    a.addEventListener('click', function(){ nav.classList.remove('is-open'); });
+  });
+  var reveals = document.querySelectorAll('.reveal');
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){ entry.target.classList.add('in'); io.unobserve(entry.target); }
+    });
+  }, {threshold:0.12});
+  reveals.forEach(function(el){ io.observe(el); });
+
+  var track = document.getElementById('carTrack');
+  if(track){
+    var slides = Array.prototype.slice.call(track.querySelectorAll('.slide'));
+    var dotsWrap = document.getElementById('carDots');
+    slides.forEach(function(_, i){
+      var b = document.createElement('button');
+      if(i === 0) b.classList.add('active');
+      b.setAttribute('aria-label', 'Ir al módulo ' + (i + 1));
+      b.addEventListener('click', function(){
+        slides[i].scrollIntoView({behavior:'smooth', inline:'start', block:'nearest'});
+      });
+      dotsWrap.appendChild(b);
+    });
+    var dots = Array.prototype.slice.call(dotsWrap.querySelectorAll('button'));
+
+    function scrollByCard(dir){
+      var style = getComputedStyle(track);
+      var gap = parseFloat(style.columnGap || style.gap) || 24;
+      var amount = slides[0].getBoundingClientRect().width + gap;
+      track.scrollBy({left: dir * amount, behavior:'smooth'});
+    }
+    document.getElementById('carPrev').addEventListener('click', function(){ scrollByCard(-1); });
+    document.getElementById('carNext').addEventListener('click', function(){ scrollByCard(1); });
+
+    var carIO = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting && entry.intersectionRatio > 0.6){
+          var idx = slides.indexOf(entry.target);
+          dots.forEach(function(d){ d.classList.remove('active'); });
+          dots[idx].classList.add('active');
+        }
+      });
+    }, {root: track, threshold: [0.6]});
+    slides.forEach(function(s){ carIO.observe(s); });
+  }
+
+  var lightbox = document.getElementById('lightbox');
+  var lightboxStage = document.getElementById('lightboxStage');
+  var lightboxImg = document.getElementById('lightboxImg');
+  var lightboxImgDark = document.getElementById('lightboxImgDark');
+
+  document.querySelectorAll('.shot').forEach(function(shot){
+    shot.addEventListener('click', function(){
+      var lightImg = shot.querySelector('img:not(.shot__dark)');
+      var darkImg = shot.querySelector('.shot__dark');
+      lightboxImg.src = lightImg.src;
+      lightboxImg.alt = lightImg.alt;
+      if(darkImg){
+        lightboxImgDark.src = darkImg.src;
+        lightboxImgDark.style.display = 'block';
+      } else {
+        lightboxImgDark.style.display = 'none';
+        lightboxImgDark.src = '';
+      }
+      lightboxStage.classList.remove('is-zoomed');
+      lightbox.classList.add('is-open');
+    });
+  });
+
+  lightboxStage.addEventListener('click', function(e){
+    e.stopPropagation();
+    lightboxStage.classList.toggle('is-zoomed');
+  });
+  function closeLightbox(){
+    lightbox.classList.remove('is-open');
+    lightboxStage.classList.remove('is-zoomed');
+  }
+  document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', closeLightbox);
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') closeLightbox();
+  });
+</script>
+
+</body>
+</html>
