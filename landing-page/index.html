@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AutoFlow OS — El sistema que tu agencia de usados necesita</title>
-<meta name="description" content="AutoFlow OS gestiona todo el ciclo de vida de tus autos: inventario, finanzas, gestoría, detailing, visitas y tareas. Personalizado a medida para tu agencia de compraventa de usados.">
-<link rel="icon" href="assets/logo.jpg">
+<title>Tablero — El sistema que tu agencia de usados necesita</title>
+<meta name="description" content="Tablero gestiona todo el ciclo de vida de tus autos: inventario, finanzas, gestoría, detailing, visitas y tareas. Personalizado a medida para tu agencia de compraventa de usados.">
+<link rel="icon" href="assets/logo.png">
 <style>
   :root{
     --primary:#0052cc;
@@ -62,8 +62,11 @@
   .btn-primary:hover{background:var(--primary-hover);}
   .btn-outline{background:#fff;border-color:var(--primary);color:var(--primary);}
   .btn-outline:hover{background:rgba(0,82,204,.05);}
-  .btn-wa{background:var(--whatsapp);color:#06210f;box-shadow:0 8px 22px -6px rgba(37,211,102,.5);}
-  .btn-wa:hover{background:#2fe07a;transform:translateY(-2px);}
+  .btn-wa{
+    background:var(--whatsapp);color:#fff;font-weight:600;font-size:15px;
+    text-transform:none;letter-spacing:0;box-shadow:0 8px 22px -6px rgba(37,211,102,.5);
+  }
+  .btn-wa:hover{background:var(--whatsapp-dark);transform:translateY(-2px);}
   .btn svg{width:18px;height:18px;flex-shrink:0;}
 
   /* ---------- NAV ---------- */
@@ -73,8 +76,19 @@
   .nav__logo{display:flex;align-items:center;gap:10px;}
   .nav__logo-badge{height:38px;width:38px;flex-shrink:0;border-radius:var(--r-sm);overflow:hidden;}
   .nav__logo-badge img{width:100%;height:100%;object-fit:contain;}
-  .nav__logo-text{font-size:19px;font-weight:800;letter-spacing:-0.01em;color:var(--primary);}
   .nav__logo-text small{font-size:11px;font-weight:700;color:var(--on-surface-variant);margin-left:2px;}
+
+  .wordmark{
+    display:inline-flex;align-items:center;
+    font-family:'Arial Black','Arial Bold',Arial,var(--sans);
+    font-weight:900;letter-spacing:-0.01em;
+  }
+  .wordmark__e{
+    display:inline-flex;flex-direction:column;justify-content:space-between;
+    width:.5em;height:.64em;margin:0 .05em;align-self:center;
+  }
+  .wordmark__e span{display:block;width:100%;height:22%;background:#4fc239;border-radius:1px;}
+  .nav__logo-text{font-size:19px;color:var(--on-surface);}
   .nav__links{display:flex;align-items:center;gap:32px;}
   .nav__links a{font-size:14px;font-weight:600;color:var(--on-surface-variant);transition:color .2s;}
   .nav__links a:hover{color:var(--primary);}
@@ -281,16 +295,21 @@
   .cta__phone svg{width:15px;height:15px;}
 
   /* ---------- FOOTER ---------- */
-  footer{background:#fff;padding:44px 0;border-top:1px solid #eef0fa;}
-  .footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;}
+  footer{background:#050505;padding:56px 0 40px;}
+  .footer-brand-img{display:flex;justify-content:center;margin-bottom:48px;}
+  .footer-brand-img img{max-width:340px;width:100%;}
+  .footer-inner{
+    display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;
+    padding-top:28px;border-top:1px solid rgba(255,255,255,.1);
+  }
   .footer-logo{display:flex;align-items:center;gap:9px;}
   .footer-logo-badge{height:32px;width:32px;flex-shrink:0;border-radius:var(--r-sm);overflow:hidden;}
   .footer-logo-badge img{width:100%;height:100%;object-fit:contain;}
-  .footer-logo-text{font-size:16px;font-weight:800;color:var(--primary);}
-  .footer-note{font-size:12.5px;color:var(--on-surface-variant);margin-top:8px;}
+  .footer-logo-text{font-size:16px;color:#eef0f5;}
+  .footer-note{font-size:12.5px;color:rgba(255,255,255,.5);margin-top:8px;}
   .footer-links{display:flex;gap:24px;}
-  .footer-links a{font-size:13px;font-weight:600;color:var(--on-surface-variant);}
-  .footer-links a:hover{color:var(--primary);}
+  .footer-links a{font-size:13px;font-weight:600;color:rgba(255,255,255,.65);}
+  .footer-links a:hover{color:#fff;}
 
   .float-wa{
     position:fixed;bottom:24px;right:24px;z-index:90;width:56px;height:56px;border-radius:50%;
@@ -309,8 +328,8 @@
 <nav class="nav" id="nav">
   <div class="nav__inner">
     <a href="#inicio" class="nav__logo">
-      <span class="nav__logo-badge"><img src="assets/logo.jpg" alt=""></span>
-      <span class="nav__logo-text">AutoFlow<small>OS</small></span>
+      <span class="nav__logo-badge"><img src="assets/logo.png" alt=""></span>
+      <span class="nav__logo-text wordmark">TABL<i class="wordmark__e"><span></span><span></span><span></span></i>RO</span>
     </a>
     <div class="nav__links">
       <a href="#modulos">Módulos</a>
@@ -319,7 +338,7 @@
       <a href="#precios">Precios</a>
       <a href="#contacto">Contacto</a>
     </div>
-    <a class="btn btn-primary nav__cta" href="https://wa.me/5491122699526?text=Hola!%20Quiero%20conocer%20AutoFlow%20para%20mi%20agencia." target="_blank" rel="noopener">Solicitar Demo</a>
+    <a class="btn btn-primary nav__cta" href="https://wa.me/5491122699526?text=Hola!%20Quiero%20conocer%20Tablero%20para%20mi%20agencia." target="_blank" rel="noopener">Solicitar Demo</a>
     <button class="nav__toggle" id="navToggle" aria-label="Abrir menú"><span></span><span></span><span></span></button>
   </div>
   <div class="nav__mobile" id="navMobile">
@@ -328,7 +347,7 @@
     <a href="#personalizacion">Personalización</a>
     <a href="#precios">Precios</a>
     <a href="#contacto">Contacto</a>
-    <a class="btn btn-primary" href="https://wa.me/5491122699526?text=Hola!%20Quiero%20conocer%20AutoFlow%20para%20mi%20agencia." target="_blank" rel="noopener">Solicitar Demo</a>
+    <a class="btn btn-primary" href="https://wa.me/5491122699526?text=Hola!%20Quiero%20conocer%20Tablero%20para%20mi%20agencia." target="_blank" rel="noopener">Solicitar Demo</a>
   </div>
 </nav>
 
@@ -346,7 +365,7 @@
         detailing, visitas y tareas — todo en un solo sistema armado a tu medida.
       </p>
       <div class="hero__ctas">
-        <a class="btn btn-wa" href="https://wa.me/5491122699526?text=Hola!%20Quiero%20conocer%20AutoFlow%20para%20mi%20agencia." target="_blank" rel="noopener">
+        <a class="btn btn-wa" href="https://wa.me/5491122699526?text=Hola!%20Quiero%20conocer%20Tablero%20para%20mi%20agencia." target="_blank" rel="noopener">
           Hablar por WhatsApp
         </a>
         <a class="btn btn-outline" href="#precios">Ver planes</a>
@@ -456,7 +475,7 @@
     <div class="sync-banner reveal">
       <div class="sync-banner__text">
         <strong>Vitrina pública sincronizada en tiempo real.</strong>
-        Cada vez que guardás un auto en AutoFlow, tu vitrina web se actualiza sola. Los clientes buscan por marca, carrocería y precio máximo en USD, siempre con el stock real.
+        Cada vez que guardás un auto en Tablero, tu vitrina web se actualiza sola. Los clientes buscan por marca, carrocería y precio máximo en USD, siempre con el stock real.
       </div>
       <div class="sync-flow"><b>Guardás el auto</b><span>→</span><b>Webhook automático</b><span>→</span><b>Vitrina actualizada</b></div>
     </div>
@@ -489,7 +508,7 @@
     <div class="personal-grid">
       <div class="reveal">
         <h2>No es software genérico. <em>Es tu herramienta de trabajo.</em></h2>
-        <p class="lead">AutoFlow se adapta a la mística de tu agencia. No te pedimos que cambies cómo vendés, te ayudamos a hacerlo de forma más eficiente.</p>
+        <p class="lead">Tablero se adapta a la mística de tu agencia. No te pedimos que cambies cómo vendés, te ayudamos a hacerlo de forma más eficiente.</p>
         <ul class="checklist">
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg>Roles y permisos ajustados a como se organiza tu equipo</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg>Categorías de finanzas y checklist de gestoría a tu medida</li>
@@ -530,7 +549,7 @@
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Vendedor asignado por unidad</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Vitrina pública sincronizada</li>
         </ul>
-        <a class="btn btn-outline" style="justify-content:center;" href="https://wa.me/5491122699526?text=Hola!%20Quiero%20consultar%20por%20el%20plan%20Esencial%20de%20AutoFlow." target="_blank" rel="noopener">Consultar</a>
+        <a class="btn btn-outline" style="justify-content:center;" href="https://wa.me/5491122699526?text=Hola!%20Quiero%20consultar%20por%20el%20plan%20Esencial%20de%20Tablero." target="_blank" rel="noopener">Consultar</a>
       </div>
       <div class="card plan featured reveal">
         <span class="plan__badge">Más elegido</span>
@@ -544,7 +563,7 @@
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Visitas y Tareas de equipo</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Todos los roles del sistema</li>
         </ul>
-        <a class="btn btn-primary" style="justify-content:center;" href="https://wa.me/5491122699526?text=Hola!%20Quiero%20consultar%20por%20el%20plan%20Completo%20de%20AutoFlow." target="_blank" rel="noopener">Elegir Completo</a>
+        <a class="btn btn-primary" style="justify-content:center;" href="https://wa.me/5491122699526?text=Hola!%20Quiero%20consultar%20por%20el%20plan%20Completo%20de%20Tablero." target="_blank" rel="noopener">Elegir Completo</a>
       </div>
       <div class="card plan reveal">
         <h3>A Medida</h3>
@@ -556,7 +575,7 @@
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Multi-sucursal</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Acompañamiento en la implementación</li>
         </ul>
-        <a class="btn btn-outline" style="justify-content:center;" href="https://wa.me/5491122699526?text=Hola!%20Quiero%20consultar%20por%20el%20plan%20A%20Medida%20de%20AutoFlow." target="_blank" rel="noopener">Contactar</a>
+        <a class="btn btn-outline" style="justify-content:center;" href="https://wa.me/5491122699526?text=Hola!%20Quiero%20consultar%20por%20el%20plan%20A%20Medida%20de%20Tablero." target="_blank" rel="noopener">Contactar</a>
       </div>
     </div>
   </div>
@@ -568,25 +587,25 @@
    <div class="cta__card">
     <h2>Empezá a transformar tu agencia hoy.</h2>
     <p>Sumate a la nueva generación de agencias que digitalizan su operación de punta a punta.</p>
-    <a class="btn btn-wa" style="padding:18px 34px;font-size:14.5px;" href="https://wa.me/5491122699526?text=Hola!%20Quiero%20conocer%20AutoFlow%20para%20mi%20agencia." target="_blank" rel="noopener">
+    <a class="btn btn-wa" style="padding:18px 34px;font-size:14.5px;" href="https://wa.me/5491122699526?text=Hola!%20Quiero%20conocer%20Tablero%20para%20mi%20agencia." target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39c1.45.79 3.08 1.21 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2zm5.79 14.06c-.24.68-1.42 1.33-1.96 1.4-.5.07-1.12.1-1.81-.11-.42-.13-.95-.31-1.64-.6-2.88-1.24-4.76-4.14-4.9-4.33-.14-.19-1.17-1.55-1.17-2.96s.72-2.1.98-2.39c.26-.28.56-.35.75-.35h.53c.17 0 .4-.06.62.48.24.58.8 2 .87 2.14.07.14.12.31.02.5-.09.19-.14.31-.28.48-.14.16-.29.36-.42.48-.14.14-.28.29-.12.57.16.28.72 1.19 1.55 1.93 1.06.95 1.96 1.24 2.24 1.38.28.14.44.12.6-.07.16-.19.68-.79.87-1.06.18-.28.37-.23.62-.14.26.1 1.63.77 1.91.91.28.14.47.21.53.33.07.12.07.68-.17 1.36z"/></svg>
       Contactar por WhatsApp
-    </a>
-    <br>
-    <a class="cta__phone" href="tel:+5491122699526">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-      +54 9 11 2269-9526
     </a>
    </div>
   </div>
 </section>
 
 <footer>
+  <div class="container">
+    <div class="footer-brand-img">
+      <img src="assets/tablero.png" alt="Tablero — Sistema de gestión para agencias de autos">
+    </div>
+  </div>
   <div class="container footer-inner">
     <div>
       <a href="#inicio" class="footer-logo">
-        <span class="footer-logo-badge"><img src="assets/logo.jpg" alt=""></span>
-        <span class="footer-logo-text">AutoFlow OS</span>
+        <span class="footer-logo-badge"><img src="assets/logo.png" alt=""></span>
+        <span class="footer-logo-text wordmark">TABL<i class="wordmark__e"><span></span><span></span><span></span></i>RO</span>
       </a>
       <div class="footer-note">Sistema de gestión hecho a medida para agencias de autos usados en Argentina.</div>
     </div>
@@ -598,7 +617,7 @@
   </div>
 </footer>
 
-<a class="float-wa" href="https://wa.me/5491122699526?text=Hola!%20Quiero%20conocer%20AutoFlow%20para%20mi%20agencia." target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp">
+<a class="float-wa" href="https://wa.me/5491122699526?text=Hola!%20Quiero%20conocer%20Tablero%20para%20mi%20agencia." target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp">
   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39c1.45.79 3.08 1.21 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2zm5.79 14.06c-.24.68-1.42 1.33-1.96 1.4-.5.07-1.12.1-1.81-.11-.42-.13-.95-.31-1.64-.6-2.88-1.24-4.76-4.14-4.9-4.33-.14-.19-1.17-1.55-1.17-2.96s.72-2.1.98-2.39c.26-.28.56-.35.75-.35h.53c.17 0 .4-.06.62.48.24.58.8 2 .87 2.14.07.14.12.31.02.5-.09.19-.14.31-.28.48-.14.16-.29.36-.42.48-.14.14-.28.29-.12.57.16.28.72 1.19 1.55 1.93 1.06.95 1.96 1.24 2.24 1.38.28.14.44.12.6-.07.16-.19.68-.79.87-1.06.18-.28.37-.23.62-.14.26.1 1.63.77 1.91.91.28.14.47.21.53.33.07.12.07.68-.17 1.36z"/></svg>
 </a>
 
