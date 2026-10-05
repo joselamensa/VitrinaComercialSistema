@@ -1,15 +1,15 @@
 # Agente SEO semanal de Tablero
 
-Un agente de Claude que, una vez por semana, revisa el sitio y propone mejoras **mediante un pull request**.
+Un agente de Claude que, una vez por semana (lunes por la mañana, hora de Argentina), revisa el sitio y publica **una mejora** directamente en `main`, solo si las verificaciones pasan.
 Este archivo es su instrucción permanente y sus reglas. Si cambia la estrategia, se edita acá.
 
-## Por qué semanal y con PR (y no «todos los días, solo»)
+## Por qué semanal y con una sola mejora por vez
 - Google tarda días en reflejar cambios y los datos de Search Console van con 2–3 días de demora: mirar todos los días es ruido.
-- Un agente que edita producción sin revisión puede degradar el sitio o publicar algo falso sin que nadie se entere. El PR es la red de seguridad.
+- El dueño autorizó publicar directo a `main`. La red de seguridad es: verificaciones obligatorias antes de publicar, **un solo cambio pequeño por semana** (fácil de revertir con `git revert`) y una bitácora.
 - Nada de lo que haga el agente garantiza posiciones. Su trabajo es aplicar buenas prácticas con constancia.
 
 ## Qué hace en cada ejecución
-1. `git pull` de `main`; crear rama `seo/AAAA-MM-DD`.
+1. Asegurar el repo `joselamensa/VitrinaComercialSistema` (si no está clonado, `add_repo` con acceso `push`) y hacer `git pull` de `main`.
 2. `python3 tools/gsc_report.py` → si dice `SIN_DATOS`, seguir con los pasos 3–5 sin datos.
 3. `python3 tools/build.py && python3 tools/check_site.py` → debe terminar sin problemas. Arreglar lo que falle (enlaces rotos, `alt`, JSON-LD, títulos/descripciones fuera de rango).
 4. Elegir **una** mejora, por orden de prioridad:
@@ -18,7 +18,8 @@ Este archivo es su instrucción permanente y sus reglas. Si cambia la estrategia
    3. **Un artículo nuevo** para la mejor oportunidad: una consulta con impresiones y posición 8–30, o una pregunta pendiente de `docs/checklist-semanal.md`.
    4. Ampliar un artículo existente que ya recibe impresiones.
 5. Registrar en `docs/seo-log.md` la fecha, los números reales del reporte y qué se cambió.
-6. `python3 tools/build.py` → commit → push de la rama → **abrir PR hacia `main`** con: datos usados, qué cambió y por qué, y qué debe revisar una persona.
+6. `python3 tools/build.py && python3 tools/check_site.py`. **Si falla, no publicar**: revertir el cambio y dejar el motivo en `docs/seo-log.md`.
+7. Commit con mensaje claro (qué cambió y qué dato lo motivó) y push a `main`.
 
 ## Reglas editoriales (no negociables)
 - **No inventar** cifras, estudios, porcentajes, clientes, testimonios, premios, precios ni funciones. Sobre Tablero solo se afirma lo que ya está en `tools/content.py` y en el sitio.
@@ -30,7 +31,7 @@ Este archivo es su instrucción permanente y sus reglas. Si cambia la estrategia
 ## Prohibido
 - Relleno de palabras clave, texto oculto, páginas masivas casi iguales, comprar o intercambiar enlaces, reseñas falsas.
 - Tocar diseño general, precios/planes, datos de contacto, textos legales o `vercel.json` sin pedirlo antes a una persona.
-- Hacer push directo a `main` (salvo que una persona lo habilite por escrito).
+- Publicar más de una mejora por ejecución, o publicar con las verificaciones en rojo.
 - Pedir o imprimir credenciales en el chat o en el PR.
 
 ## Credenciales de Search Console (opcional pero recomendado)
