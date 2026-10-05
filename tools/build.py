@@ -752,6 +752,17 @@ def fill_markers(text, name, content):
     return pat.sub(lambda m: m.group(1) + "\n" + content + "\n" + m.group(2), text)
 
 
+def heroshot_html():
+    front, back = MOD["inventario"], MOD["finanzas"]
+    sz = "(max-width:900px) 92vw, 600px"
+    return """        <div class="hv-card hv-card--back">%s</div>
+        <div class="hv-card hv-card--front">%s<span class="hv-bar" aria-hidden="true"></span></div>
+        <span class="hv-chip hv-chip--a"><b aria-hidden="true">✓</b> Auto transferido: el estado cambia solo</span>
+        <span class="hv-chip hv-chip--b"><b aria-hidden="true">$</b> Pesos y dólares</span>
+        <span class="hv-chip hv-chip--c"><b aria-hidden="true">●</b> Vitrina actualizada</span>""" % (
+        shot(back, sizes=sz), shot(front, sizes=sz, eager=True))
+
+
 def build_home():
     p = os.path.join(ROOT, "index.html")
     text = open(p, encoding="utf-8").read()
@@ -764,6 +775,7 @@ def build_home():
     text = fill_markers(text, "SLIDES", slides_html())
     text = fill_markers(text, "FAQ", faq_html(HOME_FAQ))
     text = fill_markers(text, "FOOTER", footer_html(brand_img=True))
+    text = fill_markers(text, "HEROSHOT", heroshot_html())
     open(p, "w", encoding="utf-8").write(text)
     return home_title, home_desc
 
