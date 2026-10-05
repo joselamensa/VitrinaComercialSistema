@@ -25,7 +25,8 @@
 <meta name="twitter:title" content="Preguntas frecuentes sobre Tablero | Sistema para agencias">
 <meta name="twitter:description" content="Respuestas sobre Tablero: qué es, para quién sirve, precios, manejo de pesos y dólares, vitrina pública, roles, gestoría y cómo empezar.">
 <meta name="twitter:image" content="https://www.tablero.uno/assets/og-image.jpg">
-<link rel="stylesheet" href="/assets/css/site.css">
+<link rel="alternate" type="application/rss+xml" title="Blog de Tablero" href="/blog/feed.xml">
+<link rel="stylesheet" href="/assets/css/site.css?v=2ecd7259">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -168,39 +169,45 @@
       <span class="nav__logo-text wordmark" aria-hidden="true">TABL<i class="wordmark__e"><span></span><span></span><span></span></i>RO</span>
     </a>
     <div class="nav__links">
-      <a href="/modulos/">Módulos</a>
-      <a href="/#roles">Roles</a>
-      <a href="/#personalizacion">Personalización</a>
+      <div class="nav__item"><a href="/modulos/">Módulos <svg class="nav__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a><div class="nav__sub" role="menu"><a href="/modulos/inventario-de-autos/" role="menuitem">Inventario<small>Fichas de autos y motos, precios en USD o ARS y stock siempre al día.</small></a><a href="/modulos/finanzas-agencia-de-autos/" role="menuitem">Finanzas<small>Ingresos y salidas en pesos y dólares, con medios de pago y comprobantes.</small></a><a href="/modulos/gestoria-automotor/" role="menuitem">Gestoría<small>Checklist de documentación por auto y seguimiento hasta la transferencia.</small></a><a href="/modulos/detailing-de-autos/" role="menuitem">Detailing<small>Catálogo de servicios de preparación asignados a cada auto.</small></a><a href="/modulos/visitas-y-agenda/" role="menuitem">Visitas<small>Agenda de visitas por vendedor, con calendario y horarios propios.</small></a><a href="/modulos/tareas-del-equipo/" role="menuitem">Tareas<small>Tareas internas con responsable, urgencia, estado y comentarios.</small></a><a class="nav__sub-all" href="/modulos/" role="menuitem">Ver todos los módulos →</a></div></div>
+      <div class="nav__item"><a href="/sistema-de-gestion-para-agencia-de-autos-usados/">Soluciones <svg class="nav__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a><div class="nav__sub" role="menu"><a href="/sistema-de-gestion-para-agencia-de-autos-usados/" role="menuitem">Sistema para agencias de autos usados<small>El ciclo completo del auto en un solo lugar</small></a><a href="/software-para-concesionaria/" role="menuitem">Software para concesionarias<small>Equipo, caja, trámites y vitrina conectados</small></a></div></div>
       <a href="/#precios">Precios</a>
-      <a href="/preguntas-frecuentes/">Preguntas</a>
+      <a href="/blog/">Blog</a>
+      <a href="/preguntas-frecuentes/" class="is-active" aria-current="true">Preguntas</a>
       <a href="/#contacto">Contacto</a>
     </div>
     <a class="btn btn-primary nav__cta" href="https://wa.me/5491122699526?text=Hola!%20Quiero%20conocer%20Tablero%20para%20mi%20agencia." target="_blank" rel="noopener">Solicitar Demo</a>
-    <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMobile"><span></span><span></span><span></span></button>
+    <button class="nav__toggle" id="navToggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMobile"><span></span><span></span><span></span></button>
   </div>
   <div class="nav__mobile" id="navMobile">
-    <a href="/modulos/">Módulos</a>
-    <a href="/#roles">Roles</a>
-    <a href="/#personalizacion">Personalización</a>
-    <a href="/#precios">Precios</a>
-    <a href="/preguntas-frecuentes/">Preguntas</a>
-    <a href="/#contacto">Contacto</a>
+    <span class="nav__group">Módulos</span>
+    <a class="sub" href="/modulos/inventario-de-autos/">Inventario</a>
+    <a class="sub" href="/modulos/finanzas-agencia-de-autos/">Finanzas</a>
+    <a class="sub" href="/modulos/gestoria-automotor/">Gestoría</a>
+    <a class="sub" href="/modulos/detailing-de-autos/">Detailing</a>
+    <a class="sub" href="/modulos/visitas-y-agenda/">Visitas</a>
+    <a class="sub" href="/modulos/tareas-del-equipo/">Tareas</a>
+    <span class="nav__group">Soluciones</span>
+    <a class="sub" href="/sistema-de-gestion-para-agencia-de-autos-usados/">Sistema para agencias de autos usados</a>
+    <a class="sub" href="/software-para-concesionaria/">Software para concesionarias</a>
+    <span class="nav__group">Más</span>
+    <a class="sub" href="/#precios">Precios</a>
+    <a class="sub" href="/blog/">Blog</a>
+    <a class="sub" href="/preguntas-frecuentes/">Preguntas frecuentes</a>
+    <a class="sub" href="/#contacto">Contacto</a>
     <a class="btn btn-primary" href="https://wa.me/5491122699526?text=Hola!%20Quiero%20conocer%20Tablero%20para%20mi%20agencia." target="_blank" rel="noopener">Solicitar Demo</a>
   </div>
 </nav>
 
 <main id="contenido">
-<header class="page-hero">
-  <div class="container">
-    <nav class="breadcrumb" aria-label="Migas de pan"><ol><li><a href="/">Inicio</a></li><li aria-current="page">Preguntas frecuentes</li></ol></nav>
-    <h1>Preguntas frecuentes sobre Tablero</h1>
+<header class="page-hero"><div class="container">
+    <nav class="breadcrumb" aria-label="Migas de pan"><ol><li><a href="/">Inicio</a></li><li aria-current="page">Preguntas frecuentes</li></ol></nav><h1>Preguntas frecuentes sobre Tablero</h1>
     <p class="lead">Lo que más nos preguntan las agencias de autos usados sobre el sistema. Si no encontrás tu duda, escribinos por WhatsApp.</p>
     <div class="hero__ctas">
       <a class="btn btn-wa" href="https://wa.me/5491122699526?text=Hola!%20Quiero%20conocer%20Tablero%20para%20mi%20agencia." target="_blank" rel="noopener">Hablar por WhatsApp</a>
       <a class="btn btn-outline" href="/#precios">Ver planes</a>
     </div>
-  </div>
-</header>
+  </div></header>
 
 <section class="content"><div class="container"><div class="section-head"><h2>Sobre Tablero</h2></div>
 <div class="faq">
@@ -253,15 +260,16 @@
           <span class="footer-logo-text wordmark" aria-hidden="true">TABL<i class="wordmark__e"><span></span><span></span><span></span></i>RO</span>
         </a>
         <p>Sistema de gestión hecho a medida para agencias de autos usados en Argentina.</p>
+        <a class="footer-wa" href="https://wa.me/5491122699526?text=Hola!%20Quiero%20conocer%20Tablero%20para%20mi%20agencia." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39c1.45.79 3.08 1.21 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2zm5.79 14.06c-.24.68-1.42 1.33-1.96 1.4-.5.07-1.12.1-1.81-.11-.42-.13-.95-.31-1.64-.6-2.88-1.24-4.76-4.14-4.9-4.33-.14-.19-1.17-1.55-1.17-2.96s.72-2.1.98-2.39c.26-.28.56-.35.75-.35h.53c.17 0 .4-.06.62.48.24.58.8 2 .87 2.14.07.14.12.31.02.5-.09.19-.14.31-.28.48-.14.16-.29.36-.42.48-.14.14-.28.29-.12.57.16.28.72 1.19 1.55 1.93 1.06.95 1.96 1.24 2.24 1.38.28.14.44.12.6-.07.16-.19.68-.79.87-1.06.18-.28.37-.23.62-.14.26.1 1.63.77 1.91.91.28.14.47.21.53.33.07.12.07.68-.17 1.36z"/></svg> Hablar por WhatsApp</a>
       </div>
       <div>
         <h2>Módulos</h2>
-      <a href="/modulos/inventario-de-autos/">Inventario</a>
-      <a href="/modulos/finanzas-agencia-de-autos/">Finanzas</a>
-      <a href="/modulos/gestoria-automotor/">Gestoría</a>
-      <a href="/modulos/detailing-de-autos/">Detailing</a>
-      <a href="/modulos/visitas-y-agenda/">Visitas</a>
-      <a href="/modulos/tareas-del-equipo/">Tareas</a>
+        <a href="/modulos/inventario-de-autos/">Inventario</a>
+        <a href="/modulos/finanzas-agencia-de-autos/">Finanzas</a>
+        <a href="/modulos/gestoria-automotor/">Gestoría</a>
+        <a href="/modulos/detailing-de-autos/">Detailing</a>
+        <a href="/modulos/visitas-y-agenda/">Visitas</a>
+        <a href="/modulos/tareas-del-equipo/">Tareas</a>
       </div>
       <div>
         <h2>Soluciones</h2>
@@ -270,11 +278,24 @@
         <a href="/preguntas-frecuentes/">Preguntas frecuentes</a>
       </div>
       <div>
-        <h2>Tablero</h2>
-        <a href="/#precios">Precios</a>
-        <a href="/#roles">Roles</a>
-        <a href="https://wa.me/5491122699526?text=Hola!%20Quiero%20conocer%20Tablero%20para%20mi%20agencia." target="_blank" rel="noopener">WhatsApp</a>
+        <h2>Blog</h2>
+        <a href="/blog/como-llevar-el-stock-de-una-agencia-de-autos-usados/">Cómo llevar el stock de una agencia de autos usados</a>
+        <a href="/blog/caja-en-pesos-y-dolares-agencia-de-autos/">Cómo manejar la caja en pesos y dólares en una agencia</a>
+        <a href="/blog/documentacion-para-vender-un-auto-usado-argentina/">Documentación para vender un auto usado en Argentina</a>
+        <a href="/blog/formulario-08-que-es-y-para-que-sirve/">Formulario 08: qué es y para qué sirve en una venta</a>
+        <a href="/blog/">Ver todos los artículos →</a>
       </div>
+      <div>
+        <h2>Tablero</h2>
+        <a href="/#roles">Roles</a>
+        <a href="/#personalizacion">Personalización</a>
+        <a href="/#precios">Precios</a>
+        <a href="/#contacto">Contacto</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Tablero. Industria Argentina.</span>
+      <span>Tel. <a href="https://wa.me/5491122699526?text=Hola!%20Quiero%20conocer%20Tablero%20para%20mi%20agencia." target="_blank" rel="noopener">+54 9 11 2269-9526</a></span>
     </div>
   </div>
 </footer>
@@ -292,6 +313,9 @@
   });
   document.querySelectorAll('.nav__mobile a').forEach(function(a){
     a.addEventListener('click', function(){ nav.classList.remove('is-open'); navToggle.setAttribute('aria-expanded','false'); });
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && nav.classList.contains('is-open')){ nav.classList.remove('is-open'); navToggle.setAttribute('aria-expanded','false'); navToggle.focus(); }
   });
   var reveals = document.querySelectorAll('.reveal');
   if('IntersectionObserver' in window){

@@ -314,7 +314,7 @@ def page_module(m):
     b = MODULE_BODY[m["key"]]
     path = mod_url(m["key"])
     blocks = [
-        ("split", b["h2"], [("ul", b["bullets"])], m["key"], "white"),
+        ("bulletcards", b["h2"], None, b["bullets"], "white"),
     ]
     blocks += b["extra"]
     blocks.append(("features", "Se conecta con otros módulos",
@@ -327,7 +327,7 @@ def page_module(m):
     return dict(
         path=path, title=m["title"], desc=m["desc"], h1=m["h1"], lead=m["lead"],
         trail=[("Módulos", HUB), (m["name"], path)],
-        priority="0.8", blocks=blocks,
+        priority="0.8", blocks=blocks, hero_mod=m["key"],
         cta=("Pedí una demo de Tablero",
              "Te mostramos el módulo de %s y cómo se conecta con el resto del sistema." % m["name"].lower(),
              "Hola! Quiero conocer el módulo de %s de Tablero." % m["name"].lower()),

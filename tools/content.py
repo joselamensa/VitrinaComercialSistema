@@ -9,6 +9,9 @@ WA_NUMBER = "5491122699526"
 PHONE_DISPLAY = "+54 9 11 2269-9526"
 OG_IMAGE = "/assets/og-image.jpg"
 LASTMOD = "2026-10-05"
+# Pegá acá el token de verificación de Google Search Console (solo el valor de content="...").
+# Si queda vacío no se emite la meta. Ver docs/search-console.md
+GSC_TOKEN = ""
 
 
 def wa(text="Hola! Quiero conocer Tablero para mi agencia."):
