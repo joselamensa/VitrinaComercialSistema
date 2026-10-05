@@ -45,19 +45,19 @@
   .card:hover{box-shadow:0 14px 28px rgba(0,82,204,.09);border-color:var(--primary);transform:translateY(-3px);}
 
   .btn{
-    display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:13.5px;
-    letter-spacing:.04em;text-transform:uppercase;padding:15px 28px;border-radius:var(--r-sm);
+    display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:700;font-size:15px;line-height:1.2;
+    letter-spacing:0;padding:14px 24px;border-radius:var(--r);min-height:48px;
     border:2px solid transparent;cursor:pointer;transition:background .2s,color .2s,border-color .2s,transform .2s,box-shadow .2s;
   }
   .btn-primary{background:var(--primary);color:#fff;}
   .btn-primary:hover{background:var(--primary-hover);}
-  .btn-outline{background:#fff;border-color:var(--primary);color:var(--primary);}
-  .btn-outline:hover{background:rgba(0,82,204,.05);}
+  .btn-outline{background:transparent;border-color:var(--on-surface);color:var(--on-surface);}
+  .btn-outline:hover{background:var(--on-surface);color:#fff;}
   .btn-wa{
-    background:var(--whatsapp);color:#fff;font-weight:600;font-size:15px;
-    text-transform:none;letter-spacing:0;box-shadow:0 8px 22px -6px rgba(37,211,102,.5);
+    background:var(--whatsapp);color:#06210f;
+    box-shadow:0 8px 22px -8px rgba(37,211,102,.55);
   }
-  .btn-wa:hover{background:var(--whatsapp-dark);transform:translateY(-2px);}
+  .btn-wa:hover{background:#34e07a;transform:translateY(-2px);}
   .btn svg{width:18px;height:18px;flex-shrink:0;}
 
   /* ---------- NAV ---------- */
@@ -519,3 +519,15 @@
   .solutions{background:var(--surface);}
 
   .page-hero + .content{padding-top:48px;}
+
+  /* ---------- menos azul, botones consistentes ---------- */
+  .nav .nav__cta{padding:11px 20px;min-height:44px;font-size:14px;}
+  .nav__links a.is-active{color:var(--on-surface);box-shadow:none;font-weight:700;padding-bottom:0;}
+  .nav__links a.is-active::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--primary);display:inline-block;}
+  .breadcrumb a{color:var(--on-surface-variant);font-weight:600;}
+  .breadcrumb [aria-current]{color:var(--on-surface);font-weight:600;}
+  .link-card h3{color:var(--on-surface);}
+  .link-card:hover h3{color:var(--primary);}
+  .plan .btn{width:100%;}
+  .hero__ctas .btn,.cta__card .btn{min-width:210px;}
+  @media (max-width:520px){.hero__ctas .btn{width:100%;}}

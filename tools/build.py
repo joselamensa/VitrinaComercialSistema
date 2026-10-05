@@ -365,10 +365,10 @@ def cta_html(h2, text, wa_text):
    <div class="cta__card">
     <h2>%s</h2>
     <p>%s</p>
-    <a class="btn btn-wa" style="padding:18px 34px;font-size:14.5px;" href="%s" target="_blank" rel="noopener">Contactar por WhatsApp</a>
+    <a class="btn btn-wa" href="%s" target="_blank" rel="noopener">@@WA@@Contactar por WhatsApp</a>
    </div>
   </div>
-</section>""" % (esc(h2), esc(text), wa(wa_text))
+</section>""".replace("@@WA@@", WA_SVG) % (esc(h2), esc(text), wa(wa_text))
 
 
 # --------------------------------------------------------- bloques de página
@@ -439,9 +439,9 @@ def render_body(body):
 
 def hero_html(pg):
     ctas = """<div class="hero__ctas">
-      <a class="btn btn-wa" href="%s" target="_blank" rel="noopener">Hablar por WhatsApp</a>
+      <a class="btn btn-wa" href="%s" target="_blank" rel="noopener">@@WA@@Hablar por WhatsApp</a>
       <a class="btn btn-outline" href="/#precios">Ver planes</a>
-    </div>""" % wa(pg.get("wa", "Hola! Quiero conocer Tablero para mi agencia."))
+    </div>""".replace("@@WA@@", WA_SVG) % wa(pg.get("wa", "Hola! Quiero conocer Tablero para mi agencia."))
     text = '%s<h1>%s</h1>\n    <p class="lead">%s</p>\n    %s' % (breadcrumb_html(pg["trail"]), esc(pg["h1"]), esc(pg["lead"]), ctas)
     if pg.get("hero_mod"):
         m = MOD[pg["hero_mod"]]
