@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inventario de autos usados: control de stock | Tablero</title>
+<meta name="description" content="Controlá el stock de tu agencia: ficha de cada auto o moto con dominio, km, precio en USD o ARS, historial de precios, fotos y vendedor asignado.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://www.tablero.uno/modulos/inventario-de-autos/">
+<meta name="theme-color" content="#0052cc">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" href="/assets/icon-192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Tablero">
+<meta property="og:locale" content="es_AR">
+<meta property="og:title" content="Inventario de autos usados: control de stock | Tablero">
+<meta property="og:description" content="Controlá el stock de tu agencia: ficha de cada auto o moto con dominio, km, precio en USD o ARS, historial de precios, fotos y vendedor asignado.">
+<meta property="og:url" content="https://www.tablero.uno/modulos/inventario-de-autos/">
+<meta property="og:image" content="https://www.tablero.uno/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Tablero, sistema de gestión para agencias de autos usados">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Inventario de autos usados: control de stock | Tablero">
+<meta name="twitter:description" content="Controlá el stock de tu agencia: ficha de cada auto o moto con dominio, km, precio en USD o ARS, historial de precios, fotos y vendedor asignado.">
+<meta name="twitter:image" content="https://www.tablero.uno/assets/og-image.jpg">
+<link rel="stylesheet" href="/assets/css/site.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.tablero.uno/modulos/inventario-de-autos/#webpage",
+      "url": "https://www.tablero.uno/modulos/inventario-de-autos/",
+      "name": "Inventario de autos usados: control de stock | Tablero",
+      "description": "Controlá el stock de tu agencia: ficha de cada auto o moto con dominio, km, precio en USD o ARS, historial de precios, fotos y vendedor asignado.",
+      "inLanguage": "es",
+      "isPartOf": {
+        "@id": "https://www.tablero.uno/#website"
+      },
+      "about": {
+        "@id": "https://www.tablero.uno/#software"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://www.tablero.uno/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Módulos",
+          "item": "https://www.tablero.uno/modulos/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Inventario",
+          "item": "https://www.tablero.uno/modulos/inventario-de-autos/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Puedo cargar precios en pesos y en dólares?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Cada unidad puede tener su precio en pesos o en dólares, y Tablero guarda el historial de cambios de precio de cada auto."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué datos tiene la ficha de cada auto?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dominio, marca, modelo, año, kilómetros y precio, además de una galería de fotos y el vendedor asignado a la unidad."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Puedo cargar motos además de autos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. El inventario completo incluye autos y motos en el mismo sistema, con listados separados."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+<nav class="nav" id="nav" aria-label="Principal">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo" aria-label="Tablero — inicio">
+      <span class="nav__logo-badge"><img src="/assets/logo-96.webp" width="38" height="38" alt="Logo de Tablero"></span>
+      <span class="nav__logo-text wordmark" aria-hidden="true">TABL<i class="wordmark__e"><span></span><span></span><span></span></i>RO</span>
+    </a>
+    <div class="nav__links">
+      <a href="/modulos/">Módulos</a>
+      <a href="/#roles">Roles</a>
+      <a href="/#personalizacion">Personalización</a>
+      <a href="/#precios">Precios</a>
+      <a href="/preguntas-frecuentes/">Preguntas</a>
+      <a href="/#contacto">Contacto</a>
+    </div>
+    <a class="btn btn-primary nav__cta" href="https://wa.me/5491122699526?text=Hola!%20Quiero%20conocer%20Tablero%20para%20mi%20agencia." target="_blank" rel="noopener">Solicitar Demo</a>
+    <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMobile"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav__mobile" id="navMobile">
+    <a href="/modulos/">Módulos</a>
+    <a href="/#roles">Roles</a>
+    <a href="/#personalizacion">Personalización</a>
+    <a href="/#precios">Precios</a>
+    <a href="/preguntas-frecuentes/">Preguntas</a>
+    <a href="/#contacto">Contacto</a>
+    <a class="btn btn-primary" href="https://wa.me/5491122699526?text=Hola!%20Quiero%20conocer%20Tablero%20para%20mi%20agencia." target="_blank" rel="noopener">Solicitar Demo</a>
+  </div>
+</nav>
+
+<main id="contenido">
+<header class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Migas de pan"><ol><li><a href="/">Inicio</a></li><li><a href="/modulos/">Módulos</a></li><li aria-current="page">Inventario</li></ol></nav>
+    <h1>Inventario de autos usados para tu agencia</h1>
+    <p class="lead">Cada auto o moto con su ficha completa y su estado siempre al día, en un solo lugar y sin planillas sueltas.</p>
+    <div class="hero__ctas">
+      <a class="btn btn-wa" href="https://wa.me/5491122699526?text=Hola!%20Quiero%20conocer%20el%20m%C3%B3dulo%20de%20inventario%20de%20Tablero." target="_blank" rel="noopener">Hablar por WhatsApp</a>
+      <a class="btn btn-outline" href="/#precios">Ver planes</a>
+    </div>
+  </div>
+</header>
+
+<section class="content content--white"><div class="container"><div class="split">
+<div class="prose">
+<h2>Qué incluye el módulo de inventario</h2>
+<ul class="bullets">
+  <li><strong>Ficha completa por unidad:</strong> dominio, marca, modelo, año, kilómetros y precio.</li>
+  <li><strong>Precio en pesos o en dólares</strong>, con historial de cambios de precio.</li>
+  <li><strong>Galería de fotos</strong> de cada auto o moto.</li>
+  <li><strong>Autos y motos</strong> en el mismo sistema, con listados separados.</li>
+  <li><strong>Vendedor asignado</strong> por unidad.</li>
+  <li><strong>Panel con contadores por estado</strong> (disponibles, vendidos, transferidos y bajas) y filtros por vendedor, estado y días en sistema.</li>
+</ul>
+</div>
+<figure class="figure"><div class="shot"><img src="/assets/modulos/inventario-800.webp" srcset="/assets/modulos/inventario-800.webp 800w, /assets/modulos/inventario.webp 1900w" sizes="(max-width:900px) 92vw, 640px" width="1900" height="935" alt="Panel de administración de Tablero con el listado de autos: dominio, marca, modelo, año, fecha de ingreso, vendedor y estado de cada unidad" loading="lazy" decoding="async" data-full="/assets/modulos/inventario.webp"><img class="shot__dark" src="/assets/modulos/inventariodark-800.webp" srcset="/assets/modulos/inventariodark-800.webp 800w, /assets/modulos/inventariodark.webp 1900w" sizes="(max-width:900px) 92vw, 640px" width="1900" height="935" alt="Panel de administración de Tablero con el listado de autos de la agencia, en modo oscuro" loading="lazy" decoding="async" data-full="/assets/modulos/inventariodark.webp"></div><figcaption>Pantalla del módulo de inventario en Tablero (pasá el mouse para verla en modo oscuro).</figcaption></figure>
+</div></div></section>
+
+<section class="content content--alt"><div class="container"><div class="prose">
+<h2>Un stock que se actualiza solo en tu vitrina web</h2>
+<p>La vitrina pública de tu agencia está sincronizada en tiempo real con Tablero. Cada vez que guardás un auto, un webhook automático actualiza la vitrina; tus clientes buscan por marca, carrocería y precio máximo en USD, siempre con el stock real.</p>
+<p>Así no hay que cargar el mismo auto dos veces ni acordarse de bajar el que ya se vendió.</p>
+</div></div></section>
+
+<section class="content"><div class="container"><div class="prose">
+<h2>Para qué sirve tener el inventario ordenado</h2>
+<p>Saber qué tenés, a qué precio y en qué estado es la base de todo lo demás. Con la ficha de cada unidad en un solo lugar, el vendedor encuentra los datos sin preguntar, el gerente ve cuánto stock hay en cada estado y se pueden detectar los autos que llevan más días en el sistema con el filtro correspondiente.</p>
+<p>El historial de cambios de precio deja registro de cada modificación, para que no dependa de la memoria de nadie.</p>
+</div></div></section>
+
+<section class="content content--alt"><div class="container"><div class="prose">
+<h2>Quién usa el inventario</h2>
+<p>El <strong>Administrador</strong> tiene acceso total; el <strong>Vendedor</strong> gestiona autos y carga movimientos, sin editar ni borrar; el <strong>Gerente</strong> maneja todo el negocio operativo y <strong>Soporte</strong> se asigna a autos y movimientos. Mirá todos los <a href="/#roles">roles de Tablero</a>.</p>
+</div></div></section>
+
+<section class="content content--alt"><div class="container"><div class="section-head"><h2>Se conecta con otros módulos</h2><p>Tablero funciona como un solo sistema: lo que pasa en un módulo se refleja en los demás.</p></div>
+<div class="feat-grid">
+<div class="card feat"><div class="feat__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 2h6l1 3h3v17H5V5h3l1-3z"/><path d="M9 11h6M9 15h6"/></svg></div><h3><a href="/modulos/gestoria-automotor/">Gestoría</a></h3><p>Cuando un auto se marca como «Transferido» en gestoría, cambia de estado solo.</p></div>
+<div class="card feat"><div class="feat__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14.7 6.3a1 1 0 0 0-1.4 0l-6 6a1 1 0 0 0 0 1.4l3 3a1 1 0 0 0 1.4 0l6-6a1 1 0 0 0 0-1.4l-3-3z"/><path d="M17 3l4 4"/><path d="M3 21l4-1 8.5-8.5"/></svg></div><h3><a href="/modulos/detailing-de-autos/">Detailing</a></h3><p>Los servicios de preparación se asignan a cada unidad; al terminar, el auto vuelve a Disponible.</p></div>
+<div class="card feat"><div class="feat__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div><h3><a href="/modulos/visitas-y-agenda/">Visitas</a></h3><p>Las visitas se agendan con fecha, horario y vendedor asignado.</p></div>
+</div></div></section>
+
+<section class="content"><div class="container"><div class="section-head"><h2>Preguntas frecuentes sobre inventario</h2></div>
+<div class="faq">
+  <details><summary>¿Puedo cargar precios en pesos y en dólares?</summary><div class="answer"><p>Sí. Cada unidad puede tener su precio en pesos o en dólares, y Tablero guarda el historial de cambios de precio de cada auto.</p></div></details>
+  <details><summary>¿Qué datos tiene la ficha de cada auto?</summary><div class="answer"><p>Dominio, marca, modelo, año, kilómetros y precio, además de una galería de fotos y el vendedor asignado a la unidad.</p></div></details>
+  <details><summary>¿Puedo cargar motos además de autos?</summary><div class="answer"><p>Sí. El inventario completo incluye autos y motos en el mismo sistema, con listados separados.</p></div></details>
+</div>
+</div></section>
+
+<section class="content content--alt"><div class="container"><div class="section-head"><h2>Más módulos de Tablero</h2><p>Conocé el resto de las herramientas para tu agencia.</p></div>
+<div class="link-grid">
+<a class="card link-card" href="/modulos/finanzas-agencia-de-autos/"><h3>Finanzas</h3><p>Ingresos y salidas en pesos y dólares, con medios de pago y comprobantes.</p><span>Ver más →</span></a>
+<a class="card link-card" href="/modulos/gestoria-automotor/"><h3>Gestoría</h3><p>Checklist de documentación por auto y seguimiento hasta la transferencia.</p><span>Ver más →</span></a>
+<a class="card link-card" href="/modulos/detailing-de-autos/"><h3>Detailing</h3><p>Catálogo de servicios de preparación asignados a cada auto.</p><span>Ver más →</span></a>
+</div></div></section>
+
+<section class="cta cta--tight" id="contacto">
+  <div class="container">
+   <div class="cta__card">
+    <h2>Pedí una demo de Tablero</h2>
+    <p>Te mostramos el módulo de inventario y cómo se conecta con el resto del sistema.</p>
+    <a class="btn btn-wa" style="padding:18px 34px;font-size:14.5px;" href="https://wa.me/5491122699526?text=Hola!%20Quiero%20conocer%20el%20m%C3%B3dulo%20de%20inventario%20de%20Tablero." target="_blank" rel="noopener">Contactar por WhatsApp</a>
+   </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-cols">
+      <div>
+        <a href="/" class="footer-logo" aria-label="Tablero — inicio">
+          <span class="footer-logo-badge"><img src="/assets/logo-96.webp" width="32" height="32" loading="lazy" alt="Logo de Tablero"></span>
+          <span class="footer-logo-text wordmark" aria-hidden="true">TABL<i class="wordmark__e"><span></span><span></span><span></span></i>RO</span>
+        </a>
+        <p>Sistema de gestión hecho a medida para agencias de autos usados en Argentina.</p>
+      </div>
+      <div>
+        <h2>Módulos</h2>
+      <a href="/modulos/inventario-de-autos/">Inventario</a>
+      <a href="/modulos/finanzas-agencia-de-autos/">Finanzas</a>
+      <a href="/modulos/gestoria-automotor/">Gestoría</a>
+      <a href="/modulos/detailing-de-autos/">Detailing</a>
+      <a href="/modulos/visitas-y-agenda/">Visitas</a>
+      <a href="/modulos/tareas-del-equipo/">Tareas</a>
+      </div>
+      <div>
+        <h2>Soluciones</h2>
+        <a href="/sistema-de-gestion-para-agencia-de-autos-usados/">Sistema para agencias de autos usados</a>
+        <a href="/software-para-concesionaria/">Software para concesionarias</a>
+        <a href="/preguntas-frecuentes/">Preguntas frecuentes</a>
+      </div>
+      <div>
+        <h2>Tablero</h2>
+        <a href="/#precios">Precios</a>
+        <a href="/#roles">Roles</a>
+        <a href="https://wa.me/5491122699526?text=Hola!%20Quiero%20conocer%20Tablero%20para%20mi%20agencia." target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a class="float-wa" href="https://wa.me/5491122699526?text=Hola!%20Quiero%20conocer%20Tablero%20para%20mi%20agencia." target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39c1.45.79 3.08 1.21 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2zm5.79 14.06c-.24.68-1.42 1.33-1.96 1.4-.5.07-1.12.1-1.81-.11-.42-.13-.95-.31-1.64-.6-2.88-1.24-4.76-4.14-4.9-4.33-.14-.19-1.17-1.55-1.17-2.96s.72-2.1.98-2.39c.26-.28.56-.35.75-.35h.53c.17 0 .4-.06.62.48.24.58.8 2 .87 2.14.07.14.12.31.02.5-.09.19-.14.31-.28.48-.14.16-.29.36-.42.48-.14.14-.28.29-.12.57.16.28.72 1.19 1.55 1.93 1.06.95 1.96 1.24 2.24 1.38.28.14.44.12.6-.07.16-.19.68-.79.87-1.06.18-.28.37-.23.62-.14.26.1 1.63.77 1.91.91.28.14.47.21.53.33.07.12.07.68-.17 1.36z"/></svg>
+</a>
+
+<script>
+  var nav = document.getElementById('nav');
+  var navToggle = document.getElementById('navToggle');
+  navToggle.addEventListener('click', function(){
+    var open = nav.classList.toggle('is-open');
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  document.querySelectorAll('.nav__mobile a').forEach(function(a){
+    a.addEventListener('click', function(){ nav.classList.remove('is-open'); navToggle.setAttribute('aria-expanded','false'); });
+  });
+  var reveals = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){ entry.target.classList.add('in'); io.unobserve(entry.target); }
+      });
+    }, {threshold:0.12});
+    reveals.forEach(function(el){ io.observe(el); });
+  } else { reveals.forEach(function(el){ el.classList.add('in'); }); }
+</script>
+</body>
+</html>
