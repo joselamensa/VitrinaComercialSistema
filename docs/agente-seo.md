@@ -11,6 +11,7 @@ Este archivo es su instrucción permanente y sus reglas. Si cambia la estrategia
 ## Qué hace en cada ejecución
 1. Asegurar el repo `joselamensa/VitrinaComercialSistema` (si no está clonado, `add_repo` con acceso `push`) y hacer `git pull` de `main`.
 2. `python3 tools/gsc_report.py` → si dice `SIN_DATOS`, seguir con los pasos 3–5 sin datos.
+2b. `python3 tools/gsc_inspect.py` → tabla de cómo ve Google cada URL del sitemap. «Descubierta/Rastreada: sin indexar» en páginas nuevas es normal las primeras semanas; si una página sigue así tras ~4 semanas, mejorarla (más enlaces internos, contenido más útil). Las variantes http/sin-www con «Página con redirección» son correctas (apuntan a la canónica www).
 3. `python3 tools/build.py && python3 tools/check_site.py` → debe terminar sin problemas. Arreglar lo que falle (enlaces rotos, `alt`, JSON-LD, títulos/descripciones fuera de rango).
 4. Elegir **una** mejora, por orden de prioridad:
    1. Corrección técnica detectada en el paso 3.
