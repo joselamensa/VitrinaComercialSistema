@@ -17,7 +17,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from content import *  # noqa
-from content import GSC_TOKEN  # noqa
+from content import GSC_TOKEN, PRICE_ESENCIAL_USD, PRICE_COMPLETO_USD, LINKEDIN_URL, FOUNDER  # noqa
 import pages  # noqa
 import blog  # noqa
 
@@ -153,6 +153,7 @@ def footer_html(brand_img=False):
       </div>
       <div>
         <h2>Tablero</h2>
+        <a href="/sobre-tablero/">Sobre Tablero</a>
         <a href="/#roles">Roles</a>
         <a href="/#personalizacion">Personalización</a>
         <a href="/#precios">Precios</a>
@@ -223,6 +224,18 @@ def breadcrumb_jsonld(trail):
     return {"@type": "BreadcrumbList", "itemListElement": els}
 
 
+def person_jsonld():
+    return {
+        "@type": "Person",
+        "@id": SITE_URL + "/#founder",
+        "name": FOUNDER,
+        "jobTitle": "Creador de Tablero",
+        "url": SITE_URL + "/sobre-tablero/",
+        "sameAs": [LINKEDIN_URL],
+        "worksFor": {"@id": SITE_URL + "/#organization"},
+    }
+
+
 def org_jsonld():
     return {
         "@type": "Organization",
@@ -231,6 +244,8 @@ def org_jsonld():
         "url": SITE_URL + "/",
         "logo": {"@type": "ImageObject", "url": SITE_URL + "/assets/logo.png", "width": 512, "height": 512},
         "description": "Sistema de gestión para agencias de autos usados.",
+        "foundingDate": "2025",
+        "founder": {"@id": SITE_URL + "/#founder"},
         "contactPoint": [{
             "@type": "ContactPoint",
             "contactType": "sales",
@@ -263,6 +278,12 @@ def software_jsonld():
         ],
         "screenshot": [SITE_URL + "/assets/modulos/%s.webp" % m["img"] for m in MODULES],
         "publisher": {"@id": SITE_URL + "/#organization"},
+        "offers": [
+            {"@type": "Offer", "name": "Esencial", "price": str(PRICE_ESENCIAL_USD), "priceCurrency": "USD",
+             "priceSpecification": {"@type": "UnitPriceSpecification", "price": str(PRICE_ESENCIAL_USD), "priceCurrency": "USD", "unitCode": "MON", "billingDuration": 1}},
+            {"@type": "Offer", "name": "Completo", "price": str(PRICE_COMPLETO_USD), "priceCurrency": "USD",
+             "priceSpecification": {"@type": "UnitPriceSpecification", "price": str(PRICE_COMPLETO_USD), "priceCurrency": "USD", "unitCode": "MON", "billingDuration": 1}},
+        ],
     }
 
 
@@ -463,6 +484,9 @@ def page_html(pg):
             for _, items in b[1]:
                 faq_items += items
     nodes = [webpage_jsonld(path, pg["title"], pg["desc"]), breadcrumb_jsonld(trail)]
+    if pg.get("page_type"):
+        nodes[0]["@type"] = pg["page_type"]
+        nodes.append(person_jsonld())
     if faq_items:
         nodes.append(faq_jsonld(faq_items))
     body = [render_block(b) for b in blocks]
@@ -752,6 +776,95 @@ def fill_markers(text, name, content):
     return pat.sub(lambda m: m.group(1) + "\n" + content + "\n" + m.group(2), text)
 
 
+# ----------------------------------------------------------------- precios
+FLAG_US = '<svg class="flag" viewBox="0 0 24 16" aria-hidden="true"><rect width="24" height="16" fill="#fff"/><g fill="#b22234"><rect y="0" width="24" height="1.23"/><rect y="2.46" width="24" height="1.23"/><rect y="4.92" width="24" height="1.23"/><rect y="7.38" width="24" height="1.23"/><rect y="9.85" width="24" height="1.23"/><rect y="12.3" width="24" height="1.23"/><rect y="14.77" width="24" height="1.23"/></g><rect width="10" height="8.6" fill="#3c3b6e"/></svg>'
+FLAG_AR = '<svg class="flag" viewBox="0 0 24 16" aria-hidden="true"><rect width="24" height="16" fill="#74acdf"/><rect y="5.33" width="24" height="5.34" fill="#fff"/><circle cx="12" cy="8" r="1.7" fill="#f6b40e"/></svg>'
+CHECK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>'
+
+
+def load_rate():
+    try:
+        with open(os.path.join(ROOT, "tools", "rate.json"), encoding="utf-8") as f:
+            r = json.load(f)
+        return float(r["venta"]), r.get("fecha", "")
+    except Exception:
+        return None, ""
+
+
+def fmt_ars(n):
+    return "$" + "{:,.0f}".format(n).replace(",", ".")
+
+
+def price_span(usd, rate):
+    ars = ('<span class="cur cur--ars">%s</span>' % fmt_ars(round(usd * rate / 1000.0) * 1000)) if rate else ""
+    return '<span class="cur cur--usd">USD %d</span>%s<span class="plan__per"> / mes</span>' % (usd, ars)
+
+
+def pricing_html():
+    rate, fecha = load_rate()
+    if rate:
+        f = "/".join(reversed(fecha.split("-"))) if fecha else ""
+        switch = ('<div class="cur-switch" role="group" aria-label="Moneda de los precios">'
+                  '<button type="button" class="cur-btn is-on" data-cur="usd" aria-pressed="true">%s<span>USD</span></button>'
+                  '<button type="button" class="cur-btn" data-cur="ars" aria-pressed="false">%s<span>ARS</span></button></div>' % (FLAG_US, FLAG_AR))
+        note = ('<p class="cur-note"><span class="cur cur--usd">Precios en dólares por mes.</span>'
+                '<span class="cur cur--ars">Valores en pesos calculados con el dólar oficial (venta) de %s%s. Se actualizan cada semana.</span></p>'
+                % (fmt_ars(rate).replace("$", "$ "), (", al " + f) if f else ""))
+    else:
+        switch, note = "", '<p class="cur-note">Precios en dólares por mes.</p>'
+
+    def li(t):
+        return "<li>%s%s</li>" % (CHECK, t)
+
+    def wa_link(txt):
+        return wa(txt)
+
+    return """    <div class="section-head reveal">
+      <h2>Planes pensados para tu crecimiento</h2>
+      <p>Elegí la potencia que tu agencia necesita hoy. Precios claros, sin letra chica; el plan A Medida lo definimos juntos por WhatsApp.</p>
+      %s
+      %s
+    </div>
+    <div class="pricing-grid">
+      <div class="card plan reveal">
+        <h3>Esencial</h3>
+        <p class="plan__desc">Para agencias que arrancan a digitalizar el lote.</p>
+        <div class="plan__price">%s</div>
+        <div class="plan__price-note">Ideal para empezar con inventario y vitrina</div>
+        <ul>%s%s%s</ul>
+        <a class="btn btn-outline" href="%s" target="_blank" rel="noopener">Elegir Esencial</a>
+      </div>
+      <div class="card plan featured reveal">
+        <span class="plan__badge">Más recomendado</span>
+        <h3>Completo</h3>
+        <p class="plan__desc">El sistema de punta a punta, como lo pediste.</p>
+        <div class="plan__price">%s</div>
+        <div class="plan__price-note">Gestión bimonetaria (USD/ARS)</div>
+        <ul>%s%s%s%s</ul>
+        <a class="btn btn-primary" href="%s" target="_blank" rel="noopener">Elegir Completo</a>
+      </div>
+      <div class="card plan reveal">
+        <h3>A Medida</h3>
+        <p class="plan__desc">Para estructuras grandes o multi-sucursal.</p>
+        <div class="plan__price">A consultar</div>
+        <div class="plan__price-note">Roles, flujos e integraciones a definir juntos</div>
+        <ul>%s%s%s</ul>
+        <a class="btn btn-outline" href="%s" target="_blank" rel="noopener">Contactar</a>
+      </div>
+    </div>""" % (
+        switch, note,
+        price_span(PRICE_ESENCIAL_USD, rate),
+        li("Inventario completo de autos y motos"), li("Vendedor asignado por unidad"), li("Vitrina pública sincronizada"),
+        wa_link("Hola! Quiero el plan Esencial de Tablero."),
+        price_span(PRICE_COMPLETO_USD, rate),
+        li("Todo lo del plan Esencial"), li("Finanzas, Gestoría y Detailing"), li("Visitas y Tareas de equipo"), li("Todos los roles del sistema"),
+        wa_link("Hola! Quiero el plan Completo de Tablero."),
+        li("Módulos y campos personalizados"), li("Multi-sucursal"), li("Acompañamiento en la implementación"),
+        wa_link("Hola! Quiero consultar por el plan A Medida de Tablero."),
+    )
+
+
+
 def heroshot_html():
     front, back = MOD["inventario"], MOD["finanzas"]
     sz = "(max-width:900px) 92vw, 600px"
@@ -768,7 +881,7 @@ def build_home():
     text = open(p, encoding="utf-8").read()
     home_title = "Tablero | Sistema de gestión para agencias de autos usados"
     home_desc = "Tablero es el sistema de gestión para agencias de autos usados: inventario, finanzas en USD y ARS, gestoría, detailing, visitas y tareas, a tu medida."
-    nodes = [org_jsonld(), website_jsonld(), software_jsonld(), webpage_jsonld("/", home_title, home_desc),
+    nodes = [org_jsonld(), person_jsonld(), website_jsonld(), software_jsonld(), webpage_jsonld("/", home_title, home_desc),
              faq_jsonld([FAQ[k] for k in HOME_FAQ])]
     text = fill_markers(text, "HEAD", head_html(home_title, home_desc, "/", nodes))
     text = fill_markers(text, "NAV", nav_html())
@@ -776,18 +889,20 @@ def build_home():
     text = fill_markers(text, "FAQ", faq_html(HOME_FAQ))
     text = fill_markers(text, "FOOTER", footer_html(brand_img=True))
     text = fill_markers(text, "HEROSHOT", heroshot_html())
+    text = fill_markers(text, "PRICING", pricing_html())
     open(p, "w", encoding="utf-8").write(text)
     return home_title, home_desc
 
 
 def llms_txt():
     L = ["# Tablero", "",
-         "> Tablero es un sistema de gestión hecho a medida para agencias de autos usados en Argentina. Reúne inventario de autos y motos, finanzas en pesos y dólares (USD/ARS), gestoría con checklist de documentación, detailing, agenda de visitas y tareas del equipo, con ocho roles de usuario y una vitrina web sincronizada con el stock. Los precios se definen por consulta (planes Esencial, Completo y A Medida).", "",
+         "> Tablero es un sistema de gestión hecho a medida para agencias de autos usados en Argentina. Reúne inventario de autos y motos, finanzas en pesos y dólares (USD/ARS), gestoría con checklist de documentación, detailing, agenda de visitas y tareas del equipo, con ocho roles de usuario y una vitrina web sincronizada con el stock. Planes: Esencial USD 100 por mes, Completo USD 150 por mes y A Medida por consulta.", "",
          "Contacto: WhatsApp %s · %s/" % (PHONE_DISPLAY, SITE_URL), "",
          "## Qué es y para quién", "",
          "- [Sistema de gestión para agencia de autos usados](%s/sistema-de-gestion-para-agencia-de-autos-usados/): el ciclo completo del auto, del stock a la transferencia." % SITE_URL,
          "- [Software para concesionaria](%s/software-para-concesionaria/): equipo con roles, caja en dos monedas, trámites y vitrina conectados." % SITE_URL,
-         "- [Preguntas frecuentes](%s/preguntas-frecuentes/): precios, monedas, vitrina, roles y cómo empezar." % SITE_URL, "",
+         "- [Preguntas frecuentes](%s/preguntas-frecuentes/): precios, monedas, vitrina, roles y cómo empezar." % SITE_URL,
+         "- [Sobre Tablero](%s/sobre-tablero/): quién lo hace y desde cuándo funciona." % SITE_URL, "",
          "## Módulos", ""]
     for m in MODULES:
         L.append("- [%s](%s%s): %s" % (m["name"], SITE_URL, mod_url(m["key"]), m["short"]))

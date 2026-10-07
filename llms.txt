@@ -1,6 +1,6 @@
 # Tablero
 
-> Tablero es un sistema de gestión hecho a medida para agencias de autos usados en Argentina. Reúne inventario de autos y motos, finanzas en pesos y dólares (USD/ARS), gestoría con checklist de documentación, detailing, agenda de visitas y tareas del equipo, con ocho roles de usuario y una vitrina web sincronizada con el stock. Los precios se definen por consulta (planes Esencial, Completo y A Medida).
+> Tablero es un sistema de gestión hecho a medida para agencias de autos usados en Argentina. Reúne inventario de autos y motos, finanzas en pesos y dólares (USD/ARS), gestoría con checklist de documentación, detailing, agenda de visitas y tareas del equipo, con ocho roles de usuario y una vitrina web sincronizada con el stock. Planes: Esencial USD 100 por mes, Completo USD 150 por mes y A Medida por consulta.
 
 Contacto: WhatsApp +54 9 11 2269-9526 · https://www.tablero.uno/
 
@@ -9,6 +9,7 @@ Contacto: WhatsApp +54 9 11 2269-9526 · https://www.tablero.uno/
 - [Sistema de gestión para agencia de autos usados](https://www.tablero.uno/sistema-de-gestion-para-agencia-de-autos-usados/): el ciclo completo del auto, del stock a la transferencia.
 - [Software para concesionaria](https://www.tablero.uno/software-para-concesionaria/): equipo con roles, caja en dos monedas, trámites y vitrina conectados.
 - [Preguntas frecuentes](https://www.tablero.uno/preguntas-frecuentes/): precios, monedas, vitrina, roles y cómo empezar.
+- [Sobre Tablero](https://www.tablero.uno/sobre-tablero/): quién lo hace y desde cuándo funciona.
 
 ## Módulos
 

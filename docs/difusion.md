@@ -31,7 +31,7 @@ del cliente, sumalos.
 >
 > **Cómo funciona:** hay ocho roles con permisos diferenciados (Administrador, Vendedor, Contadora, Visualizador, Gestor, Detailer, Gerente y Soporte), y la vitrina pública de la agencia se actualiza sola cada vez que se guarda un auto.
 >
-> **Planes:** Esencial, Completo y A Medida. El precio se define por consulta. Más información en https://www.tablero.uno/
+> **Planes:** Esencial USD 100 por mes, Completo USD 150 por mes y A Medida por consulta. Más información en https://www.tablero.uno/
 
 ---
 

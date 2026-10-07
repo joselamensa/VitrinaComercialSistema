@@ -13,6 +13,11 @@ LASTMOD = "2026-10-05"
 # Si queda vacío no se emite la meta. Ver docs/search-console.md
 GSC_TOKEN = ""
 # Clave pública de IndexNow (el archivo /<clave>.txt debe existir en la raíz del sitio).
+# Planes (precios en USD por mes). A Medida: a consultar.
+PRICE_ESENCIAL_USD = 100
+PRICE_COMPLETO_USD = 150
+LINKEDIN_URL = "https://www.linkedin.com/in/jose-lamensa-6a29b8236/"
+FOUNDER = "José Lamensa"
 INDEXNOW_KEY = "6ee7a279b293405a48cc1a9a537bbed0"
 
 
@@ -128,7 +133,7 @@ FAQ = {
     ),
     "precio": (
         "¿Cuánto cuesta Tablero?",
-        "Hay tres planes: Esencial, Completo y A Medida. No publicamos precios fijos porque dependen de los módulos y de lo que necesite tu agencia; lo definimos juntos por WhatsApp, sin letra chica.",
+        "Hay tres planes. Esencial cuesta USD 100 por mes y Completo USD 150 por mes (el más recomendado). A Medida, para estructuras grandes o multi-sucursal, se define por consulta. En la sección de planes podés ver los valores también en pesos, al dólar oficial.",
     ),
     "monedas": (
         "¿Maneja pesos y dólares?",

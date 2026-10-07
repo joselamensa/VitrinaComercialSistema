@@ -27,7 +27,7 @@
 <meta name="twitter:description" content="Tablero es el sistema de gestión para agencias de autos usados: inventario, finanzas en USD y ARS, gestoría, detailing, visitas y tareas, a tu medida.">
 <meta name="twitter:image" content="https://www.tablero.uno/assets/og-image.jpg">
 <link rel="alternate" type="application/rss+xml" title="Blog de Tablero" href="/blog/feed.xml">
-<link rel="stylesheet" href="/assets/css/site.css?v=1bd95273">
+<link rel="stylesheet" href="/assets/css/site.css?v=e7f1eb06">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -44,6 +44,10 @@
         "height": 512
       },
       "description": "Sistema de gestión para agencias de autos usados.",
+      "foundingDate": "2025",
+      "founder": {
+        "@id": "https://www.tablero.uno/#founder"
+      },
       "contactPoint": [
         {
           "@type": "ContactPoint",
@@ -53,6 +57,19 @@
           "url": "https://wa.me/5491122699526?text=Hola!%20Quiero%20conocer%20Tablero%20para%20mi%20agencia."
         }
       ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.tablero.uno/#founder",
+      "name": "José Lamensa",
+      "jobTitle": "Creador de Tablero",
+      "url": "https://www.tablero.uno/sobre-tablero/",
+      "sameAs": [
+        "https://www.linkedin.com/in/jose-lamensa-6a29b8236/"
+      ],
+      "worksFor": {
+        "@id": "https://www.tablero.uno/#organization"
+      }
     },
     {
       "@type": "WebSite",
@@ -93,7 +110,35 @@
       ],
       "publisher": {
         "@id": "https://www.tablero.uno/#organization"
-      }
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Esencial",
+          "price": "100",
+          "priceCurrency": "USD",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "100",
+            "priceCurrency": "USD",
+            "unitCode": "MON",
+            "billingDuration": 1
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Completo",
+          "price": "150",
+          "priceCurrency": "USD",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "150",
+            "priceCurrency": "USD",
+            "unitCode": "MON",
+            "billingDuration": 1
+          }
+        }
+      ]
     },
     {
       "@type": "WebPage",
@@ -125,7 +170,7 @@
           "name": "¿Cuánto cuesta Tablero?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Hay tres planes: Esencial, Completo y A Medida. No publicamos precios fijos porque dependen de los módulos y de lo que necesite tu agencia; lo definimos juntos por WhatsApp, sin letra chica."
+            "text": "Hay tres planes. Esencial cuesta USD 100 por mes y Completo USD 150 por mes (el más recomendado). A Medida, para estructuras grandes o multi-sucursal, se define por consulta. En la sección de planes podés ver los valores también en pesos, al dólar oficial."
           }
         },
         {
@@ -441,50 +486,41 @@
 <!-- ================= PRECIOS ================= -->
 <section class="pricing" id="precios">
   <div class="container">
+<!--@@PRICING-->
     <div class="section-head reveal">
       <h2>Planes pensados para tu crecimiento</h2>
-      <p>Elegí la potencia que tu agencia necesita hoy. Sin letra chica — lo definimos juntos por WhatsApp.</p>
+      <p>Elegí la potencia que tu agencia necesita hoy. Precios claros, sin letra chica; el plan A Medida lo definimos juntos por WhatsApp.</p>
+      
+      <p class="cur-note">Precios en dólares por mes.</p>
     </div>
     <div class="pricing-grid">
       <div class="card plan reveal">
         <h3>Esencial</h3>
         <p class="plan__desc">Para agencias que arrancan a digitalizar el lote.</p>
-        <div class="plan__price">Consultar</div>
+        <div class="plan__price"><span class="cur cur--usd">USD 100</span><span class="plan__per"> / mes</span></div>
         <div class="plan__price-note">Ideal para empezar con inventario y vitrina</div>
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Inventario completo de autos y motos</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Vendedor asignado por unidad</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Vitrina pública sincronizada</li>
-        </ul>
-        <a class="btn btn-outline" href="https://wa.me/5491122699526?text=Hola!%20Quiero%20consultar%20por%20el%20plan%20Esencial%20de%20Tablero." target="_blank" rel="noopener">Consultar</a>
+        <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Inventario completo de autos y motos</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Vendedor asignado por unidad</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Vitrina pública sincronizada</li></ul>
+        <a class="btn btn-outline" href="https://wa.me/5491122699526?text=Hola!%20Quiero%20el%20plan%20Esencial%20de%20Tablero." target="_blank" rel="noopener">Elegir Esencial</a>
       </div>
       <div class="card plan featured reveal">
-        <span class="plan__badge">Más elegido</span>
+        <span class="plan__badge">Más recomendado</span>
         <h3>Completo</h3>
         <p class="plan__desc">El sistema de punta a punta, como lo pediste.</p>
-        <div class="plan__price">Consultar</div>
+        <div class="plan__price"><span class="cur cur--usd">USD 150</span><span class="plan__per"> / mes</span></div>
         <div class="plan__price-note">Gestión bimonetaria (USD/ARS)</div>
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Todo lo del plan Esencial</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Finanzas, Gestoría y Detailing</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Visitas y Tareas de equipo</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Todos los roles del sistema</li>
-        </ul>
-        <a class="btn btn-primary" href="https://wa.me/5491122699526?text=Hola!%20Quiero%20consultar%20por%20el%20plan%20Completo%20de%20Tablero." target="_blank" rel="noopener">Elegir Completo</a>
+        <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Todo lo del plan Esencial</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Finanzas, Gestoría y Detailing</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Visitas y Tareas de equipo</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Todos los roles del sistema</li></ul>
+        <a class="btn btn-primary" href="https://wa.me/5491122699526?text=Hola!%20Quiero%20el%20plan%20Completo%20de%20Tablero." target="_blank" rel="noopener">Elegir Completo</a>
       </div>
       <div class="card plan reveal">
         <h3>A Medida</h3>
         <p class="plan__desc">Para estructuras grandes o multi-sucursal.</p>
-        <div class="plan__price">A Medida</div>
+        <div class="plan__price">A consultar</div>
         <div class="plan__price-note">Roles, flujos e integraciones a definir juntos</div>
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Módulos y campos personalizados</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Multi-sucursal</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Acompañamiento en la implementación</li>
-        </ul>
+        <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Módulos y campos personalizados</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Multi-sucursal</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Acompañamiento en la implementación</li></ul>
         <a class="btn btn-outline" href="https://wa.me/5491122699526?text=Hola!%20Quiero%20consultar%20por%20el%20plan%20A%20Medida%20de%20Tablero." target="_blank" rel="noopener">Contactar</a>
       </div>
     </div>
+<!--@@/PRICING-->
   </div>
 </section>
 <!-- ================= FAQ ================= -->
@@ -497,7 +533,7 @@
 <!--@@FAQ-->
 <div class="faq">
   <details><summary>¿Qué es Tablero?</summary><div class="answer"><p>Tablero es un sistema de gestión para agencias de autos usados. Reúne en un solo lugar inventario, finanzas, gestoría, detailing, visitas y tareas, y se adapta a cómo trabaja tu agencia.</p></div></details>
-  <details><summary>¿Cuánto cuesta Tablero?</summary><div class="answer"><p>Hay tres planes: Esencial, Completo y A Medida. No publicamos precios fijos porque dependen de los módulos y de lo que necesite tu agencia; lo definimos juntos por WhatsApp, sin letra chica.</p></div></details>
+  <details><summary>¿Cuánto cuesta Tablero?</summary><div class="answer"><p>Hay tres planes. Esencial cuesta USD 100 por mes y Completo USD 150 por mes (el más recomendado). A Medida, para estructuras grandes o multi-sucursal, se define por consulta. En la sección de planes podés ver los valores también en pesos, al dólar oficial.</p></div></details>
   <details><summary>¿Maneja pesos y dólares?</summary><div class="answer"><p>Sí. Tablero tiene gestión bimonetaria (USD y ARS): los autos pueden tener precio en pesos o en dólares y, en finanzas, cargás la cotización una vez y el sistema convierte todo solo.</p></div></details>
   <details><summary>¿Qué es la vitrina pública sincronizada?</summary><div class="answer"><p>Es la vitrina web de tu agencia conectada con Tablero. Cada vez que guardás un auto, un webhook automático actualiza la vitrina, y tus clientes pueden buscar por marca, carrocería y precio máximo en USD con el stock real.</p></div></details>
   <details><summary>¿Pueden trabajar varias personas con distintos permisos?</summary><div class="answer"><p>Sí. Tablero tiene ocho roles: Administrador, Vendedor, Contadora, Visualizador, Gestor, Detailer, Gerente y Soporte. Cada uno ve y hace solo lo que le corresponde, y los permisos se ajustan a cómo se organiza tu equipo.</p></div></details>
@@ -565,6 +601,7 @@
       </div>
       <div>
         <h2>Tablero</h2>
+        <a href="/sobre-tablero/">Sobre Tablero</a>
         <a href="/#roles">Roles</a>
         <a href="/#personalizacion">Personalización</a>
         <a href="/#precios">Precios</a>
@@ -632,6 +669,24 @@
     });
   }, {threshold:0.12});
   reveals.forEach(function(el){ io.observe(el); });
+
+
+  // Switch de moneda (USD / ARS) en los planes. Recuerda la elección; por defecto ARS si el navegador es es-AR.
+  (function(){
+    var sec = document.getElementById('precios');
+    if(!sec) return;
+    var btns = sec.querySelectorAll('.cur-btn');
+    if(!btns.length) return;
+    function set(cur, save){
+      sec.setAttribute('data-cur', cur);
+      btns.forEach(function(b){ var on = b.getAttribute('data-cur') === cur; b.classList.toggle('is-on', on); b.setAttribute('aria-pressed', on ? 'true' : 'false'); });
+      if(save){ try{ localStorage.setItem('tablero-cur', cur); }catch(e){} }
+    }
+    var saved = null; try{ saved = localStorage.getItem('tablero-cur'); }catch(e){}
+    var lang = (navigator.language || '').toLowerCase();
+    set(saved || (lang === 'es-ar' ? 'ars' : 'usd'), false);
+    btns.forEach(function(b){ b.addEventListener('click', function(){ set(b.getAttribute('data-cur'), true); }); });
+  })();
 
   var track = document.getElementById('carTrack');
   if(track){

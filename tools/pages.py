@@ -17,6 +17,7 @@ HUB = "/modulos/"
 URL_SISTEMA = "/sistema-de-gestion-para-agencia-de-autos-usados/"
 URL_CONC = "/software-para-concesionaria/"
 URL_FAQ = "/preguntas-frecuentes/"
+URL_ABOUT = "/sobre-tablero/"
 
 ROLES_UL = ("ul", ["<strong>%s:</strong> %s" % r for r in ROLES])
 
@@ -70,7 +71,7 @@ def page_sistema():
             ]),
             ("prose", "Se adapta a tu agencia, no al revés", [
                 "Tablero se arma con vos, hablando módulo por módulo: los roles y permisos, las categorías de finanzas y el checklist de gestoría se definen a tu medida. No te pedimos que cambies cómo vendés; te ayudamos a hacerlo de forma más eficiente.",
-                "Hay tres planes —Esencial, Completo y A Medida— y el precio se define por consulta. Mirá el detalle en %s." % L("/#precios", "planes"),
+                "Hay tres planes: Esencial (USD 100 por mes), Completo (USD 150 por mes) y A Medida (a consultar). Mirá el detalle en %s." % L("/#precios", "planes"),
             ], "alt"),
             ("faq", "Preguntas frecuentes sobre el sistema", [FAQ[k] for k in ("que-es", "precio", "personalizar", "empezar")]),
             ("links", "Seguí explorando", None, [
@@ -352,7 +353,7 @@ def page_hub():
             ], "alt"),
             ("prose", "Elegí los módulos que necesitás", [
                 "Tablero se ofrece en tres planes: <strong>Esencial</strong>, con inventario completo, vendedor asignado por unidad y vitrina pública sincronizada; <strong>Completo</strong>, con finanzas, gestoría, detailing, visitas, tareas y todos los roles; y <strong>A Medida</strong>, para estructuras grandes o multi-sucursal.",
-                "El precio se define por consulta. Mirá el detalle en la sección de %s o escribinos por WhatsApp." % L("/#precios", "planes"),
+                "Esencial cuesta USD 100 por mes, Completo USD 150 por mes y A Medida se define por consulta. Mirá el detalle en la sección de %s o escribinos por WhatsApp." % L("/#precios", "planes"),
             ]),
             ("faq", "Preguntas frecuentes", [FAQ[k] for k in ("que-es", "precio", "personalizar")], "alt"),
         ],
@@ -378,8 +379,42 @@ def page_faq():
     )
 
 
+# ============================================================== SOBRE
+def page_about():
+    return dict(
+        path=URL_ABOUT,
+        title="Sobre Tablero: quién lo hace y cómo nació | Tablero",
+        desc="Tablero es un sistema de gestión hecho a medida para agencias de autos usados, en funcionamiento desde comienzos de 2025. Conocé quién está detrás.",
+        h1="Sobre Tablero",
+        lead="Un sistema de gestión hecho a medida para agencias de autos usados, creado en Argentina y en funcionamiento desde comienzos de 2025.",
+        trail=[("Sobre Tablero", URL_ABOUT)],
+        priority="0.6",
+        page_type="AboutPage",
+        blocks=[
+            ("prose", "Qué es Tablero", [
+                "Tablero es un sistema de gestión pensado para agencias de autos usados. Reúne inventario, finanzas en pesos y dólares, gestoría, detailing, visitas y tareas en un solo lugar, con ocho roles de usuario y una vitrina web que se sincroniza con el stock.",
+                "Se desarrolló a medida y está en funcionamiento desde comienzos de 2025. Más información en %s y en los %s." % (L(URL_SISTEMA, "la página del sistema"), L(HUB, "módulos")),
+            ]),
+            ("prose", "Quién está detrás", [
+                "Tablero lo creó <strong>%s</strong> junto a un amigo programador. %s es quien se ocupa de la relación con cada agencia: te escucha, define con vos cómo se arma el sistema y te acompaña en la puesta en marcha." % (FOUNDER, FOUNDER.split()[0]),
+                "Podés ver su perfil profesional en %s." % '<a href="%s" target="_blank" rel="noopener">LinkedIn</a>' % LINKEDIN_URL,
+            ], "alt"),
+            ("prose", "Cómo trabajamos", [
+                ("ul", [
+                    "<strong>A medida:</strong> los roles, las categorías de finanzas y el checklist de gestoría se definen con cada agencia.",
+                    "<strong>Módulo por módulo:</strong> empezás por lo que más necesitás y sumás el resto cuando quieras.",
+                    "<strong>Trato directo:</strong> hablás por WhatsApp con quien creó el sistema, sin intermediarios.",
+                    "<strong>Precios claros:</strong> Esencial USD 100 por mes, Completo USD 150 por mes y A Medida por consulta.",
+                ]),
+            ]),
+        ],
+        cta=("Hablemos de tu agencia", "Escribinos y te mostramos Tablero funcionando.", "Hola! Quiero conocer Tablero para mi agencia."),
+    )
+
+
 def all_pages():
     pgs = [page_sistema(), page_concesionaria(), page_hub()]
     pgs += [page_module(m) for m in MODULES]
     pgs.append(page_faq())
+    pgs.append(page_about())
     return pgs

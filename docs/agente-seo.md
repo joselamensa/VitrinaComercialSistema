@@ -12,6 +12,7 @@ Este archivo es su instrucción permanente y sus reglas. Si cambia la estrategia
 1. Asegurar el repo `joselamensa/VitrinaComercialSistema` (si no está clonado, `add_repo` con acceso `push`) y hacer `git pull` de `main`.
 2. `python3 tools/gsc_report.py` → si dice `SIN_DATOS`, seguir con los pasos 3–5 sin datos.
 2b. `python3 tools/gsc_inspect.py` → tabla de cómo ve Google cada URL del sitemap. «Descubierta/Rastreada: sin indexar» en páginas nuevas es normal las primeras semanas; si una página sigue así tras ~4 semanas, mejorarla (más enlaces internos, contenido más útil). Las variantes http/sin-www con «Página con redirección» son correctas (apuntan a la canónica www).
+2c. `python3 tools/update_rate.py` → actualiza el dólar oficial (venta) en `tools/rate.json` para el switch USD/ARS de los planes. Si falla, se conserva el valor anterior y se anota en la bitácora. Cada lunes, aunque no haya otro cambio, se publica la cotización nueva.
 3. `python3 tools/build.py && python3 tools/check_site.py` → debe terminar sin problemas. Arreglar lo que falle (enlaces rotos, `alt`, JSON-LD, títulos/descripciones fuera de rango).
 4. Elegir **una** mejora, por orden de prioridad:
    1. Corrección técnica detectada en el paso 3.
@@ -32,7 +33,7 @@ Este archivo es su instrucción permanente y sus reglas. Si cambia la estrategia
 
 ## Prohibido
 - Relleno de palabras clave, texto oculto, páginas masivas casi iguales, comprar o intercambiar enlaces, reseñas falsas.
-- Tocar diseño general, precios/planes, datos de contacto, textos legales o `vercel.json` sin pedirlo antes a una persona.
+- Tocar diseño general, los precios en USD de los planes (la conversión a pesos sí se actualiza sola), datos de contacto, textos legales o `vercel.json` sin pedirlo antes a una persona.
 - Publicar más de una mejora por ejecución, o publicar con las verificaciones en rojo.
 - Pedir o imprimir credenciales en el chat o en el PR.
 
@@ -43,5 +44,5 @@ Sin ellas el agente solo hace chequeos técnicos y artículos de la lista de pen
 3. En el entorno de la nube (menú del entorno en la barra del título → Editar): guardar
    - `GSC_SERVICE_ACCOUNT_JSON` = contenido completo del JSON
    - `GSC_SITE` = `sc-domain:tablero.uno` (propiedad de dominio) o `https://www.tablero.uno/`
-4. En **Acceso a la red** del entorno: permitir `api.indexnow.org` (IndexNow),  `searchconsole.googleapis.com`, `oauth2.googleapis.com` y mantener la lista de gestores de paquetes (para `pip install google-auth requests`).
+4. En **Acceso a la red** del entorno: permitir `api.indexnow.org` (IndexNow), `dolarapi.com` (cotización),  `searchconsole.googleapis.com`, `oauth2.googleapis.com` y mantener la lista de gestores de paquetes (para `pip install google-auth requests`).
 5. **Nunca pegues la clave en el chat.**

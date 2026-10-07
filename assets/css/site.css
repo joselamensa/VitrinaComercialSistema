@@ -573,3 +573,15 @@
   @media (prefers-reduced-motion:reduce){.hv-chip{animation:none;}.hv-card--front{transition:none;}}
 
   .nav{background:#fff;}
+
+  /* ---------- precios con switch de moneda ---------- */
+  .cur-switch{display:inline-flex;gap:4px;background:#fff;border:1px solid var(--outline-variant);border-radius:999px;padding:4px;margin:22px 0 10px;}
+  .cur-btn{display:inline-flex;align-items:center;gap:8px;border:0;background:transparent;border-radius:999px;padding:9px 18px;font:inherit;font-size:14px;font-weight:700;color:var(--on-surface-variant);cursor:pointer;min-height:40px;transition:background .2s,color .2s;}
+  .cur-btn.is-on{background:var(--on-surface);color:#fff;}
+  .flag{width:22px;height:15px;border-radius:2px;box-shadow:0 0 0 1px rgba(0,0,0,.15);flex-shrink:0;}
+  .cur-note{font-size:12.5px;color:var(--on-surface-variant);margin:6px auto 0;max-width:560px;}
+  .plan__per{font-size:14px;font-weight:600;color:var(--on-surface-variant);}
+  #precios .cur--ars{display:none;}
+  #precios[data-cur="ars"] .cur--ars{display:inline;}
+  #precios[data-cur="ars"] .cur--usd{display:none;}
+  .plan__price{font-size:30px;}
