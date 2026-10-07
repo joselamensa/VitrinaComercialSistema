@@ -814,7 +814,7 @@ def local_amount(usd, code, rate, step):
 
 def price_span(usd, rates):
     out = '<span class="cur" data-c="USD">USD %d</span>' % usd
-    for code, _n, _f, step, _r in CURRENCIES:
+    for code, _n, _f, step in CURRENCIES:
         if code in rates:
             out += '<span class="cur" data-c="%s" hidden>%s</span>' % (code, fmt_money(code, local_amount(usd, code, rates[code], step)))
     return out + '<span class="plan__per"> / mes</span>'
