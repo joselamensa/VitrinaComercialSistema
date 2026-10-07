@@ -1,6 +1,6 @@
 # Tablero
 
-> Tablero es un sistema de gestión hecho a medida para agencias de autos usados en Argentina. Reúne inventario de autos y motos, finanzas en pesos y dólares (USD/ARS), gestoría con checklist de documentación, detailing, agenda de visitas y tareas del equipo, con ocho roles de usuario y una vitrina web sincronizada con el stock. Planes: Esencial USD 100 por mes, Completo USD 150 por mes y A Medida por consulta.
+> Tablero es un sistema de gestión hecho a medida para agencias de autos usados. Reúne inventario de autos y motos, finanzas en tu moneda local y en dólares, gestoría con checklist de documentación, detailing, agenda de visitas y tareas del equipo, con ocho roles de usuario y una vitrina web sincronizada con el stock. Planes: Esencial USD 100 por mes, Completo USD 150 por mes y A Medida por consulta.
 
 Contacto: WhatsApp +54 9 11 2269-9526 · https://www.tablero.uno/
 
@@ -13,8 +13,8 @@ Contacto: WhatsApp +54 9 11 2269-9526 · https://www.tablero.uno/
 
 ## Módulos
 
-- [Inventario](https://www.tablero.uno/modulos/inventario-de-autos/): Fichas de autos y motos, precios en USD o ARS y stock siempre al día.
-- [Finanzas](https://www.tablero.uno/modulos/finanzas-agencia-de-autos/): Ingresos y salidas en pesos y dólares, con medios de pago y comprobantes.
+- [Inventario](https://www.tablero.uno/modulos/inventario-de-autos/): Fichas de autos y motos, precios en USD o en tu moneda local y stock siempre al día.
+- [Finanzas](https://www.tablero.uno/modulos/finanzas-agencia-de-autos/): Ingresos y salidas en tu moneda local y en dólares, con medios de pago y comprobantes.
 - [Gestoría](https://www.tablero.uno/modulos/gestoria-automotor/): Checklist de documentación por auto y seguimiento hasta la transferencia.
 - [Detailing](https://www.tablero.uno/modulos/detailing-de-autos/): Catálogo de servicios de preparación asignados a cada auto.
 - [Visitas](https://www.tablero.uno/modulos/visitas-y-agenda/): Agenda de visitas por vendedor, con calendario y horarios propios.
@@ -23,7 +23,7 @@ Contacto: WhatsApp +54 9 11 2269-9526 · https://www.tablero.uno/
 ## Guías del blog
 
 - [Cómo llevar el stock de una agencia de autos usados](https://www.tablero.uno/blog/como-llevar-el-stock-de-una-agencia-de-autos-usados/): Guía práctica para ordenar el stock de tu agencia de autos usados: qué datos cargar, cómo registrar precios y estados y cómo evitar versiones duplicadas.
-- [Cómo manejar la caja en pesos y dólares en una agencia](https://www.tablero.uno/blog/caja-en-pesos-y-dolares-agencia-de-autos/): Cómo registrar ingresos y salidas en pesos y dólares en una agencia de autos usados sin perder el control: categorías, medios de pago y cotización.
+- [Caja en dos monedas (moneda local y dólares) en una agencia](https://www.tablero.uno/blog/caja-en-pesos-y-dolares-agencia-de-autos/): Cómo registrar ingresos y salidas en dos monedas (moneda local y dólares) en una agencia de autos usados sin perder el control: categorías y cotización.
 - [Documentación para vender un auto usado en Argentina](https://www.tablero.uno/blog/documentacion-para-vender-un-auto-usado-argentina/): Checklist de la documentación que suele pedirse para transferir un auto usado: título, cédula, formulario 08, verificación policial e informe de dominio.
 - [Formulario 08: qué es y para qué sirve en una venta](https://www.tablero.uno/blog/formulario-08-que-es-y-para-que-sirve/): Qué es el formulario 08, cuándo se usa en la transferencia de un auto usado y qué conviene controlar antes de firmarlo y guardarlo en la agencia.
 - [Cómo organizar las visitas de clientes en una agencia](https://www.tablero.uno/blog/como-organizar-las-visitas-en-una-agencia-de-autos/): Cómo organizar la agenda de visitas de una agencia de autos usados: qué datos registrar, horarios por vendedor, excepciones y seguimiento.

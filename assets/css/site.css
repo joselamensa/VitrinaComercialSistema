@@ -581,7 +581,11 @@
   .flag{width:22px;height:15px;border-radius:2px;box-shadow:0 0 0 1px rgba(0,0,0,.15);flex-shrink:0;}
   .cur-note{font-size:12.5px;color:var(--on-surface-variant);margin:6px auto 0;max-width:560px;}
   .plan__per{font-size:14px;font-weight:600;color:var(--on-surface-variant);}
-  #precios .cur--ars{display:none;}
-  #precios[data-cur="ars"] .cur--ars{display:inline;}
-  #precios[data-cur="ars"] .cur--usd{display:none;}
+  #precios [hidden]{display:none !important;}
+  .cur-local{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:0 6px 0 14px;min-height:40px;transition:background .2s,color .2s;color:var(--on-surface-variant);}
+  .cur-local.is-on{background:var(--on-surface);color:#fff;}
+  .cur-select{appearance:none;-webkit-appearance:none;border:0;background:transparent;color:inherit;font:inherit;font-size:14px;font-weight:700;cursor:pointer;padding:9px 22px 9px 0;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='3'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 2px center;background-size:12px;}
+  .cur-select option{color:#0e1c2f;}
+  .cur-flag{display:inline-flex;}
   .plan__price{font-size:30px;}

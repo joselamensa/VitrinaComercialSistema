@@ -27,14 +27,14 @@ def page_sistema():
     return dict(
         path=URL_SISTEMA,
         title="Sistema de gestión para agencia de autos usados | Tablero",
-        desc="Tablero es el sistema de gestión para agencias de autos usados: inventario, finanzas en USD y ARS, gestoría, detailing, visitas y tareas en un solo lugar.",
+        desc="Tablero es el sistema de gestión para agencias de autos usados: inventario, finanzas en moneda local y USD, gestoría, detailing, visitas y tareas en un solo lugar.",
         h1="Sistema de gestión para agencia de autos usados",
         lead="Todo el ciclo de vida de tus autos —stock, preparación, visitas, cobros y transferencia— en un único sistema, armado a la medida de tu agencia.",
         trail=[("Sistema de gestión para agencia de autos usados", URL_SISTEMA)],
         priority="0.9",
         blocks=[
             ("prose", "Qué tiene que resolver un sistema de gestión para una agencia de usados", [
-                "Una agencia de usados maneja muchas cosas a la vez: un stock que cambia todos los días, precios en pesos y en dólares, documentación que hay que reunir para cada transferencia, autos que pasan por preparación, clientes que vienen a ver unidades y un equipo que tiene que coordinarse. Cuando cada una de esas cosas vive en una planilla, un cuaderno o un chat distinto, la información se duplica, se desactualiza y se pierde.",
+                "Una agencia de usados maneja muchas cosas a la vez: un stock que cambia todos los días, precios en tu moneda local y en dólares, documentación que hay que reunir para cada transferencia, autos que pasan por preparación, clientes que vienen a ver unidades y un equipo que tiene que coordinarse. Cuando cada una de esas cosas vive en una planilla, un cuaderno o un chat distinto, la información se duplica, se desactualiza y se pierde.",
                 "Un <strong>sistema de gestión para agencias de autos usados</strong> junta todo eso en un único lugar, con una sola versión de los datos. Eso es Tablero: acompaña a cada unidad durante todo su ciclo de vida, desde que entra al stock hasta que se transfiere.",
             ]),
             ("features", "Seis módulos para todo el ciclo del auto",
@@ -46,21 +46,21 @@ def page_sistema():
                     "<strong>Ingresa al inventario.</strong> Se carga la ficha con dominio, marca, modelo, año, kilómetros, precio y fotos, y se asigna un vendedor. Ver %s." % L(mod_url("inventario"), "módulo de inventario"),
                     "<strong>Se prepara.</strong> Los servicios de detailing se asignan al auto y se marcan a medida que se hacen; al terminar, vuelve solo a Disponible. Ver %s." % L(mod_url("detailing"), "módulo de detailing"),
                     "<strong>Se muestra.</strong> Cada vez que guardás el auto, la vitrina pública se actualiza sola, y las visitas se agendan con fecha, horario y vendedor. Ver %s." % L(mod_url("visitas"), "módulo de visitas"),
-                    "<strong>Se vende y se cobra.</strong> Los ingresos y las salidas se registran en pesos o dólares, con su medio de pago y comprobante. Ver %s." % L(mod_url("finanzas"), "módulo de finanzas"),
+                    "<strong>Se vende y se cobra.</strong> Los ingresos y las salidas se registran en tu moneda local o en dólares, con su medio de pago y comprobante. Ver %s." % L(mod_url("finanzas"), "módulo de finanzas"),
                     "<strong>Se transfiere.</strong> El checklist de gestoría controla la documentación y, al marcar «Transferido», el auto cambia de estado solo. Ver %s." % L(mod_url("gestoria"), "módulo de gestoría"),
                 ]),
                 "Nadie copia datos de un lado a otro: lo que se carga en un módulo queda disponible para el resto.",
             ]),
             ("split", "Stock y vitrina web: una sola fuente de verdad", [
-                "El inventario de Tablero es la base de todo. Cada auto o moto tiene su ficha, su precio en pesos o dólares, su galería de fotos y su vendedor asignado.",
+                "El inventario de Tablero es la base de todo. Cada auto o moto tiene su ficha, su precio en tu moneda local o en dólares, su galería de fotos y su vendedor asignado.",
                 "Además, la <strong>vitrina pública de tu agencia está sincronizada en tiempo real</strong>: cuando guardás un auto, un webhook automático actualiza la vitrina y tus clientes pueden buscar por marca, carrocería y precio máximo en USD, siempre con el stock real.",
                 "Conocé más en la página del %s." % L(mod_url("inventario"), "inventario de autos usados"),
             ], "inventario", "white"),
-            ("prose", "Pensado para cómo se trabaja en Argentina", [
-                "Tablero no es un software genérico al que se le cambió el nombre. Está armado alrededor del flujo real de una agencia de usados argentina:",
+            ("prose", "Pensado para el trabajo real de una agencia, en cualquier país", [
+                "Tablero no es un software genérico al que se le cambió el nombre. Está armado alrededor del flujo real de una agencia de usados, y se adapta al país donde trabajás:",
                 ("ul", [
-                    "<strong>Gestión bimonetaria (USD / ARS):</strong> cargás la cotización una vez y el sistema convierte todo solo.",
-                    "<strong>Gestoría con la documentación local:</strong> título, cédula, formulario 08, verificación policial e informe de dominio.",
+                    "<strong>Gestión bimonetaria (moneda local y USD):</strong> cargás la cotización una vez y el sistema convierte todo solo.",
+                    "<strong>Gestoría con la documentación de tu país:</strong> el checklist se arma a medida (por ejemplo, en Argentina: título, cédula, formulario 08, verificación policial e informe de dominio).",
                     "<strong>Estados que se actualizan solos:</strong> «Transferido» en gestoría o «Disponible» al terminar el detailing.",
                 ]),
             ], "alt"),
@@ -90,7 +90,7 @@ def page_concesionaria():
     return dict(
         path=URL_CONC,
         title="Software para concesionaria de autos usados | Tablero",
-        desc="Software para concesionarias de autos usados: stock, finanzas en USD y ARS, gestoría, visitas y equipo con roles y permisos, todo conectado en Tablero.",
+        desc="Software para concesionarias de autos usados: stock, finanzas en moneda local y USD, gestoría, visitas y equipo con roles y permisos, todo conectado.",
         h1="Software para concesionaria de autos usados",
         lead="Ordená stock, caja, trámites, visitas y equipo en un solo sistema, con permisos por rol y la posibilidad de crecer a varias sucursales.",
         trail=[("Software para concesionaria", URL_CONC)],
@@ -100,7 +100,7 @@ def page_concesionaria():
                 "Elegir un software para tu concesionaria no es solo comparar listas de funciones. Estos son los criterios que más conviene mirar:",
                 ("ul", [
                     "<strong>Que cubra el ciclo completo del auto</strong>, no solo el stock: preparación, visitas, venta, cobro y transferencia.",
-                    "<strong>Que entienda el negocio local:</strong> precios y caja en pesos y dólares, y trámites como el formulario 08.",
+                    "<strong>Que entienda el negocio local:</strong> precios y caja en tu moneda local y en dólares, y los trámites de tu país (en Argentina, por ejemplo, el formulario 08).",
                     "<strong>Que cada persona vea lo que le corresponde:</strong> el gerente no necesita acceso a la plata y el detailer solo trabaja en preparación.",
                     "<strong>Que la vitrina web muestre el stock real</strong>, sin cargar cada auto dos veces.",
                     "<strong>Que se adapte a tu forma de trabajar</strong> y no al revés.",
@@ -108,13 +108,13 @@ def page_concesionaria():
                 "Tablero está armado alrededor de estos criterios.",
             ]),
             ("features", "Lo que cubre Tablero en una concesionaria", None, [
-                feat_mod("inventario", "Fichas de autos y motos con precio en USD o ARS, historial de precios, fotos y vendedor asignado."),
+                feat_mod("inventario", "Fichas de autos y motos con precio en USD o en tu moneda local, historial de precios, fotos y vendedor asignado."),
                 ("moneda", "Finanzas en dos monedas", "Ingresos y salidas con medio de pago y comprobante; cotización cargada una vez y conversión automática.", mod_url("finanzas")),
                 ("roles", "Equipo con permisos", "Ocho roles —de Administrador a Detailer— para que cada persona vea y haga solo lo que le toca.", "/#roles"),
                 ("vitrina", "Vitrina web sincronizada", "Cada auto que guardás actualiza tu vitrina pública con el stock real.", mod_url("inventario")),
             ], "alt"),
             ("split", "Stock, precios y vitrina en el mismo lugar", [
-                "El corazón de una concesionaria es su stock. En Tablero cada unidad tiene su ficha completa, con precio en pesos o en dólares, historial de cambios de precio y galería de fotos.",
+                "El corazón de una concesionaria es su stock. En Tablero cada unidad tiene su ficha completa, con precio en tu moneda local o en dólares, historial de cambios de precio y galería de fotos.",
                 "Los clientes ven esa información en tu vitrina web, que se actualiza sola cada vez que guardás un auto. Buscan por marca, carrocería y precio máximo en USD.",
                 "Más detalle en el módulo de %s." % L(mod_url("inventario"), "inventario"),
             ], "inventario", "white"),
@@ -133,7 +133,7 @@ def page_concesionaria():
                 "Si tu estructura es grande o tenés más de una sucursal, existe el plan <strong>A Medida</strong>: módulos y campos personalizados, multi-sucursal y acompañamiento en la implementación. Los roles, los flujos y las integraciones se definen en conjunto, en una conversación inicial por WhatsApp.",
             ]),
             ("prose", "¿Concesionaria o agencia de usados?", [
-                "En el negocio automotor argentino los dos términos se usan casi como sinónimos. Tablero está pensado para la <strong>compraventa de autos usados y motos</strong>. Si tu concesionaria trabaja además con otro tipo de operación, contanos cómo y vemos juntos qué parte del sistema se adapta.",
+                "En el negocio automotor los dos términos suelen usarse casi como sinónimos. Tablero está pensado para la <strong>compraventa de autos usados y motos</strong>. Si tu concesionaria trabaja además con otro tipo de operación, contanos cómo y vemos juntos qué parte del sistema se adapta.",
                 "Si querés una mirada más general, leé la página del %s." % L(URL_SISTEMA, "sistema de gestión para agencia de autos usados"),
             ], "alt"),
             ("faq", "Preguntas frecuentes sobre el software para concesionarias", [
@@ -155,7 +155,7 @@ MODULE_BODY = {
         h2="Qué incluye el módulo de inventario",
         bullets=[
             "<strong>Ficha completa por unidad:</strong> dominio, marca, modelo, año, kilómetros y precio.",
-            "<strong>Precio en pesos o en dólares</strong>, con historial de cambios de precio.",
+            "<strong>Precio en tu moneda local o en dólares</strong>, con historial de cambios de precio.",
             "<strong>Galería de fotos</strong> de cada auto o moto.",
             "<strong>Autos y motos</strong> en el mismo sistema, con listados separados.",
             "<strong>Vendedor asignado</strong> por unidad.",
@@ -184,16 +184,16 @@ MODULE_BODY = {
         h2="Qué incluye el módulo de finanzas",
         bullets=[
             "<strong>Ingresos y salidas</strong> con categoría, monto, moneda, medio de pago y comprobante.",
-            "<strong>Gestión bimonetaria USD / ARS:</strong> cargás la cotización una vez y el sistema convierte todo solo.",
-            "<strong>Resumen de ingresos, salidas y neto</strong> en pesos y en dólares.",
+            "<strong>Gestión bimonetaria (moneda local y USD):</strong> cargás la cotización una vez y el sistema convierte todo solo.",
+            "<strong>Resumen de ingresos, salidas y neto</strong> en tu moneda local y en dólares.",
             "<strong>Períodos:</strong> hoy, esta semana, este mes, este año, histórico o un rango de fechas a elección.",
-            "<strong>Últimos movimientos</strong> y totales por medio de pago (por ejemplo, efectivo en pesos, efectivo en dólares o una cuenta bancaria).",
+            "<strong>Últimos movimientos</strong> y totales por medio de pago (por ejemplo, efectivo en moneda local, efectivo en dólares o una cuenta bancaria).",
             "<strong>Categorías y medios de pago propios</strong>, armados a tu medida.",
         ],
         extra=[
             ("prose", "Por qué importa manejar dos monedas", [
-                "En una agencia de usados argentina es habitual que los autos se coticen en dólares y que parte de la operación se cobre y se pague en pesos. Llevar eso en una planilla obliga a hacer cuentas aparte para ver cuánto se ganó o se gastó en cada moneda.",
-                "En Tablero cargás la cotización una vez y el sistema convierte todo solo, así los netos en ARS y en USD quedan a la vista en el mismo resumen.",
+                "En muchos mercados es habitual que los autos se coticen en dólares y que parte de la operación se cobre y se pague en moneda local. Llevar eso en una planilla obliga a hacer cuentas aparte para ver cuánto se ganó o se gastó en cada moneda.",
+                "En Tablero cargás la cotización una vez y el sistema convierte todo solo, así los netos en tu moneda local y en USD quedan a la vista en el mismo resumen.",
             ], "alt"),
             ("prose", "Permisos pensados para el manejo del dinero", [
                 "No todo el equipo tiene que ver la plata. Por eso Tablero separa los accesos:",
@@ -207,7 +207,7 @@ MODULE_BODY = {
             ]),
         ],
         related=[
-            ("inventario", "Cada unidad tiene su precio en pesos o en dólares, con historial de cambios."),
+            ("inventario", "Cada unidad tiene su precio en tu moneda local o en dólares, con historial de cambios."),
             ("gestoria", "Los trámites de cada auto se siguen en un checklist por unidad."),
             ("tareas", "Las tareas pendientes del equipo, con responsable y urgencia."),
         ],
@@ -215,7 +215,7 @@ MODULE_BODY = {
     "gestoria": dict(
         h2="Qué incluye el módulo de gestoría",
         bullets=[
-            "<strong>Checklist por auto:</strong> título, cédula, formulario 08, verificación policial e informe de dominio.",
+            "<strong>Checklist por auto</strong> con los documentos que pide tu país (por ejemplo, en Argentina: título, cédula, formulario 08, verificación policial e informe de dominio).",
             "<strong>Vista de gestoría pendientes</strong> con los vehículos, su estado y la documentación de cada uno, con filtros.",
             "<strong>Listas «Listos para transferir» y «Transferidos»</strong>, y un resumen de ventas.",
             "<strong>Cambio de estado automático:</strong> al marcar «Transferido», el auto actualiza su estado solo.",
@@ -233,7 +233,7 @@ MODULE_BODY = {
         ],
         related=[
             ("inventario", "El estado de cada unidad se actualiza solo cuando se marca como «Transferido»."),
-            ("finanzas", "Ingresos y salidas en pesos y dólares, con medio de pago y comprobante."),
+            ("finanzas", "Ingresos y salidas en tu moneda local y en dólares, con medio de pago y comprobante."),
             ("tareas", "Asigná pendientes al equipo con responsable y urgencia."),
         ],
     ),
@@ -284,7 +284,7 @@ MODULE_BODY = {
         related=[
             ("inventario", "Cada visita se apoya en las unidades que tenés en stock."),
             ("tareas", "Tareas internas con responsable, urgencia y calendario."),
-            ("finanzas", "El resultado de la venta, registrado en pesos o dólares."),
+            ("finanzas", "El resultado de la venta, registrado en tu moneda local o en dólares."),
         ],
     ),
     "tareas": dict(
@@ -365,7 +365,7 @@ def page_faq():
     return dict(
         path=URL_FAQ,
         title="Preguntas frecuentes sobre Tablero | Sistema para agencias",
-        desc="Respuestas sobre Tablero: qué es, para quién sirve, precios, manejo de pesos y dólares, vitrina pública, roles, gestoría y cómo empezar.",
+        desc="Respuestas sobre Tablero: qué es, para quién sirve, precios, manejo de moneda local y dólares, vitrina pública, roles, gestoría y cómo empezar.",
         h1="Preguntas frecuentes sobre Tablero",
         lead="Lo que más nos preguntan las agencias de autos usados sobre el sistema. Si no encontrás tu duda, escribinos por WhatsApp.",
         trail=[("Preguntas frecuentes", URL_FAQ)],
@@ -392,7 +392,7 @@ def page_about():
         page_type="AboutPage",
         blocks=[
             ("prose", "Qué es Tablero", [
-                "Tablero es un sistema de gestión pensado para agencias de autos usados. Reúne inventario, finanzas en pesos y dólares, gestoría, detailing, visitas y tareas en un solo lugar, con ocho roles de usuario y una vitrina web que se sincroniza con el stock.",
+                "Tablero es un sistema de gestión pensado para agencias de autos usados. Reúne inventario, finanzas en tu moneda local y en dólares, gestoría, detailing, visitas y tareas en un solo lugar, con ocho roles de usuario y una vitrina web que se sincroniza con el stock.",
                 "Se desarrolló a medida y está en funcionamiento desde comienzos de 2025. Más información en %s y en los %s." % (L(URL_SISTEMA, "la página del sistema"), L(HUB, "módulos")),
             ]),
             ("prose", "Quién está detrás", [

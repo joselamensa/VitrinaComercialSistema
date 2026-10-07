@@ -27,7 +27,7 @@ POSTS = [
                 ("ul", [
                     "<strong>Identificación:</strong> dominio, marca, modelo y año.",
                     "<strong>Estado físico:</strong> kilómetros y fotos actuales.",
-                    "<strong>Precio y moneda:</strong> si está en pesos o en dólares, y desde cuándo.",
+                    "<strong>Precio y moneda:</strong> si está en tu moneda local o en dólares, y desde cuándo.",
                     "<strong>Responsable:</strong> el vendedor asignado a la unidad.",
                     "<strong>Fecha de ingreso:</strong> te permite saber cuánto tiempo lleva cada auto en el lote.",
                     "<strong>Estado:</strong> en qué punto del circuito está (más abajo).",
@@ -37,25 +37,25 @@ POSTS = [
                 "Casi todo lo demás se ordena si los estados están bien definidos. La regla es tener pocos, con un significado claro y sin zonas grises. Por ejemplo: disponible, vendido, transferido y baja. Cada estado responde una pregunta distinta: ¿se puede mostrar?, ¿ya se cobró?, ¿ya se hizo el trámite?, ¿salió del stock?",
                 "Lo ideal es que el estado cambie por el trabajo mismo del equipo y no por una tarea extra de actualización. Si marcar un auto como transferido en gestoría ya actualiza su estado, nadie tiene que acordarse de hacerlo dos veces.",
             ]),
-            ("Precio en pesos o en dólares, con historial", [
-                "En el mercado de usados argentino es normal que unas unidades se publiquen en dólares y otras en pesos. Registrá siempre la moneda junto con el precio, y guardá cada cambio con su fecha. Ese historial sirve para entender cuánto tardó en venderse un auto después de bajarle el precio y evita discusiones del tipo «yo lo tenía a otro valor».",
+            ("Precio en tu moneda local o en dólares, con historial", [
+                "En muchos mercados de usados es normal que unas unidades se publiquen en dólares y otras en moneda local. Registrá siempre la moneda junto con el precio, y guardá cada cambio con su fecha. Ese historial sirve para entender cuánto tardó en venderse un auto después de bajarle el precio y evita discusiones del tipo «yo lo tenía a otro valor».",
             ]),
             ("Una sola fuente de verdad, también para la vitrina web", [
                 "Si tu agencia tiene vitrina web, la peor práctica es cargar cada auto dos veces: una en la planilla y otra en la web. Tarde o temprano se desfasan. Lo recomendable es que la vitrina se alimente del mismo lugar donde se carga el stock, de modo que al guardar un auto la web se actualice sola.",
             ]),
             ("Cuándo conviene pasar de la planilla a un sistema", [
                 "Si ya tenés más de una persona editando, si perdés tiempo conciliando versiones o si el stock tiene que reflejarse en una web, es momento de dar el salto. Podés leer más sobre eso en %s." % '<a href="/blog/excel-o-sistema-de-gestion-agencia-de-autos/">Excel o sistema de gestión: cuándo dar el salto</a>',
-                "En Tablero, el %s guarda la ficha de cada auto o moto con su precio en pesos o dólares, el historial de cambios de precio, la galería de fotos y el vendedor asignado, y mantiene la vitrina pública sincronizada." % '<a href="/modulos/inventario-de-autos/">módulo de inventario</a>',
+                "En Tablero, el %s guarda la ficha de cada auto o moto con su precio en tu moneda local o en dólares, el historial de cambios de precio, la galería de fotos y el vendedor asignado, y mantiene la vitrina pública sincronizada." % '<a href="/modulos/inventario-de-autos/">módulo de inventario</a>',
             ]),
             ("callout", "Resumen: ficha igual para todas las unidades, pocos estados bien definidos, precio con su moneda y su historial, y una única fuente para la vitrina."),
         ],
     ),
     dict(
         slug="caja-en-pesos-y-dolares-agencia-de-autos",
-        title="Cómo manejar la caja en pesos y dólares en una agencia",
-        desc="Cómo registrar ingresos y salidas en pesos y dólares en una agencia de autos usados sin perder el control: categorías, medios de pago y cotización.",
-        h1="Cómo manejar la caja en pesos y dólares en una agencia de autos",
-        lead="Cuando una parte de la operación se mueve en dólares y otra en pesos, la caja se complica rápido. Estos son los criterios que ordenan el manejo de dos monedas sin hacer cuentas a mano.",
+        title="Caja en dos monedas (moneda local y dólares) en una agencia",
+        desc="Cómo registrar ingresos y salidas en dos monedas (moneda local y dólares) en una agencia de autos usados sin perder el control: categorías y cotización.",
+        h1="Cómo manejar la caja en dos monedas (moneda local y dólares) en una agencia de autos",
+        lead="Cuando una parte de la operación se mueve en dólares y otra en moneda local (pesos, por ejemplo), la caja se complica rápido. Estos son los criterios que ordenan el manejo de dos monedas sin hacer cuentas a mano.",
         modules=["finanzas"],
         sections=[
             ("El problema de trabajar con dos monedas", [
@@ -67,14 +67,14 @@ POSTS = [
                     "<strong>Definí un único criterio de cotización</strong> y aplicalo siempre igual, para que los totales sean comparables entre sí.",
                     "<strong>Separá ingresos de salidas</strong> y calculá el neto de cada moneda por separado.",
                     "<strong>Usá categorías estables.</strong> Si hoy una compra se llama «Compra» y mañana «Adquisición», no vas a poder comparar períodos.",
-                    "<strong>Anotá el medio de pago:</strong> efectivo en pesos, efectivo en dólares, cuenta bancaria. Es lo que permite saber dónde está realmente la plata.",
+                    "<strong>Anotá el medio de pago:</strong> efectivo en moneda local, efectivo en dólares, cuenta bancaria. Es lo que permite saber dónde está realmente la plata.",
                     "<strong>Guardá el comprobante</strong> de cada movimiento, o al menos dónde está.",
                 ]),
             ]),
             ("Errores comunes", [
                 ("ul", [
                     "Convertir a mano cada fila y que dos personas usen cotizaciones distintas.",
-                    "Llevar una planilla para pesos y otra para dólares sin un resumen que las junte.",
+                    "Llevar una planilla para la moneda local y otra para dólares sin un resumen que las junte.",
                     "No registrar los gastos chicos, que sumados pesan.",
                     "Dar a todo el equipo acceso a editar la caja.",
                 ]),
@@ -83,7 +83,7 @@ POSTS = [
                 "No todas las personas de la agencia necesitan ver el dinero. Una buena práctica es que quien registra y quien controla sean roles distintos, y que haya perfiles de solo lectura. Hablamos de esto con más detalle en %s." % '<a href="/blog/permisos-y-roles-quien-debe-ver-la-caja-agencia-de-autos/">Roles y permisos: quién debería ver la caja</a>',
             ]),
             ("Cómo se resuelve en Tablero", [
-                "El %s registra ingresos y salidas con categoría, monto, moneda, medio de pago y comprobante. La gestión es bimonetaria: cargás la cotización una vez y el sistema convierte todo solo, y el resumen muestra ingresos, salidas y neto en pesos y en dólares, por período y por medio de pago." % '<a href="/modulos/finanzas-agencia-de-autos/">módulo de finanzas</a>',
+                "El %s registra ingresos y salidas con categoría, monto, moneda, medio de pago y comprobante. La gestión es bimonetaria: cargás la cotización una vez y el sistema convierte todo solo, y el resumen muestra ingresos, salidas y neto en tu moneda local y en dólares, por período y por medio de pago." % '<a href="/modulos/finanzas-agencia-de-autos/">módulo de finanzas</a>',
             ]),
             ("callout", "Resumen: cada movimiento en su moneda, una cotización de referencia, categorías estables, medio de pago y comprobante, y permisos distintos para cargar y para controlar."),
         ],
@@ -304,7 +304,7 @@ POSTS = [
                 "El stock es el punto de partida, pero una agencia también prepara autos, agenda visitas, cobra, paga gastos y hace trámites. Cuanto más del ciclo cubre el sistema, menos herramientas sueltas vas a tener.",
             ]),
             ("2. ¿Entiende el negocio local?", [
-                "Preguntá si maneja pesos y dólares, y si contempla trámites propios del mercado argentino, como el formulario 08, la verificación policial o el informe de dominio. Un software genérico adaptado suele quedarse corto en estos puntos.",
+                "Preguntá si maneja tu moneda local y dólares, y si contempla los trámites propios de tu país (en Argentina, por ejemplo, el formulario 08, la verificación policial o el informe de dominio). Un software genérico adaptado suele quedarse corto en estos puntos.",
             ]),
             ("3. ¿Cada persona ve lo que le corresponde?", [
                 "Revisá si hay roles diferenciados y qué tan finos son. Especialmente: quién puede ver y editar la caja.",
@@ -322,7 +322,7 @@ POSTS = [
                 "Pedí que te expliquen planes y condiciones antes de decidir, y que te muestren el sistema funcionando. Si es posible, probalo con casos reales de tu agencia.",
             ]),
             ("Dónde encaja Tablero", [
-                "Tablero está pensado alrededor de estos puntos: cubre inventario, finanzas, gestoría, detailing, visitas y tareas, trabaja en pesos y dólares, tiene ocho roles, sincroniza la vitrina pública y se arma con cada agencia, módulo por módulo. Podés ver más en la página del %s o %s." % ('<a href="/sistema-de-gestion-para-agencia-de-autos-usados/">sistema de gestión para agencia de autos usados</a>', '<a href="https://wa.me/5491122699526?text=Hola!%20Quiero%20una%20demo%20de%20Tablero." target="_blank" rel="noopener">pedir una demo por WhatsApp</a>'),
+                "Tablero está pensado alrededor de estos puntos: cubre inventario, finanzas, gestoría, detailing, visitas y tareas, trabaja con tu moneda local y dólares, tiene ocho roles, sincroniza la vitrina pública y se arma con cada agencia, módulo por módulo. Podés ver más en la página del %s o %s." % ('<a href="/sistema-de-gestion-para-agencia-de-autos-usados/">sistema de gestión para agencia de autos usados</a>', '<a href="https://wa.me/5491122699526?text=Hola!%20Quiero%20una%20demo%20de%20Tablero." target="_blank" rel="noopener">pedir una demo por WhatsApp</a>'),
             ]),
         ],
     ),
@@ -344,7 +344,7 @@ POSTS = [
                     "Tu vitrina web no coincide con el stock real.",
                     "No podés darle a cada persona acceso solo a lo que le corresponde.",
                     "Cuesta saber en qué etapa está cada auto: preparación, documentación, visita, transferencia.",
-                    "La caja en pesos y dólares requiere cuentas manuales.",
+                    "La caja en dos monedas requiere cuentas manuales.",
                 ]),
             ]),
             ("Cómo hacer la transición sin frenar la operación", [

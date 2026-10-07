@@ -19,15 +19,15 @@ del cliente, sumalos.
 > Sistema de gestión para agencias de autos usados: stock, finanzas, gestoría y más.
 
 **Corta (≤ 160 caracteres)**
-> Tablero es el sistema de gestión para agencias de autos usados: inventario, finanzas en USD y ARS, gestoría, detailing, visitas y tareas, a tu medida.
+> Tablero es el sistema de gestión para agencias de autos usados: inventario, finanzas en tu moneda local y en dólares, gestoría, detailing, visitas y tareas, a tu medida.
 
 **Media (≈ 600 caracteres)**
-> Tablero es un sistema de gestión pensado para agencias de autos usados en Argentina. Reúne en un solo lugar el inventario de autos y motos, las finanzas en pesos y dólares, la gestoría y su checklist de documentación, el detailing, la agenda de visitas y las tareas del equipo. Cada persona ve lo que le corresponde gracias a ocho roles, y la vitrina web de la agencia se sincroniza sola con el stock real. Se arma a medida de cada agencia, módulo por módulo.
+> Tablero es un sistema de gestión pensado para agencias de autos usados. Reúne en un solo lugar el inventario de autos y motos, las finanzas en tu moneda local y en dólares, la gestoría y su checklist de documentación, el detailing, la agenda de visitas y las tareas del equipo. Cada persona ve lo que le corresponde gracias a ocho roles, y la vitrina web de la agencia se sincroniza sola con el stock real. Se arma a medida de cada agencia, módulo por módulo.
 
 **Larga (≈ 1.200 caracteres)**
 > Tablero es un sistema de gestión hecho a medida para agencias de autos usados. En lugar de usar planillas, cuadernos y chats separados, el equipo trabaja sobre una única versión de la información.
 >
-> **Qué incluye:** inventario de autos y motos con ficha completa, precio en pesos o dólares e historial de cambios de precio; finanzas bimonetarias (USD/ARS) con medios de pago y comprobantes; gestoría con checklist por unidad (título, cédula, formulario 08, verificación policial e informe de dominio); detailing con catálogo de servicios; agenda de visitas con horarios por vendedor; y tareas internas con urgencia y estado.
+> **Qué incluye:** inventario de autos y motos con ficha completa, precio en tu moneda local o en dólares e historial de cambios de precio; finanzas bimonetarias (moneda local y USD) con medios de pago y comprobantes; gestoría con checklist por unidad (título, cédula, formulario 08, verificación policial e informe de dominio); detailing con catálogo de servicios; agenda de visitas con horarios por vendedor; y tareas internas con urgencia y estado.
 >
 > **Cómo funciona:** hay ocho roles con permisos diferenciados (Administrador, Vendedor, Contadora, Visualizador, Gestor, Detailer, Gerente y Soporte), y la vitrina pública de la agencia se actualiza sola cada vez que se guarda un auto.
 >
@@ -39,10 +39,10 @@ del cliente, sumalos.
 
 **Nombre del canal:** Tablero — Sistema para agencias de autos usados
 **Descripción del canal (≈ 450 caracteres)**
-> Videos para dueños, gerentes y equipos de agencias de autos usados: cómo ordenar el stock, llevar la caja en pesos y dólares, controlar la documentación, coordinar visitas y trabajar en equipo. Mostramos cómo se hace con Tablero, el sistema de gestión hecho a medida para agencias. Más información: https://www.tablero.uno/ · WhatsApp: +54 9 11 2269-9526
+> Videos para dueños, gerentes y equipos de agencias de autos usados: cómo ordenar el stock, llevar la caja en tu moneda local y en dólares, controlar la documentación, coordinar visitas y trabajar en equipo. Mostramos cómo se hace con Tablero, el sistema de gestión hecho a medida para agencias. Más información: https://www.tablero.uno/ · WhatsApp: +54 9 11 2269-9526
 
 **Etiquetas del canal / de los videos (usar las que correspondan, no todas):**
-sistema de gestión para agencias de autos usados, software para concesionaria, gestión de agencia de autos, stock de autos usados, caja en pesos y dólares, formulario 08, gestoría automotor, detailing de autos, agenda de visitas, Tablero.
+sistema de gestión para agencias de autos usados, software para concesionaria, gestión de agencia de autos, stock de autos usados, caja en tu moneda local y en dólares, formulario 08, gestoría automotor, detailing de autos, agenda de visitas, Tablero.
 
 ### Plan de videos (de mayor a menor prioridad)
 Cada título tiene ≤ 70 caracteres. Grabá pantalla real de Tablero (usá datos de demostración, nunca datos reales de clientes).
@@ -51,7 +51,7 @@ Cada título tiene ≤ 70 caracteres. Grabá pantalla real de Tablero (usá dato
 |---|---|---|---|
 | 1 | Tablero: sistema de gestión para agencias de autos usados (recorrido) | Los 6 módulos y la vitrina sincronizada | `/sistema-de-gestion-para-agencia-de-autos-usados/` |
 | 2 | Cómo llevar el stock de una agencia de autos usados | Ficha de unidad, estados, historial de precios | `/blog/como-llevar-el-stock-de-una-agencia-de-autos-usados/` |
-| 3 | Caja en pesos y dólares en una agencia: cómo ordenarla | Ingresos, salidas, cotización, medios de pago | `/blog/caja-en-pesos-y-dolares-agencia-de-autos/` |
+| 3 | Caja en dos monedas en una agencia: cómo ordenarla | Ingresos, salidas, cotización, medios de pago | `/blog/caja-en-pesos-y-dolares-agencia-de-autos/` |
 | 4 | Checklist de documentación para vender un auto usado | Checklist de gestoría, listos para transferir | `/blog/documentacion-para-vender-un-auto-usado-argentina/` |
 | 5 | Cómo organizar las visitas de clientes en una agencia | Agenda, horarios por vendedor, calendario | `/blog/como-organizar-las-visitas-en-una-agencia-de-autos/` |
 | 6 | Detailing de autos usados: ordená la preparación | Catálogo, asignación, vuelve a Disponible | `/blog/detailing-autos-usados-preparacion-para-la-venta/` |
@@ -96,9 +96,9 @@ Capítulos:
 **Post 1 — Presentación**
 > Presentamos Tablero: un sistema de gestión hecho a medida para agencias de autos usados.
 >
-> En una agencia conviven muchas cosas a la vez: stock, precios en pesos y dólares, documentación, preparación de unidades, visitas y equipo. Tablero las reúne en un solo lugar:
+> En una agencia conviven muchas cosas a la vez: stock, precios en tu moneda local y en dólares, documentación, preparación de unidades, visitas y equipo. Tablero las reúne en un solo lugar:
 > • Inventario de autos y motos
-> • Finanzas en USD y ARS
+> • Finanzas en tu moneda local y en dólares
 > • Gestoría con checklist por unidad
 > • Detailing, visitas y tareas
 >

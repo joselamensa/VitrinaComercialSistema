@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tablero | Sistema de gestión para agencias de autos usados</title>
-<meta name="description" content="Tablero es el sistema de gestión para agencias de autos usados: inventario, finanzas en USD y ARS, gestoría, detailing, visitas y tareas, a tu medida.">
+<meta name="description" content="Tablero es el sistema de gestión para agencias de autos usados: inventario, finanzas en moneda local y USD, gestoría, detailing, visitas y tareas, a tu medida.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://www.tablero.uno/">
 <meta name="theme-color" content="#0052cc">
@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Tablero">
 <meta property="og:locale" content="es_AR">
 <meta property="og:title" content="Tablero | Sistema de gestión para agencias de autos usados">
-<meta property="og:description" content="Tablero es el sistema de gestión para agencias de autos usados: inventario, finanzas en USD y ARS, gestoría, detailing, visitas y tareas, a tu medida.">
+<meta property="og:description" content="Tablero es el sistema de gestión para agencias de autos usados: inventario, finanzas en moneda local y USD, gestoría, detailing, visitas y tareas, a tu medida.">
 <meta property="og:url" content="https://www.tablero.uno/">
 <meta property="og:image" content="https://www.tablero.uno/assets/og-image.jpg">
 <meta property="og:image:width" content="1200">
@@ -24,10 +24,10 @@
 <meta property="og:image:alt" content="Tablero, sistema de gestión para agencias de autos usados">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Tablero | Sistema de gestión para agencias de autos usados">
-<meta name="twitter:description" content="Tablero es el sistema de gestión para agencias de autos usados: inventario, finanzas en USD y ARS, gestoría, detailing, visitas y tareas, a tu medida.">
+<meta name="twitter:description" content="Tablero es el sistema de gestión para agencias de autos usados: inventario, finanzas en moneda local y USD, gestoría, detailing, visitas y tareas, a tu medida.">
 <meta name="twitter:image" content="https://www.tablero.uno/assets/og-image.jpg">
 <link rel="alternate" type="application/rss+xml" title="Blog de Tablero" href="/blog/feed.xml">
-<link rel="stylesheet" href="/assets/css/site.css?v=e7f1eb06">
+<link rel="stylesheet" href="/assets/css/site.css?v=d77c4437">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -89,10 +89,10 @@
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "Web",
       "inLanguage": "es",
-      "description": "Sistema de gestión para agencias de autos usados: inventario, finanzas en pesos y dólares, gestoría, detailing, visitas y tareas, con vitrina pública sincronizada.",
+      "description": "Sistema de gestión para agencias de autos usados: inventario, finanzas en tu moneda local y en dólares, gestoría, detailing, visitas y tareas, con vitrina pública sincronizada.",
       "featureList": [
         "Inventario de autos y motos con historial de precios y galería de fotos",
-        "Finanzas bimonetarias (USD y ARS) con medios de pago y comprobantes",
+        "Finanzas bimonetarias (moneda local y USD) con medios de pago y comprobantes",
         "Gestoría con checklist de documentación por unidad",
         "Detailing: catálogo de servicios de preparación y seguimiento",
         "Agenda de visitas por vendedor",
@@ -145,7 +145,7 @@
       "@id": "https://www.tablero.uno/#webpage",
       "url": "https://www.tablero.uno/",
       "name": "Tablero | Sistema de gestión para agencias de autos usados",
-      "description": "Tablero es el sistema de gestión para agencias de autos usados: inventario, finanzas en USD y ARS, gestoría, detailing, visitas y tareas, a tu medida.",
+      "description": "Tablero es el sistema de gestión para agencias de autos usados: inventario, finanzas en moneda local y USD, gestoría, detailing, visitas y tareas, a tu medida.",
       "inLanguage": "es",
       "isPartOf": {
         "@id": "https://www.tablero.uno/#website"
@@ -175,10 +175,10 @@
         },
         {
           "@type": "Question",
-          "name": "¿Maneja pesos y dólares?",
+          "name": "¿Qué monedas maneja?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Sí. Tablero tiene gestión bimonetaria (USD y ARS): los autos pueden tener precio en pesos o en dólares y, en finanzas, cargás la cotización una vez y el sistema convierte todo solo."
+            "text": "Tablero trabaja con dos monedas: la moneda local de tu país (pesos argentinos, uruguayos o mexicanos, u otra) y dólares (USD). Los autos pueden tener precio en cualquiera de las dos y, en finanzas, cargás la cotización una vez y el sistema convierte todo solo."
           }
         },
         {
@@ -199,10 +199,10 @@
         },
         {
           "@type": "Question",
-          "name": "¿Y si mi agencia no está en Argentina?",
+          "name": "¿Funciona en mi país?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Tablero nació para el mercado argentino: trabaja con USD y ARS y su gestoría contempla trámites locales como el formulario 08. Si tu agencia está en otro país, escribinos y vemos juntos qué parte del sistema se adapta a tu mercado."
+            "text": "Sí. Tablero no depende de un país: trabaja con tu moneda local y dólares, y el checklist de gestoría, las categorías de finanzas y los roles se adaptan a la documentación y a la forma de trabajar de cada mercado. Escribinos y lo armamos con vos."
           }
         }
       ]
@@ -224,7 +224,7 @@
       <span class="nav__logo-text wordmark" aria-hidden="true">TABL<i class="wordmark__e"><span></span><span></span><span></span></i>RO</span>
     </a>
     <div class="nav__links">
-      <div class="nav__item"><a href="/modulos/">Módulos <svg class="nav__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a><div class="nav__sub" role="menu"><a href="/modulos/inventario-de-autos/" role="menuitem">Inventario<small>Fichas de autos y motos, precios en USD o ARS y stock siempre al día.</small></a><a href="/modulos/finanzas-agencia-de-autos/" role="menuitem">Finanzas<small>Ingresos y salidas en pesos y dólares, con medios de pago y comprobantes.</small></a><a href="/modulos/gestoria-automotor/" role="menuitem">Gestoría<small>Checklist de documentación por auto y seguimiento hasta la transferencia.</small></a><a href="/modulos/detailing-de-autos/" role="menuitem">Detailing<small>Catálogo de servicios de preparación asignados a cada auto.</small></a><a href="/modulos/visitas-y-agenda/" role="menuitem">Visitas<small>Agenda de visitas por vendedor, con calendario y horarios propios.</small></a><a href="/modulos/tareas-del-equipo/" role="menuitem">Tareas<small>Tareas internas con responsable, urgencia, estado y comentarios.</small></a><a class="nav__sub-all" href="/modulos/" role="menuitem">Ver todos los módulos →</a></div></div>
+      <div class="nav__item"><a href="/modulos/">Módulos <svg class="nav__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a><div class="nav__sub" role="menu"><a href="/modulos/inventario-de-autos/" role="menuitem">Inventario<small>Fichas de autos y motos, precios en USD o en tu moneda local y stock siempre al día.</small></a><a href="/modulos/finanzas-agencia-de-autos/" role="menuitem">Finanzas<small>Ingresos y salidas en tu moneda local y en dólares, con medios de pago y comprobantes.</small></a><a href="/modulos/gestoria-automotor/" role="menuitem">Gestoría<small>Checklist de documentación por auto y seguimiento hasta la transferencia.</small></a><a href="/modulos/detailing-de-autos/" role="menuitem">Detailing<small>Catálogo de servicios de preparación asignados a cada auto.</small></a><a href="/modulos/visitas-y-agenda/" role="menuitem">Visitas<small>Agenda de visitas por vendedor, con calendario y horarios propios.</small></a><a href="/modulos/tareas-del-equipo/" role="menuitem">Tareas<small>Tareas internas con responsable, urgencia, estado y comentarios.</small></a><a class="nav__sub-all" href="/modulos/" role="menuitem">Ver todos los módulos →</a></div></div>
       <div class="nav__item"><a href="/sistema-de-gestion-para-agencia-de-autos-usados/">Soluciones <svg class="nav__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a><div class="nav__sub" role="menu"><a href="/sistema-de-gestion-para-agencia-de-autos-usados/" role="menuitem">Sistema para agencias de autos usados<small>El ciclo completo del auto en un solo lugar</small></a><a href="/software-para-concesionaria/" role="menuitem">Software para concesionarias<small>Equipo, caja, trámites y vitrina conectados</small></a></div></div>
       <a href="/#precios">Precios</a>
       <a href="/blog/">Blog</a>
@@ -269,7 +269,7 @@
        <span class="eyebrow eyebrow--dark"><i aria-hidden="true"></i>Para agencias de autos usados</span>
        <h1>Todo tu negocio de autos usados, <span class="hl">en un solo tablero.</span></h1>
        <p class="lead">
-        Tablero es el sistema de gestión para agencias de autos usados: stock, caja en pesos y dólares, gestoría,
+        Tablero es el sistema de gestión para agencias de autos usados: stock, caja en tu moneda local y en dólares, gestoría,
         detailing, visitas y equipo, con tu vitrina web siempre al día.
        </p>
        <div class="hero__ctas">
@@ -280,10 +280,10 @@
       </div>
       <div class="hero__visual" aria-hidden="false">
 <!--@@HEROSHOT-->
-        <div class="hv-card hv-card--back"><div class="shot"><img src="/assets/modulos/finanzas-800.webp" srcset="/assets/modulos/finanzas-800.webp 800w, /assets/modulos/finanzas.webp 1900w" sizes="(max-width:900px) 92vw, 600px" width="1900" height="935" alt="Inicio del módulo de finanzas de Tablero con ingresos, salidas y neto en pesos y en dólares, últimos movimientos y totales por medio de pago" loading="lazy" decoding="async" data-full="/assets/modulos/finanzas.webp"><img class="shot__dark" src="/assets/modulos/finanzasdark-800.webp" srcset="/assets/modulos/finanzasdark-800.webp 800w, /assets/modulos/finanzasdark.webp 1900w" sizes="(max-width:900px) 92vw, 600px" width="1900" height="935" alt="Inicio del módulo de finanzas de Tablero con ingresos, salidas y neto en pesos y dólares, en modo oscuro" loading="lazy" decoding="async" data-full="/assets/modulos/finanzasdark.webp"></div></div>
+        <div class="hv-card hv-card--back"><div class="shot"><img src="/assets/modulos/finanzas-800.webp" srcset="/assets/modulos/finanzas-800.webp 800w, /assets/modulos/finanzas.webp 1900w" sizes="(max-width:900px) 92vw, 600px" width="1900" height="935" alt="Inicio del módulo de finanzas de Tablero con ingresos, salidas y neto en tu moneda local y en dólares, últimos movimientos y totales por medio de pago" loading="lazy" decoding="async" data-full="/assets/modulos/finanzas.webp"><img class="shot__dark" src="/assets/modulos/finanzasdark-800.webp" srcset="/assets/modulos/finanzasdark-800.webp 800w, /assets/modulos/finanzasdark.webp 1900w" sizes="(max-width:900px) 92vw, 600px" width="1900" height="935" alt="Inicio del módulo de finanzas de Tablero con ingresos, salidas y neto en tu moneda local y en dólares, en modo oscuro" loading="lazy" decoding="async" data-full="/assets/modulos/finanzasdark.webp"></div></div>
         <div class="hv-card hv-card--front"><div class="shot"><img src="/assets/modulos/inventario-800.webp" srcset="/assets/modulos/inventario-800.webp 800w, /assets/modulos/inventario.webp 1900w" sizes="(max-width:900px) 92vw, 600px" width="1900" height="935" alt="Panel de administración de Tablero con el listado de autos: dominio, marca, modelo, año, fecha de ingreso, vendedor y estado de cada unidad" loading="eager" decoding="async" data-full="/assets/modulos/inventario.webp"><img class="shot__dark" src="/assets/modulos/inventariodark-800.webp" srcset="/assets/modulos/inventariodark-800.webp 800w, /assets/modulos/inventariodark.webp 1900w" sizes="(max-width:900px) 92vw, 600px" width="1900" height="935" alt="Panel de administración de Tablero con el listado de autos de la agencia, en modo oscuro" loading="lazy" decoding="async" data-full="/assets/modulos/inventariodark.webp"></div><span class="hv-bar" aria-hidden="true"></span></div>
         <span class="hv-chip hv-chip--a"><b aria-hidden="true">✓</b> Auto transferido: el estado cambia solo</span>
-        <span class="hv-chip hv-chip--b"><b aria-hidden="true">$</b> Pesos y dólares</span>
+        <span class="hv-chip hv-chip--b"><b aria-hidden="true">$</b> Moneda local y dólares</span>
         <span class="hv-chip hv-chip--c"><b aria-hidden="true">●</b> Vitrina actualizada</span>
 <!--@@/HEROSHOT-->
       </div>
@@ -297,7 +297,7 @@
   <div class="container">
     <div class="strip__grid">
       <div class="strip__item"><span class="strip__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 13l1.5-4.5A2 2 0 0 1 6.4 7h11.2a2 2 0 0 1 1.9 1.5L21 13"/><rect x="2" y="13" width="20" height="6" rx="1.5"/><circle cx="7" cy="19" r="1.5"/><circle cx="17" cy="19" r="1.5"/></svg></span><div><strong>Un solo sistema</strong><span class="t">Inventario, finanzas, gestoría, detailing, visitas y tareas.</span></div></div>
-      <div class="strip__item"><span class="strip__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M14.5 9.2c-.4-.8-1.3-1.2-2.5-1.2-1.5 0-2.5.8-2.5 1.9 0 2.7 5.2 1.3 5.2 4 0 1.1-1.1 1.9-2.7 1.9-1.3 0-2.3-.5-2.7-1.4M12 6.5V8m0 8v1.5"/></svg></span><div><strong>Pesos y dólares</strong><span class="t">Gestión bimonetaria: cargás la cotización una vez.</span></div></div>
+      <div class="strip__item"><span class="strip__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M14.5 9.2c-.4-.8-1.3-1.2-2.5-1.2-1.5 0-2.5.8-2.5 1.9 0 2.7 5.2 1.3 5.2 4 0 1.1-1.1 1.9-2.7 1.9-1.3 0-2.3-.5-2.7-1.4M12 6.5V8m0 8v1.5"/></svg></span><div><strong>Moneda local y dólares</strong><span class="t">Gestión bimonetaria: cargás la cotización una vez.</span></div></div>
       <div class="strip__item"><span class="strip__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14c2.2.7 3.5 2.6 3.5 6"/></svg></span><div><strong>Ocho roles</strong><span class="t">Cada persona ve lo que le corresponde.</span></div></div>
       <div class="strip__item"><span class="strip__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></span><div><strong>Vitrina sincronizada</strong><span class="t">Tu stock real publicado, sin cargar dos veces.</span></div></div>
     </div>
@@ -309,7 +309,7 @@
   <div class="container">
     <div class="section-head reveal">
       <h2>Todo lo que necesitás en un solo lugar</h2>
-      <p>Módulos pensados específicamente para el flujo real de una agencia de usados en Argentina, no funciones genéricas.</p>
+      <p>Módulos pensados específicamente para el flujo real de una agencia de usados, no funciones genéricas.</p>
     </div>
 
     <div class="carousel-wrap">
@@ -325,7 +325,7 @@
             <h3>Inventario</h3>
           </div>
           <div class="shot"><img src="/assets/modulos/inventario-800.webp" srcset="/assets/modulos/inventario-800.webp 800w, /assets/modulos/inventario.webp 1900w" sizes="(max-width:600px) 90vw, 700px" width="1900" height="935" alt="Panel de administración de Tablero con el listado de autos: dominio, marca, modelo, año, fecha de ingreso, vendedor y estado de cada unidad" loading="lazy" decoding="async" data-full="/assets/modulos/inventario.webp"><img class="shot__dark" src="/assets/modulos/inventariodark-800.webp" srcset="/assets/modulos/inventariodark-800.webp 800w, /assets/modulos/inventariodark.webp 1900w" sizes="(max-width:600px) 90vw, 700px" width="1900" height="935" alt="Panel de administración de Tablero con el listado de autos de la agencia, en modo oscuro" loading="lazy" decoding="async" data-full="/assets/modulos/inventariodark.webp"></div>
-          <p>Cada auto o moto con su ficha completa: dominio, marca, modelo, año, km y precio en pesos o dólares, con historial de cambios de precio y galería de fotos.</p>
+          <p>Cada auto o moto con su ficha completa: dominio, marca, modelo, año, km y precio en tu moneda local o en dólares, con historial de cambios de precio y galería de fotos.</p>
           <a class="slide__more" href="/modulos/inventario-de-autos/">Ver módulo de inventario →</a>
           <div class="slide__badge">Stock en tiempo real</div>
         </article>
@@ -335,10 +335,10 @@
             <span class="slide__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="6" width="20" height="14" rx="2"/><path d="M2 10h20"/><path d="M6 15h4"/></svg></span>
             <h3>Finanzas</h3>
           </div>
-          <div class="shot"><img src="/assets/modulos/finanzas-800.webp" srcset="/assets/modulos/finanzas-800.webp 800w, /assets/modulos/finanzas.webp 1900w" sizes="(max-width:600px) 90vw, 700px" width="1900" height="935" alt="Inicio del módulo de finanzas de Tablero con ingresos, salidas y neto en pesos y en dólares, últimos movimientos y totales por medio de pago" loading="lazy" decoding="async" data-full="/assets/modulos/finanzas.webp"><img class="shot__dark" src="/assets/modulos/finanzasdark-800.webp" srcset="/assets/modulos/finanzasdark-800.webp 800w, /assets/modulos/finanzasdark.webp 1900w" sizes="(max-width:600px) 90vw, 700px" width="1900" height="935" alt="Inicio del módulo de finanzas de Tablero con ingresos, salidas y neto en pesos y dólares, en modo oscuro" loading="lazy" decoding="async" data-full="/assets/modulos/finanzasdark.webp"></div>
+          <div class="shot"><img src="/assets/modulos/finanzas-800.webp" srcset="/assets/modulos/finanzas-800.webp 800w, /assets/modulos/finanzas.webp 1900w" sizes="(max-width:600px) 90vw, 700px" width="1900" height="935" alt="Inicio del módulo de finanzas de Tablero con ingresos, salidas y neto en tu moneda local y en dólares, últimos movimientos y totales por medio de pago" loading="lazy" decoding="async" data-full="/assets/modulos/finanzas.webp"><img class="shot__dark" src="/assets/modulos/finanzasdark-800.webp" srcset="/assets/modulos/finanzasdark-800.webp 800w, /assets/modulos/finanzasdark.webp 1900w" sizes="(max-width:600px) 90vw, 700px" width="1900" height="935" alt="Inicio del módulo de finanzas de Tablero con ingresos, salidas y neto en tu moneda local y en dólares, en modo oscuro" loading="lazy" decoding="async" data-full="/assets/modulos/finanzasdark.webp"></div>
           <p>Ingresos y salidas con categoría, monto, moneda, medio de pago y comprobante. Cargás la cotización una vez y el sistema convierte todo solo.</p>
           <a class="slide__more" href="/modulos/finanzas-agencia-de-autos/">Ver módulo de finanzas →</a>
-          <div class="slide__badge">Bimonetario USD / ARS</div>
+          <div class="slide__badge">Moneda local + USD</div>
         </article>
 
         <article class="slide reveal">
@@ -347,7 +347,7 @@
             <h3>Gestoría</h3>
           </div>
           <div class="shot"><img src="/assets/modulos/gestoria-800.webp" srcset="/assets/modulos/gestoria-800.webp 800w, /assets/modulos/gestoria.webp 1900w" sizes="(max-width:600px) 90vw, 700px" width="1900" height="935" alt="Pantalla de gestoría pendientes de Tablero con el checklist de documentación y pagos de cada vehículo y su estado" loading="lazy" decoding="async" data-full="/assets/modulos/gestoria.webp"><img class="shot__dark" src="/assets/modulos/gestoriadark-800.webp" srcset="/assets/modulos/gestoriadark-800.webp 800w, /assets/modulos/gestoriadark.webp 1900w" sizes="(max-width:600px) 90vw, 700px" width="1900" height="935" alt="Pantalla de gestoría pendientes de Tablero con el checklist de documentación de cada vehículo, en modo oscuro" loading="lazy" decoding="async" data-full="/assets/modulos/gestoriadark.webp"></div>
-          <p>Checklist por auto: título, cédula, formulario 08, verificación policial e informe de dominio. Al marcar «Transferido», el auto cambia de estado solo.</p>
+          <p>Checklist de documentación por auto, a medida de tu país (por ejemplo: título, cédula, formulario 08, verificación policial e informe de dominio). Al marcar «Transferido», el auto cambia de estado solo.</p>
           <a class="slide__more" href="/modulos/gestoria-automotor/">Ver módulo de gestoría →</a>
           <div class="slide__badge">Documentación al día</div>
         </article>
@@ -477,7 +477,7 @@
     </div>
     <div class="link-grid">
       <a class="card link-card reveal" href="/sistema-de-gestion-para-agencia-de-autos-usados/"><h3>Sistema de gestión para agencia de autos usados</h3><p>El ciclo completo del auto, del stock a la transferencia, en un solo sistema.</p><span>Ver más →</span></a>
-      <a class="card link-card reveal" href="/software-para-concesionaria/"><h3>Software para concesionaria</h3><p>Equipo con roles, caja en pesos y dólares, trámites y vitrina conectados.</p><span>Ver más →</span></a>
+      <a class="card link-card reveal" href="/software-para-concesionaria/"><h3>Software para concesionaria</h3><p>Equipo con roles, caja en tu moneda local y en dólares, trámites y vitrina conectados.</p><span>Ver más →</span></a>
       <a class="card link-card reveal" href="/modulos/"><h3>Todos los módulos</h3><p>Inventario, finanzas, gestoría, detailing, visitas y tareas, uno por uno.</p><span>Ver más →</span></a>
     </div>
   </div>
@@ -490,14 +490,14 @@
     <div class="section-head reveal">
       <h2>Planes pensados para tu crecimiento</h2>
       <p>Elegí la potencia que tu agencia necesita hoy. Precios claros, sin letra chica; el plan A Medida lo definimos juntos por WhatsApp.</p>
-      <div class="cur-switch" role="group" aria-label="Moneda de los precios"><button type="button" class="cur-btn is-on" data-cur="usd" aria-pressed="true"><svg class="flag" viewBox="0 0 24 16" aria-hidden="true"><rect width="24" height="16" fill="#fff"/><g fill="#b22234"><rect y="0" width="24" height="1.23"/><rect y="2.46" width="24" height="1.23"/><rect y="4.92" width="24" height="1.23"/><rect y="7.38" width="24" height="1.23"/><rect y="9.85" width="24" height="1.23"/><rect y="12.3" width="24" height="1.23"/><rect y="14.77" width="24" height="1.23"/></g><rect width="10" height="8.6" fill="#3c3b6e"/></svg><span>USD</span></button><button type="button" class="cur-btn" data-cur="ars" aria-pressed="false"><svg class="flag" viewBox="0 0 24 16" aria-hidden="true"><rect width="24" height="16" fill="#74acdf"/><rect y="5.33" width="24" height="5.34" fill="#fff"/><circle cx="12" cy="8" r="1.7" fill="#f6b40e"/></svg><span>ARS</span></button></div>
-      <p class="cur-note"><span class="cur cur--usd">Precios en dólares por mes.</span><span class="cur cur--ars">Valores en pesos calculados con el dólar oficial (venta) de $ 1.545, al 07/10/2026. Se actualizan cada semana.</span></p>
+      <div class="cur-switch" role="group" aria-label="Moneda de los precios"><button type="button" class="cur-btn is-on" data-cur="USD" aria-pressed="true"><svg class="flag" viewBox="0 0 24 16" aria-hidden="true"><rect width="24" height="16" fill="#fff"/><g fill="#b22234"><rect y="0" width="24" height="1.23"/><rect y="2.46" width="24" height="1.23"/><rect y="4.92" width="24" height="1.23"/><rect y="7.38" width="24" height="1.23"/><rect y="9.85" width="24" height="1.23"/><rect y="12.3" width="24" height="1.23"/><rect y="14.77" width="24" height="1.23"/></g><rect width="10" height="8.6" fill="#3c3b6e"/></svg><span>USD</span></button><span class="cur-local"><span class="cur-flag" data-c="ARS" hidden><svg class="flag" viewBox="0 0 24 16" aria-hidden="true"><rect width="24" height="16" fill="#74acdf"/><rect y="5.33" width="24" height="5.34" fill="#fff"/><circle cx="12" cy="8" r="1.7" fill="#f6b40e"/></svg></span><select class="cur-select" aria-label="Ver precios en moneda local"><option value="ARS">ARS · Peso argentino</option></select></span></div>
+      <p class="cur-note"><span class="cur" data-c="USD">Precios en dólares (USD) por mes. Elegí tu moneda local para ver el valor de referencia.</span><span class="cur" data-c="ARS" hidden>Valor de referencia en peso argentino: 1 USD = 1.545,00 ARS (dólar oficial (venta), al 07/10/2026). Se actualiza cada semana.</span></p>
     </div>
     <div class="pricing-grid">
       <div class="card plan reveal">
         <h3>Esencial</h3>
         <p class="plan__desc">Para agencias que arrancan a digitalizar el lote.</p>
-        <div class="plan__price"><span class="cur cur--usd">USD 100</span><span class="cur cur--ars">$155.000</span><span class="plan__per"> / mes</span></div>
+        <div class="plan__price"><span class="cur" data-c="USD">USD 100</span><span class="cur" data-c="ARS" hidden>ARS 155.000</span><span class="plan__per"> / mes</span></div>
         <div class="plan__price-note">Ideal para empezar con inventario y vitrina</div>
         <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Inventario completo de autos y motos</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Vendedor asignado por unidad</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Vitrina pública sincronizada</li></ul>
         <a class="btn btn-outline" href="https://wa.me/5491122699526?text=Hola!%20Quiero%20el%20plan%20Esencial%20de%20Tablero." target="_blank" rel="noopener">Elegir Esencial</a>
@@ -506,8 +506,8 @@
         <span class="plan__badge">Más recomendado</span>
         <h3>Completo</h3>
         <p class="plan__desc">El sistema de punta a punta, como lo pediste.</p>
-        <div class="plan__price"><span class="cur cur--usd">USD 150</span><span class="cur cur--ars">$232.000</span><span class="plan__per"> / mes</span></div>
-        <div class="plan__price-note">Gestión bimonetaria (USD/ARS)</div>
+        <div class="plan__price"><span class="cur" data-c="USD">USD 150</span><span class="cur" data-c="ARS" hidden>ARS 232.000</span><span class="plan__per"> / mes</span></div>
+        <div class="plan__price-note">Gestión bimonetaria (moneda local + USD)</div>
         <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Todo lo del plan Esencial</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Finanzas, Gestoría y Detailing</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Visitas y Tareas de equipo</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Todos los roles del sistema</li></ul>
         <a class="btn btn-primary" href="https://wa.me/5491122699526?text=Hola!%20Quiero%20el%20plan%20Completo%20de%20Tablero." target="_blank" rel="noopener">Elegir Completo</a>
       </div>
@@ -534,10 +534,10 @@
 <div class="faq">
   <details><summary>¿Qué es Tablero?</summary><div class="answer"><p>Tablero es un sistema de gestión para agencias de autos usados. Reúne en un solo lugar inventario, finanzas, gestoría, detailing, visitas y tareas, y se adapta a cómo trabaja tu agencia.</p></div></details>
   <details><summary>¿Cuánto cuesta Tablero?</summary><div class="answer"><p>Hay tres planes. Esencial cuesta USD 100 por mes y Completo USD 150 por mes (el más recomendado). A Medida, para estructuras grandes o multi-sucursal, se define por consulta. En la sección de planes podés ver los valores también en pesos, al dólar oficial.</p></div></details>
-  <details><summary>¿Maneja pesos y dólares?</summary><div class="answer"><p>Sí. Tablero tiene gestión bimonetaria (USD y ARS): los autos pueden tener precio en pesos o en dólares y, en finanzas, cargás la cotización una vez y el sistema convierte todo solo.</p></div></details>
+  <details><summary>¿Qué monedas maneja?</summary><div class="answer"><p>Tablero trabaja con dos monedas: la moneda local de tu país (pesos argentinos, uruguayos o mexicanos, u otra) y dólares (USD). Los autos pueden tener precio en cualquiera de las dos y, en finanzas, cargás la cotización una vez y el sistema convierte todo solo.</p></div></details>
   <details><summary>¿Qué es la vitrina pública sincronizada?</summary><div class="answer"><p>Es la vitrina web de tu agencia conectada con Tablero. Cada vez que guardás un auto, un webhook automático actualiza la vitrina, y tus clientes pueden buscar por marca, carrocería y precio máximo en USD con el stock real.</p></div></details>
   <details><summary>¿Pueden trabajar varias personas con distintos permisos?</summary><div class="answer"><p>Sí. Tablero tiene ocho roles: Administrador, Vendedor, Contadora, Visualizador, Gestor, Detailer, Gerente y Soporte. Cada uno ve y hace solo lo que le corresponde, y los permisos se ajustan a cómo se organiza tu equipo.</p></div></details>
-  <details><summary>¿Y si mi agencia no está en Argentina?</summary><div class="answer"><p>Tablero nació para el mercado argentino: trabaja con USD y ARS y su gestoría contempla trámites locales como el formulario 08. Si tu agencia está en otro país, escribinos y vemos juntos qué parte del sistema se adapta a tu mercado.</p></div></details>
+  <details><summary>¿Funciona en mi país?</summary><div class="answer"><p>Sí. Tablero no depende de un país: trabaja con tu moneda local y dólares, y el checklist de gestoría, las categorías de finanzas y los roles se adaptan a la documentación y a la forma de trabajar de cada mercado. Escribinos y lo armamos con vos.</p></div></details>
 </div>
 <!--@@/FAQ-->
     <p style="text-align:center;margin:28px 0 0;"><a class="btn btn-outline" href="/preguntas-frecuentes/">Ver todas las preguntas</a></p>
@@ -573,7 +573,7 @@
           <span class="footer-logo-badge"><img src="/assets/logo-96.webp" width="32" height="32" loading="lazy" alt="Logo de Tablero"></span>
           <span class="footer-logo-text wordmark" aria-hidden="true">TABL<i class="wordmark__e"><span></span><span></span><span></span></i>RO</span>
         </a>
-        <p>Sistema de gestión hecho a medida para agencias de autos usados en Argentina.</p>
+        <p>Sistema de gestión hecho a medida para agencias de autos usados.</p>
         <a class="footer-wa" href="https://wa.me/5491122699526?text=Hola!%20Quiero%20conocer%20Tablero%20para%20mi%20agencia." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39c1.45.79 3.08 1.21 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2zm5.79 14.06c-.24.68-1.42 1.33-1.96 1.4-.5.07-1.12.1-1.81-.11-.42-.13-.95-.31-1.64-.6-2.88-1.24-4.76-4.14-4.9-4.33-.14-.19-1.17-1.55-1.17-2.96s.72-2.1.98-2.39c.26-.28.56-.35.75-.35h.53c.17 0 .4-.06.62.48.24.58.8 2 .87 2.14.07.14.12.31.02.5-.09.19-.14.31-.28.48-.14.16-.29.36-.42.48-.14.14-.28.29-.12.57.16.28.72 1.19 1.55 1.93 1.06.95 1.96 1.24 2.24 1.38.28.14.44.12.6-.07.16-.19.68-.79.87-1.06.18-.28.37-.23.62-.14.26.1 1.63.77 1.91.91.28.14.47.21.53.33.07.12.07.68-.17 1.36z"/></svg> Hablar por WhatsApp</a>
       </div>
       <div>
@@ -594,7 +594,7 @@
       <div>
         <h2>Blog</h2>
         <a href="/blog/como-llevar-el-stock-de-una-agencia-de-autos-usados/">Cómo llevar el stock de una agencia de autos usados</a>
-        <a href="/blog/caja-en-pesos-y-dolares-agencia-de-autos/">Cómo manejar la caja en pesos y dólares en una agencia</a>
+        <a href="/blog/caja-en-pesos-y-dolares-agencia-de-autos/">Caja en dos monedas (moneda local y dólares) en una agencia</a>
         <a href="/blog/documentacion-para-vender-un-auto-usado-argentina/">Documentación para vender un auto usado en Argentina</a>
         <a href="/blog/formulario-08-que-es-y-para-que-sirve/">Formulario 08: qué es y para qué sirve en una venta</a>
         <a href="/blog/">Ver todos los artículos →</a>
@@ -671,21 +671,34 @@
   reveals.forEach(function(el){ io.observe(el); });
 
 
-  // Switch de moneda (USD / ARS) en los planes. Recuerda la elección; por defecto ARS si el navegador es es-AR.
+  // Switch de moneda en los planes: USD o la moneda local elegida. Recuerda la elección y, si no hay,
+  // preselecciona la moneda del país del navegador (si hay cotización para ella).
   (function(){
     var sec = document.getElementById('precios');
     if(!sec) return;
-    var btns = sec.querySelectorAll('.cur-btn');
-    if(!btns.length) return;
-    function set(cur, save){
-      sec.setAttribute('data-cur', cur);
-      btns.forEach(function(b){ var on = b.getAttribute('data-cur') === cur; b.classList.toggle('is-on', on); b.setAttribute('aria-pressed', on ? 'true' : 'false'); });
-      if(save){ try{ localStorage.setItem('tablero-cur', cur); }catch(e){} }
+    var btn = sec.querySelector('.cur-btn');
+    var sel = sec.querySelector('.cur-select');
+    var wrap = sec.querySelector('.cur-local');
+    if(!btn || !sel) return;
+    var regionToCur = {AR:'ARS',UY:'UYU',CL:'CLP',MX:'MXN',CO:'COP',PE:'PEN',BR:'BRL',ES:'EUR',DE:'EUR',FR:'EUR',IT:'EUR',PT:'EUR'};
+    function set(code, save){
+      var local = code !== 'USD';
+      if(local) sel.value = code;
+      sec.querySelectorAll('.cur').forEach(function(el){ el.hidden = el.getAttribute('data-c') !== code; });
+      sec.querySelectorAll('.cur-flag').forEach(function(el){ el.hidden = el.getAttribute('data-c') !== sel.value; });
+      btn.classList.toggle('is-on', !local); btn.setAttribute('aria-pressed', local ? 'false' : 'true');
+      wrap.classList.toggle('is-on', local);
+      if(save){ try{ localStorage.setItem('tablero-cur', code); }catch(e){} }
     }
     var saved = null; try{ saved = localStorage.getItem('tablero-cur'); }catch(e){}
-    var lang = (navigator.language || '').toLowerCase();
-    set(saved || (lang === 'es-ar' ? 'ars' : 'usd'), false);
-    btns.forEach(function(b){ b.addEventListener('click', function(){ set(b.getAttribute('data-cur'), true); }); });
+    var parts = (navigator.language || '').split('-');
+    var guess = parts[1] ? regionToCur[parts[1].toUpperCase()] : null;
+    var valid = function(c){ return c === 'USD' || Array.prototype.some.call(sel.options, function(o){ return o.value === c; }); };
+    var start = valid(saved) ? saved : (guess && valid(guess) ? guess : 'USD');
+    if(start === 'USD') sel.selectedIndex = Math.max(0, Array.prototype.findIndex.call(sel.options, function(o){ return o.value === guess; }));
+    set(start, false);
+    btn.addEventListener('click', function(){ set('USD', true); });
+    sel.addEventListener('change', function(){ set(sel.value, true); });
   })();
 
   var track = document.getElementById('carTrack');

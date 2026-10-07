@@ -26,7 +26,7 @@
 <meta name="twitter:description" content="Guía práctica para ordenar el stock de tu agencia de autos usados: qué datos cargar, cómo registrar precios y estados y cómo evitar versiones duplicadas.">
 <meta name="twitter:image" content="https://www.tablero.uno/assets/og-image.jpg">
 <link rel="alternate" type="application/rss+xml" title="Blog de Tablero" href="/blog/feed.xml">
-<link rel="stylesheet" href="/assets/css/site.css?v=e7f1eb06">
+<link rel="stylesheet" href="/assets/css/site.css?v=d77c4437">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -84,7 +84,7 @@
       "publisher": {
         "@id": "https://www.tablero.uno/#organization"
       },
-      "wordCount": 559
+      "wordCount": 566
     }
   ]
 }
@@ -100,7 +100,7 @@
       <span class="nav__logo-text wordmark" aria-hidden="true">TABL<i class="wordmark__e"><span></span><span></span><span></span></i>RO</span>
     </a>
     <div class="nav__links">
-      <div class="nav__item"><a href="/modulos/">Módulos <svg class="nav__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a><div class="nav__sub" role="menu"><a href="/modulos/inventario-de-autos/" role="menuitem">Inventario<small>Fichas de autos y motos, precios en USD o ARS y stock siempre al día.</small></a><a href="/modulos/finanzas-agencia-de-autos/" role="menuitem">Finanzas<small>Ingresos y salidas en pesos y dólares, con medios de pago y comprobantes.</small></a><a href="/modulos/gestoria-automotor/" role="menuitem">Gestoría<small>Checklist de documentación por auto y seguimiento hasta la transferencia.</small></a><a href="/modulos/detailing-de-autos/" role="menuitem">Detailing<small>Catálogo de servicios de preparación asignados a cada auto.</small></a><a href="/modulos/visitas-y-agenda/" role="menuitem">Visitas<small>Agenda de visitas por vendedor, con calendario y horarios propios.</small></a><a href="/modulos/tareas-del-equipo/" role="menuitem">Tareas<small>Tareas internas con responsable, urgencia, estado y comentarios.</small></a><a class="nav__sub-all" href="/modulos/" role="menuitem">Ver todos los módulos →</a></div></div>
+      <div class="nav__item"><a href="/modulos/">Módulos <svg class="nav__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a><div class="nav__sub" role="menu"><a href="/modulos/inventario-de-autos/" role="menuitem">Inventario<small>Fichas de autos y motos, precios en USD o en tu moneda local y stock siempre al día.</small></a><a href="/modulos/finanzas-agencia-de-autos/" role="menuitem">Finanzas<small>Ingresos y salidas en tu moneda local y en dólares, con medios de pago y comprobantes.</small></a><a href="/modulos/gestoria-automotor/" role="menuitem">Gestoría<small>Checklist de documentación por auto y seguimiento hasta la transferencia.</small></a><a href="/modulos/detailing-de-autos/" role="menuitem">Detailing<small>Catálogo de servicios de preparación asignados a cada auto.</small></a><a href="/modulos/visitas-y-agenda/" role="menuitem">Visitas<small>Agenda de visitas por vendedor, con calendario y horarios propios.</small></a><a href="/modulos/tareas-del-equipo/" role="menuitem">Tareas<small>Tareas internas con responsable, urgencia, estado y comentarios.</small></a><a class="nav__sub-all" href="/modulos/" role="menuitem">Ver todos los módulos →</a></div></div>
       <div class="nav__item"><a href="/sistema-de-gestion-para-agencia-de-autos-usados/">Soluciones <svg class="nav__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a><div class="nav__sub" role="menu"><a href="/sistema-de-gestion-para-agencia-de-autos-usados/" role="menuitem">Sistema para agencias de autos usados<small>El ciclo completo del auto en un solo lugar</small></a><a href="/software-para-concesionaria/" role="menuitem">Software para concesionarias<small>Equipo, caja, trámites y vitrina conectados</small></a></div></div>
       <a href="/#precios">Precios</a>
       <a href="/blog/" class="is-active" aria-current="true">Blog</a>
@@ -149,7 +149,7 @@
 <ul class="bullets">
   <li><strong>Identificación:</strong> dominio, marca, modelo y año.</li>
   <li><strong>Estado físico:</strong> kilómetros y fotos actuales.</li>
-  <li><strong>Precio y moneda:</strong> si está en pesos o en dólares, y desde cuándo.</li>
+  <li><strong>Precio y moneda:</strong> si está en tu moneda local o en dólares, y desde cuándo.</li>
   <li><strong>Responsable:</strong> el vendedor asignado a la unidad.</li>
   <li><strong>Fecha de ingreso:</strong> te permite saber cuánto tiempo lleva cada auto en el lote.</li>
   <li><strong>Estado:</strong> en qué punto del circuito está (más abajo).</li>
@@ -157,13 +157,13 @@
 <h2 id="los-estados-la-pieza-que-mas-se-subestima">Los estados: la pieza que más se subestima</h2>
 <p>Casi todo lo demás se ordena si los estados están bien definidos. La regla es tener pocos, con un significado claro y sin zonas grises. Por ejemplo: disponible, vendido, transferido y baja. Cada estado responde una pregunta distinta: ¿se puede mostrar?, ¿ya se cobró?, ¿ya se hizo el trámite?, ¿salió del stock?</p>
 <p>Lo ideal es que el estado cambie por el trabajo mismo del equipo y no por una tarea extra de actualización. Si marcar un auto como transferido en gestoría ya actualiza su estado, nadie tiene que acordarse de hacerlo dos veces.</p>
-<h2 id="precio-en-pesos-o-en-dolares-con-historial">Precio en pesos o en dólares, con historial</h2>
-<p>En el mercado de usados argentino es normal que unas unidades se publiquen en dólares y otras en pesos. Registrá siempre la moneda junto con el precio, y guardá cada cambio con su fecha. Ese historial sirve para entender cuánto tardó en venderse un auto después de bajarle el precio y evita discusiones del tipo «yo lo tenía a otro valor».</p>
+<h2 id="precio-en-tu-moneda-local-o-en-dolares-con-historial">Precio en tu moneda local o en dólares, con historial</h2>
+<p>En muchos mercados de usados es normal que unas unidades se publiquen en dólares y otras en moneda local. Registrá siempre la moneda junto con el precio, y guardá cada cambio con su fecha. Ese historial sirve para entender cuánto tardó en venderse un auto después de bajarle el precio y evita discusiones del tipo «yo lo tenía a otro valor».</p>
 <h2 id="una-sola-fuente-de-verdad-tambien-para-la-vitrina-web">Una sola fuente de verdad, también para la vitrina web</h2>
 <p>Si tu agencia tiene vitrina web, la peor práctica es cargar cada auto dos veces: una en la planilla y otra en la web. Tarde o temprano se desfasan. Lo recomendable es que la vitrina se alimente del mismo lugar donde se carga el stock, de modo que al guardar un auto la web se actualice sola.</p>
 <h2 id="cuando-conviene-pasar-de-la-planilla-a-un-sistema">Cuándo conviene pasar de la planilla a un sistema</h2>
 <p>Si ya tenés más de una persona editando, si perdés tiempo conciliando versiones o si el stock tiene que reflejarse en una web, es momento de dar el salto. Podés leer más sobre eso en <a href="/blog/excel-o-sistema-de-gestion-agencia-de-autos/">Excel o sistema de gestión: cuándo dar el salto</a>.</p>
-<p>En Tablero, el <a href="/modulos/inventario-de-autos/">módulo de inventario</a> guarda la ficha de cada auto o moto con su precio en pesos o dólares, el historial de cambios de precio, la galería de fotos y el vendedor asignado, y mantiene la vitrina pública sincronizada.</p>
+<p>En Tablero, el <a href="/modulos/inventario-de-autos/">módulo de inventario</a> guarda la ficha de cada auto o moto con su precio en tu moneda local o en dólares, el historial de cambios de precio, la galería de fotos y el vendedor asignado, y mantiene la vitrina pública sincronizada.</p>
 <div class="callout"><p>Resumen: ficha igual para todas las unidades, pocos estados bien definidos, precio con su moneda y su historial, y una única fuente para la vitrina.</p></div>
 <div class="post-cta">
   <h2>¿Querés resolver esto en tu agencia?</h2>
@@ -171,13 +171,13 @@
   <a class="btn btn-wa" href="https://wa.me/5491122699526?text=Hola!%20Le%C3%AD%20un%20art%C3%ADculo%20del%20blog%20y%20quiero%20conocer%20Tablero." target="_blank" rel="noopener">Pedir una demo por WhatsApp</a>
 </div>
 </article>
-<aside class="card toc" aria-label="En este artículo"><h2>En este artículo</h2><ol><li><a href="#por-que-el-stock-se-desordena">Por qué el stock se desordena</a></li><li><a href="#que-datos-tiene-que-tener-la-ficha-de-cada-unidad">Qué datos tiene que tener la ficha de cada unidad</a></li><li><a href="#los-estados-la-pieza-que-mas-se-subestima">Los estados: la pieza que más se subestima</a></li><li><a href="#precio-en-pesos-o-en-dolares-con-historial">Precio en pesos o en dólares, con historial</a></li><li><a href="#una-sola-fuente-de-verdad-tambien-para-la-vitrina-web">Una sola fuente de verdad, también para la vitrina web</a></li><li><a href="#cuando-conviene-pasar-de-la-planilla-a-un-sistema">Cuándo conviene pasar de la planilla a un sistema</a></li></ol></aside>
+<aside class="card toc" aria-label="En este artículo"><h2>En este artículo</h2><ol><li><a href="#por-que-el-stock-se-desordena">Por qué el stock se desordena</a></li><li><a href="#que-datos-tiene-que-tener-la-ficha-de-cada-unidad">Qué datos tiene que tener la ficha de cada unidad</a></li><li><a href="#los-estados-la-pieza-que-mas-se-subestima">Los estados: la pieza que más se subestima</a></li><li><a href="#precio-en-tu-moneda-local-o-en-dolares-con-historial">Precio en tu moneda local o en dólares, con historial</a></li><li><a href="#una-sola-fuente-de-verdad-tambien-para-la-vitrina-web">Una sola fuente de verdad, también para la vitrina web</a></li><li><a href="#cuando-conviene-pasar-de-la-planilla-a-un-sistema">Cuándo conviene pasar de la planilla a un sistema</a></li></ol></aside>
 </div>
 </div></section>
 
 <section class="content content--alt"><div class="container">
   <div class="section-head"><h2>Módulos relacionados</h2></div>
-  <div class="link-grid"><a class="card link-card" href="/modulos/inventario-de-autos/"><h3>Módulo de inventario</h3><p>Fichas de autos y motos, precios en USD o ARS y stock siempre al día.</p><span>Ver módulo →</span></a></div>
+  <div class="link-grid"><a class="card link-card" href="/modulos/inventario-de-autos/"><h3>Módulo de inventario</h3><p>Fichas de autos y motos, precios en USD o en tu moneda local y stock siempre al día.</p><span>Ver módulo →</span></a></div>
 </div></section>
 
 <section class="content"><div class="container">
@@ -194,7 +194,7 @@
           <span class="footer-logo-badge"><img src="/assets/logo-96.webp" width="32" height="32" loading="lazy" alt="Logo de Tablero"></span>
           <span class="footer-logo-text wordmark" aria-hidden="true">TABL<i class="wordmark__e"><span></span><span></span><span></span></i>RO</span>
         </a>
-        <p>Sistema de gestión hecho a medida para agencias de autos usados en Argentina.</p>
+        <p>Sistema de gestión hecho a medida para agencias de autos usados.</p>
         <a class="footer-wa" href="https://wa.me/5491122699526?text=Hola!%20Quiero%20conocer%20Tablero%20para%20mi%20agencia." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39c1.45.79 3.08 1.21 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2zm5.79 14.06c-.24.68-1.42 1.33-1.96 1.4-.5.07-1.12.1-1.81-.11-.42-.13-.95-.31-1.64-.6-2.88-1.24-4.76-4.14-4.9-4.33-.14-.19-1.17-1.55-1.17-2.96s.72-2.1.98-2.39c.26-.28.56-.35.75-.35h.53c.17 0 .4-.06.62.48.24.58.8 2 .87 2.14.07.14.12.31.02.5-.09.19-.14.31-.28.48-.14.16-.29.36-.42.48-.14.14-.28.29-.12.57.16.28.72 1.19 1.55 1.93 1.06.95 1.96 1.24 2.24 1.38.28.14.44.12.6-.07.16-.19.68-.79.87-1.06.18-.28.37-.23.62-.14.26.1 1.63.77 1.91.91.28.14.47.21.53.33.07.12.07.68-.17 1.36z"/></svg> Hablar por WhatsApp</a>
       </div>
       <div>
@@ -215,7 +215,7 @@
       <div>
         <h2>Blog</h2>
         <a href="/blog/como-llevar-el-stock-de-una-agencia-de-autos-usados/">Cómo llevar el stock de una agencia de autos usados</a>
-        <a href="/blog/caja-en-pesos-y-dolares-agencia-de-autos/">Cómo manejar la caja en pesos y dólares en una agencia</a>
+        <a href="/blog/caja-en-pesos-y-dolares-agencia-de-autos/">Caja en dos monedas (moneda local y dólares) en una agencia</a>
         <a href="/blog/documentacion-para-vender-un-auto-usado-argentina/">Documentación para vender un auto usado en Argentina</a>
         <a href="/blog/formulario-08-que-es-y-para-que-sirve/">Formulario 08: qué es y para qué sirve en una venta</a>
         <a href="/blog/">Ver todos los artículos →</a>

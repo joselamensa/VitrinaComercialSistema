@@ -44,35 +44,35 @@ MODULES = [
     dict(
         key="inventario", slug="inventario-de-autos", name="Inventario", img="inventario", dark=True,
         badge="Stock en tiempo real",
-        blurb="Cada auto o moto con su ficha completa: dominio, marca, modelo, año, km y precio en pesos o dólares, con historial de cambios de precio y galería de fotos.",
+        blurb="Cada auto o moto con su ficha completa: dominio, marca, modelo, año, km y precio en tu moneda local o en dólares, con historial de cambios de precio y galería de fotos.",
         alt="Panel de administración de Tablero con el listado de autos: dominio, marca, modelo, año, fecha de ingreso, vendedor y estado de cada unidad",
         alt_dark="Panel de administración de Tablero con el listado de autos de la agencia, en modo oscuro",
         title="Inventario de autos usados: control de stock | Tablero",
-        desc="Controlá el stock de tu agencia: ficha de cada auto o moto con dominio, km, precio en USD o ARS, historial de precios, fotos y vendedor asignado.",
+        desc="Controlá el stock de tu agencia: ficha de cada auto o moto con dominio, km, precio en USD o en tu moneda local, historial de precios, fotos y vendedor asignado.",
         h1="Inventario de autos usados para tu agencia",
         lead="Cada auto o moto con su ficha completa y su estado siempre al día, en un solo lugar y sin planillas sueltas.",
-        short="Fichas de autos y motos, precios en USD o ARS y stock siempre al día.",
+        short="Fichas de autos y motos, precios en USD o en tu moneda local y stock siempre al día.",
     ),
     dict(
         key="finanzas", slug="finanzas-agencia-de-autos", name="Finanzas", img="finanzas", dark=True,
-        badge="Bimonetario USD / ARS",
+        badge="Moneda local + USD",
         blurb="Ingresos y salidas con categoría, monto, moneda, medio de pago y comprobante. Cargás la cotización una vez y el sistema convierte todo solo.",
-        alt="Inicio del módulo de finanzas de Tablero con ingresos, salidas y neto en pesos y en dólares, últimos movimientos y totales por medio de pago",
-        alt_dark="Inicio del módulo de finanzas de Tablero con ingresos, salidas y neto en pesos y dólares, en modo oscuro",
-        title="Finanzas para agencias de autos: USD y ARS | Tablero",
-        desc="Ingresos y salidas con categoría, medio de pago y comprobante, en pesos y dólares. Cargás la cotización una vez y Tablero convierte todo solo.",
-        h1="Control de finanzas para agencias de autos, en pesos y dólares",
-        lead="Registrá cada ingreso y cada salida con su categoría, moneda, medio de pago y comprobante, y mirá el neto de tu agencia en ARS y en USD.",
-        short="Ingresos y salidas en pesos y dólares, con medios de pago y comprobantes.",
+        alt="Inicio del módulo de finanzas de Tablero con ingresos, salidas y neto en tu moneda local y en dólares, últimos movimientos y totales por medio de pago",
+        alt_dark="Inicio del módulo de finanzas de Tablero con ingresos, salidas y neto en tu moneda local y en dólares, en modo oscuro",
+        title="Finanzas para agencias de autos: moneda local y USD | Tablero",
+        desc="Ingresos y salidas con categoría, medio de pago y comprobante, en tu moneda local y en dólares. Cargás la cotización una vez y Tablero convierte todo solo.",
+        h1="Control de finanzas para agencias de autos, en tu moneda local y en dólares",
+        lead="Registrá cada ingreso y cada salida con su categoría, moneda, medio de pago y comprobante, y mirá el neto de tu agencia en tu moneda local y en USD.",
+        short="Ingresos y salidas en tu moneda local y en dólares, con medios de pago y comprobantes.",
     ),
     dict(
         key="gestoria", slug="gestoria-automotor", name="Gestoría", img="gestoria", dark=True,
         badge="Documentación al día",
-        blurb="Checklist por auto: título, cédula, formulario 08, verificación policial e informe de dominio. Al marcar «Transferido», el auto cambia de estado solo.",
+        blurb="Checklist de documentación por auto, a medida de tu país (por ejemplo: título, cédula, formulario 08, verificación policial e informe de dominio). Al marcar «Transferido», el auto cambia de estado solo.",
         alt="Pantalla de gestoría pendientes de Tablero con el checklist de documentación y pagos de cada vehículo y su estado",
         alt_dark="Pantalla de gestoría pendientes de Tablero con el checklist de documentación de cada vehículo, en modo oscuro",
         title="Gestoría de autos usados: checklist por unidad | Tablero",
-        desc="Seguí la documentación de cada auto: título, cédula, formulario 08, verificación policial e informe de dominio. Al transferir, el estado cambia solo.",
+        desc="Seguí la documentación de cada auto con un checklist a medida de tu país (título, cédula, formulario 08 y más). Al transferir, el estado cambia solo.",
         h1="Gestoría de autos usados: la documentación de cada unidad, al día",
         lead="Un checklist por auto para saber de un vistazo qué papeles tiene, cuáles faltan y cuáles están listos para transferir.",
         short="Checklist de documentación por auto y seguimiento hasta la transferencia.",
@@ -129,15 +129,15 @@ FAQ = {
     ),
     "para-quien": (
         "¿Para qué tipo de negocio sirve?",
-        "Para agencias y concesionarias que compran y venden autos usados y motos. Para estructuras grandes o con varias sucursales existe el plan A Medida, donde roles, flujos e integraciones se definen en conjunto.",
+        "Para agencias y concesionarias de cualquier país que compran y venden autos usados y motos. Para estructuras grandes o con varias sucursales existe el plan A Medida, donde roles, flujos e integraciones se definen en conjunto.",
     ),
     "precio": (
         "¿Cuánto cuesta Tablero?",
         "Hay tres planes. Esencial cuesta USD 100 por mes y Completo USD 150 por mes (el más recomendado). A Medida, para estructuras grandes o multi-sucursal, se define por consulta. En la sección de planes podés ver los valores también en pesos, al dólar oficial.",
     ),
     "monedas": (
-        "¿Maneja pesos y dólares?",
-        "Sí. Tablero tiene gestión bimonetaria (USD y ARS): los autos pueden tener precio en pesos o en dólares y, en finanzas, cargás la cotización una vez y el sistema convierte todo solo.",
+        "¿Qué monedas maneja?",
+        "Tablero trabaja con dos monedas: la moneda local de tu país (pesos argentinos, uruguayos o mexicanos, u otra) y dólares (USD). Los autos pueden tener precio en cualquiera de las dos y, en finanzas, cargás la cotización una vez y el sistema convierte todo solo.",
     ),
     "vitrina": (
         "¿Qué es la vitrina pública sincronizada?",
@@ -149,7 +149,7 @@ FAQ = {
     ),
     "gestoria": (
         "¿Cómo se lleva la documentación de cada auto?",
-        "Con el módulo de Gestoría: un checklist por unidad con título, cédula, formulario 08, verificación policial e informe de dominio. Al marcar un auto como «Transferido», cambia de estado automáticamente.",
+        "Con el módulo de Gestoría: un checklist por unidad con los documentos que pide tu país (por ejemplo, en Argentina: título, cédula, formulario 08, verificación policial e informe de dominio). Al marcar un auto como «Transferido», cambia de estado automáticamente.",
     ),
     "personalizar": (
         "¿Se puede adaptar a mi forma de trabajar?",
@@ -164,8 +164,8 @@ FAQ = {
         "Escribinos por WhatsApp al %s y pedí una demo. Te mostramos el sistema, hablamos de cómo trabaja tu agencia y armamos Tablero con vos, módulo por módulo." % PHONE_DISPLAY,
     ),
     "otro-pais": (
-        "¿Y si mi agencia no está en Argentina?",
-        "Tablero nació para el mercado argentino: trabaja con USD y ARS y su gestoría contempla trámites locales como el formulario 08. Si tu agencia está en otro país, escribinos y vemos juntos qué parte del sistema se adapta a tu mercado.",
+        "¿Funciona en mi país?",
+        "Sí. Tablero no depende de un país: trabaja con tu moneda local y dólares, y el checklist de gestoría, las categorías de finanzas y los roles se adaptan a la documentación y a la forma de trabajar de cada mercado. Escribinos y lo armamos con vos.",
     ),
 }
 
@@ -180,8 +180,8 @@ FAQ_PAGE_GROUPS = [
 # FAQ propias de cada módulo (3 por página). (pregunta, respuesta)
 MODULE_FAQ = {
     "inventario": [
-        ("¿Puedo cargar precios en pesos y en dólares?",
-         "Sí. Cada unidad puede tener su precio en pesos o en dólares, y Tablero guarda el historial de cambios de precio de cada auto."),
+        ("¿Puedo cargar precios en tu moneda local y en dólares?",
+         "Sí. Cada unidad puede tener su precio en tu moneda local o en dólares, y Tablero guarda el historial de cambios de precio de cada auto."),
         ("¿Qué datos tiene la ficha de cada auto?",
          "Dominio, marca, modelo, año, kilómetros y precio, además de una galería de fotos y el vendedor asignado a la unidad."),
         ("¿Puedo cargar motos además de autos?",
@@ -189,7 +189,7 @@ MODULE_FAQ = {
     ],
     "finanzas": [
         ("¿Cómo se registran los movimientos en dos monedas?",
-         "Cada ingreso o salida se carga con su moneda (pesos o dólares). Cargás la cotización una vez y el sistema convierte todo solo, así ves el neto en ARS y en USD."),
+         "Cada ingreso o salida se carga con su moneda (moneda local o dólares). Cargás la cotización una vez y el sistema convierte todo solo, así ves el neto en tu moneda local y en USD."),
         ("¿Quién puede ver y editar las finanzas?",
          "Depende del rol. La Contadora puede cargar, editar y borrar; el Visualizador solo lee; el Vendedor carga movimientos sin editar ni borrar; y el Gerente ve todo el negocio operativo menos la plata."),
         ("¿Puedo definir mis propias categorías y medios de pago?",
@@ -197,7 +197,7 @@ MODULE_FAQ = {
     ],
     "gestoria": [
         ("¿Qué documentos se controlan por auto?",
-         "El checklist base incluye título, cédula, formulario 08, verificación policial e informe de dominio, con un resumen de lo que falta en cada unidad."),
+         "El checklist se arma con los documentos que pide tu país; por ejemplo, en Argentina: título, cédula, formulario 08, verificación policial e informe de dominio. Incluye un resumen de lo que falta en cada unidad."),
         ("¿Se puede adaptar el checklist a mi agencia?",
          "Sí. El checklist de gestoría se arma a tu medida, junto con tu gestor, para reflejar los trámites que hacés en la práctica."),
         ("¿Qué pasa cuando se transfiere un auto?",
