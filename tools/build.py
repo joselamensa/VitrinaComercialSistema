@@ -796,7 +796,7 @@ def fmt_ars(n):
 
 
 def price_span(usd, rate):
-    ars = ('<span class="cur cur--ars">%s</span>' % fmt_ars(round(usd * rate / 1000.0) * 1000)) if rate else ""
+    ars = ('<span class="cur cur--ars">%s</span>' % fmt_ars(int(usd * rate / 1000.0 + 0.5) * 1000)) if rate else ""
     return '<span class="cur cur--usd">USD %d</span>%s<span class="plan__per"> / mes</span>' % (usd, ars)
 
 
