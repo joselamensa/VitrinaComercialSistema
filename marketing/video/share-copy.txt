@@ -3,7 +3,7 @@ Planillas, chats y cuadernos: así se lleva todavía mucha agencia de autos usad
 
 Tablero junta todo en un solo sistema: inventario, finanzas en tu moneda local y en dólares, gestoría, detailing, visitas y tareas. Cargás la cotización una vez y convierte todo solo. Con el checklist de gestoría (título, cédula, 08, verificación policial, informe de dominio), al marcar «Transferido» el auto cambia de estado sin que nadie lo toque. Y la vitrina web se actualiza sola con tu stock real.
 
-Hay ocho roles con permisos, así que cada uno ve lo que le corresponde. Lo armamos a medida, módulo por módulo. Hecho en Argentina.
+Hay ocho roles con permisos, así que cada uno ve lo que le corresponde. Lo armamos a medida, módulo por módulo.
 
 Pedí una demo por WhatsApp: +54 9 11 2269-9526
 https://www.tablero.uno/
@@ -22,7 +22,7 @@ Descripción:
 
 En este video: los seis módulos de Tablero (inventario, finanzas, gestoría, detailing, visitas y tareas), la gestión en tu moneda local y en dólares con una sola cotización, el checklist de gestoría que pasa el auto a «Transferido» y la vitrina web sincronizada en tiempo real con el stock.
 
-Tablero se arma a medida, módulo por módulo, y está hecho en Argentina. Planes: Esencial USD 100 por mes, Completo USD 150 por mes y A Medida por consulta.
+Tablero se arma a medida, módulo por módulo, y es para agencias de cualquier país. Planes: Esencial USD 100 por mes, Completo USD 150 por mes y A Medida por consulta.
 
 Conocé Tablero: https://www.tablero.uno/
 Pedí una demo por WhatsApp: https://wa.me/5491122699526

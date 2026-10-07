@@ -1,6 +1,6 @@
 {
   "fecha": "2026-10-07",
-  "fuente": "ARS: dolarapi.com (dólar oficial, venta). Resto: open.er-api.com (referencia)",
+  "fuente": "dolarapi.com (dólar oficial, venta)",
   "rates": {
     "ARS": 1545.0
   }

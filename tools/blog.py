@@ -96,7 +96,7 @@ POSTS = [
         lead="Un auto no está realmente listo para vender hasta que su documentación está completa. Este es un checklist general para que ninguna unidad se frene por un papel que faltaba.",
         modules=["gestoria"],
         sections=[
-            ("callout", "Este artículo es informativo y general. Los requisitos exactos pueden variar según la jurisdicción, el tipo de vehículo y el trámite; confirmalos siempre con tu gestor o con el Registro del Automotor."),
+            ("callout", "Este artículo es informativo y general, y se refiere a Argentina. Si tu agencia está en otro país, los documentos y los trámites cambian: Tablero adapta el checklist a los de tu mercado. En cualquier caso, los requisitos exactos pueden variar según la jurisdicción, el tipo de vehículo y el trámite; confirmalos siempre con tu gestor o con el registro automotor de tu país."),
             ("Por qué conviene un checklist por unidad", [
                 "Reunir la documentación de un auto suele involucrar a varias personas y varios momentos: lo que trae el vendedor anterior, lo que se solicita en el Registro, lo que se verifica antes de entregar. Si esa información vive en la memoria del gestor o en mensajes sueltos, es fácil que una unidad quede frenada por un papel que nadie sabía que faltaba.",
             ]),
@@ -133,7 +133,7 @@ POSTS = [
         lead="Es uno de los papeles que más se nombran en una agencia. Esta es una explicación general de qué es, cuándo aparece y qué conviene controlar.",
         modules=["gestoria"],
         sections=[
-            ("callout", "Este artículo es informativo y general. Para el trámite concreto, los requisitos y los costos vigentes, consultá con tu gestor o con el Registro del Automotor."),
+            ("callout", "Este artículo es informativo y general, y se refiere a Argentina. En otros países el trámite tiene otro nombre y otros requisitos; Tablero adapta el checklist de gestoría a cada mercado. Para el trámite concreto, los requisitos y los costos vigentes, consultá con tu gestor o con el registro automotor que corresponda."),
             ("Qué es el formulario 08", [
                 "El formulario 08 es el formulario del Registro del Automotor que se utiliza para solicitar la transferencia de un vehículo. En él figuran los datos del vehículo, del vendedor y del comprador, y se firma por las partes.",
                 "En una agencia aparece en el momento de la venta, cuando el auto pasa de un titular a otro, y es una de las piezas centrales del trámite de transferencia.",

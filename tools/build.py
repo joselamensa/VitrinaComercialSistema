@@ -117,7 +117,7 @@ WA_SVG = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path 
 
 def footer_html(brand_img=False):
     mods = "\n".join('        <a href="%s">%s</a>' % (mod_url(m["key"]), m["name"]) for m in MODULES)
-    recents = "\n".join('        <a href="%s">%s</a>' % (blog.post_url(p["slug"]), esc(p["title"])) for p in blog.POSTS[:4])
+    recents = "\n".join('        <a href="%s">%s</a>' % (blog.post_url(p["slug"]), esc(p["title"])) for p in [q for q in blog.POSTS if "argentina" not in q["slug"] and "formulario-08" not in q["slug"]][:4])
     brand = ""
     if brand_img:
         brand = """  <div class="container">
@@ -162,7 +162,7 @@ def footer_html(brand_img=False):
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Tablero. Industria Argentina.</span>
+      <span>© 2026 Tablero.</span>
       <span>Tel. <a href="%s" target="_blank" rel="noopener">%s</a></span>
     </div>
   </div>
@@ -246,6 +246,7 @@ def org_jsonld():
         "logo": {"@type": "ImageObject", "url": SITE_URL + "/assets/logo.png", "width": 512, "height": 512},
         "description": "Sistema de gestión para agencias de autos usados.",
         "foundingDate": "2025",
+        "areaServed": "Worldwide",
         "founder": {"@id": SITE_URL + "/#founder"},
         "contactPoint": [{
             "@type": "ContactPoint",
@@ -339,7 +340,7 @@ def head_html(title, desc, path, jsonld_nodes, og_type="website", robots="index,
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta property="og:type" content="%(og_type)s">
 <meta property="og:site_name" content="Tablero">
-<meta property="og:locale" content="es_AR">
+<meta property="og:locale" content="es_LA">
 <meta property="og:title" content="%(t)s">
 <meta property="og:description" content="%(d)s">
 <meta property="og:url" content="%(url)s">
@@ -760,7 +761,7 @@ def rss_xml():
         items.append("<item><title>%s</title><link>%s%s</link><guid>%s%s</guid><pubDate>%s</pubDate><description>%s</description></item>"
                      % (esc(q["title"]), SITE_URL, blog.post_url(q["slug"]), SITE_URL, blog.post_url(q["slug"]), format_datetime(dt), esc(q["desc"])))
     return ('<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0"><channel><title>Blog de Tablero</title><link>%s/blog/</link>'
-            "<description>Guías para agencias de autos usados.</description><language>es-AR</language>\n%s\n</channel></rss>\n" % (SITE_URL, "\n".join(items)))
+            "<description>Guías para agencias de autos usados.</description><language>es</language>\n%s\n</channel></rss>\n" % (SITE_URL, "\n".join(items)))
 
 # ----------------------------------------------------------------- salida
 def write(path, text):
@@ -784,27 +785,10 @@ def _flag(inner):
 
 
 FLAG_AR = _flag('<rect width="24" height="16" fill="#74acdf"/><rect y="5.33" width="24" height="5.34" fill="#fff"/><circle cx="12" cy="8" r="1.7" fill="#f6b40e"/>')
-FLAG_UY = _flag('<rect width="24" height="16" fill="#fff"/><g fill="#0038a8"><rect y="1.78" width="24" height="1.78"/><rect y="5.33" width="24" height="1.78"/><rect y="8.89" width="24" height="1.78"/><rect y="12.44" width="24" height="1.78"/></g><rect width="9.8" height="8.9" fill="#fff"/><circle cx="4.9" cy="4.45" r="2.3" fill="#fcd116"/>')
-FLAG_CL = _flag('<rect width="24" height="16" fill="#fff"/><rect y="8" width="24" height="8" fill="#d52b1e"/><rect width="8" height="8" fill="#0039a6"/><path d="M4 1.6l.9 2.6h2.7l-2.2 1.6.9 2.6L4 6.8 1.7 8.4l.9-2.6L.4 4.2h2.7z" fill="#fff"/>')
-FLAG_MX = _flag('<rect width="24" height="16" fill="#fff"/><rect width="8" height="16" fill="#006847"/><rect x="16" width="8" height="16" fill="#ce1126"/><circle cx="12" cy="8" r="2" fill="#8c5a2b"/>')
-FLAG_CO = _flag('<rect width="24" height="16" fill="#fcd116"/><rect y="8" width="24" height="4" fill="#003893"/><rect y="12" width="24" height="4" fill="#ce1126"/>')
-FLAG_PE = _flag('<rect width="24" height="16" fill="#fff"/><rect width="8" height="16" fill="#d91023"/><rect x="16" width="8" height="16" fill="#d91023"/>')
-FLAG_BR = _flag('<rect width="24" height="16" fill="#009b3a"/><path d="M12 1.8L22 8 12 14.2 2 8z" fill="#fedf00"/><circle cx="12" cy="8" r="3.3" fill="#002776"/>')
-_stars = "".join('<circle cx="%.2f" cy="%.2f" r=".6" fill="#fc0"/>' % (12 + 4.2 * math.sin(i * math.pi / 6), 8 - 4.2 * math.cos(i * math.pi / 6)) for i in range(12))
-FLAG_EU = _flag('<rect width="24" height="16" fill="#039"/>' + _stars)
 CHECK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>'
 
-# código, nombre, bandera, redondeo del precio, regiones del navegador que la preseleccionan
-CURRENCIES = [
-    ("ARS", "Peso argentino", FLAG_AR, 1000, ["AR"]),
-    ("UYU", "Peso uruguayo", FLAG_UY, 10, ["UY"]),
-    ("CLP", "Peso chileno", FLAG_CL, 1000, ["CL"]),
-    ("MXN", "Peso mexicano", FLAG_MX, 10, ["MX"]),
-    ("COP", "Peso colombiano", FLAG_CO, 1000, ["CO"]),
-    ("PEN", "Sol peruano", FLAG_PE, 5, ["PE"]),
-    ("BRL", "Real brasileño", FLAG_BR, 5, ["BR"]),
-    ("EUR", "Euro", FLAG_EU, 1, ["ES", "DE", "FR", "IT", "PT"]),
-]
+# Moneda alternativa opcional a USD (los precios son en USD; el peso argentino es solo una comodidad).
+CURRENCIES = [("ARS", "peso argentino", FLAG_AR, 1000)]
 
 
 def load_rates():
@@ -840,19 +824,14 @@ def pricing_html():
     rates, fecha = load_rates()
     avail = [c for c in CURRENCIES if c[0] in rates]
     if avail:
+        code, name, flag, step = avail[0]
         f = "/".join(reversed(fecha.split("-"))) if fecha else ""
-        opts = "".join('<option value="%s">%s · %s</option>' % (c[0], c[0], c[1]) for c in avail)
-        flags = "".join('<span class="cur-flag" data-c="%s" hidden>%s</span>' % (c[0], c[2]) for c in avail)
         switch = ('<div class="cur-switch" role="group" aria-label="Moneda de los precios">'
                   '<button type="button" class="cur-btn is-on" data-cur="USD" aria-pressed="true">%s<span>USD</span></button>'
-                  '<span class="cur-local">%s<select class="cur-select" aria-label="Ver precios en moneda local">%s</select></span></div>' % (FLAG_US, flags, opts))
-        notes = '<span class="cur" data-c="USD">Precios en dólares (USD) por mes. Elegí tu moneda local para ver el valor de referencia.</span>'
-        for c in avail:
-            code = c[0]
-            src = "dólar oficial (venta)" if code == "ARS" else "tipo de cambio de referencia"
-            notes += ('<span class="cur" data-c="%s" hidden>Valor de referencia en %s: 1 USD = %s %s (%s%s). Se actualiza cada semana.</span>'
-                      % (code, c[1].lower(), "{:,.2f}".format(rates[code]).replace(",", "X").replace(".", ",").replace("X", "."), code, src, (", al " + f) if f else ""))
-        note = '<p class="cur-note">%s</p>' % notes
+                  '<button type="button" class="cur-btn" data-cur="%s" aria-pressed="false">%s<span>%s</span></button></div>' % (FLAG_US, code, flag, code))
+        note = ('<p class="cur-note"><span class="cur" data-c="USD">Precios en dólares (USD) por mes.</span>'
+                '<span class="cur" data-c="%s" hidden>Valor en %s calculado con el dólar oficial (venta) de %s%s. Se actualiza cada semana.</span></p>'
+                % (code, name + "s", ("$ " + "{:,.0f}".format(rates[code]).replace(",", ".")), (", al " + f) if f else ""))
     else:
         switch, note = "", '<p class="cur-note">Precios en dólares (USD) por mes.</p>'
 
@@ -939,7 +918,7 @@ def build_home():
 
 def llms_txt():
     L = ["# Tablero", "",
-         "> Tablero es un sistema de gestión hecho a medida para agencias de autos usados. Reúne inventario de autos y motos, finanzas en tu moneda local y en dólares, gestoría con checklist de documentación, detailing, agenda de visitas y tareas del equipo, con ocho roles de usuario y una vitrina web sincronizada con el stock. Planes: Esencial USD 100 por mes, Completo USD 150 por mes y A Medida por consulta.", "",
+         "> Tablero es un sistema de gestión hecho a medida para agencias de autos usados. Sirve a agencias de cualquier país. Reúne inventario de autos y motos, finanzas en tu moneda local y en dólares, gestoría con checklist de documentación, detailing, agenda de visitas y tareas del equipo, con ocho roles de usuario y una vitrina web sincronizada con el stock. Planes: Esencial USD 100 por mes, Completo USD 150 por mes y A Medida por consulta.", "",
          "Contacto: WhatsApp %s · %s/" % (PHONE_DISPLAY, SITE_URL), "",
          "## Qué es y para quién", "",
          "- [Sistema de gestión para agencia de autos usados](%s/sistema-de-gestion-para-agencia-de-autos-usados/): el ciclo completo del auto, del stock a la transferencia." % SITE_URL,

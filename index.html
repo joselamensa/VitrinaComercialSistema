@@ -276,7 +276,7 @@
         <a class="btn btn-wa" href="https://wa.me/5491122699526?text=Hola!%20Quiero%20pedir%20una%20demo%20de%20Tablero." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39c1.45.79 3.08 1.21 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2zm5.79 14.06c-.24.68-1.42 1.33-1.96 1.4-.5.07-1.12.1-1.81-.11-.42-.13-.95-.31-1.64-.6-2.88-1.24-4.76-4.14-4.9-4.33-.14-.19-1.17-1.55-1.17-2.96s.72-2.1.98-2.39c.26-.28.56-.35.75-.35h.53c.17 0 .4-.06.62.48.24.58.8 2 .87 2.14.07.14.12.31.02.5-.09.19-.14.31-.28.48-.14.16-.29.36-.42.48-.14.14-.28.29-.12.57.16.28.72 1.19 1.55 1.93 1.06.95 1.96 1.24 2.24 1.38.28.14.44.12.6-.07.16-.19.68-.79.87-1.06.18-.28.37-.23.62-.14.26.1 1.63.77 1.91.91.28.14.47.21.53.33.07.12.07.68-.17 1.36z"/></svg> Pedir una demo</a>
         <a class="btn btn-outline" href="#modulos">Ver cómo funciona</a>
        </div>
-       <p class="hero__note">Industria argentina · Se arma a tu medida, módulo por módulo</p>
+       <p class="hero__note">Para agencias de cualquier país · Se arma a tu medida, módulo por módulo</p>
       </div>
       <div class="hero__visual" aria-hidden="false">
 <!--@@HEROSHOT-->
@@ -671,34 +671,22 @@
   reveals.forEach(function(el){ io.observe(el); });
 
 
-  // Switch de moneda en los planes: USD o la moneda local elegida. Recuerda la elección y, si no hay,
-  // preselecciona la moneda del país del navegador (si hay cotización para ella).
+  // Switch de moneda en los planes: USD (por defecto) o peso argentino. Recuerda la elección; arranca en ARS solo si el navegador es es-AR.
   (function(){
     var sec = document.getElementById('precios');
     if(!sec) return;
-    var btn = sec.querySelector('.cur-btn');
-    var sel = sec.querySelector('.cur-select');
-    var wrap = sec.querySelector('.cur-local');
-    if(!btn || !sel) return;
-    var regionToCur = {AR:'ARS',UY:'UYU',CL:'CLP',MX:'MXN',CO:'COP',PE:'PEN',BR:'BRL',ES:'EUR',DE:'EUR',FR:'EUR',IT:'EUR',PT:'EUR'};
+    var btns = sec.querySelectorAll('.cur-btn');
+    if(!btns.length) return;
     function set(code, save){
-      var local = code !== 'USD';
-      if(local) sel.value = code;
       sec.querySelectorAll('.cur').forEach(function(el){ el.hidden = el.getAttribute('data-c') !== code; });
-      sec.querySelectorAll('.cur-flag').forEach(function(el){ el.hidden = el.getAttribute('data-c') !== sel.value; });
-      btn.classList.toggle('is-on', !local); btn.setAttribute('aria-pressed', local ? 'false' : 'true');
-      wrap.classList.toggle('is-on', local);
+      btns.forEach(function(b){ var on = b.getAttribute('data-cur') === code; b.classList.toggle('is-on', on); b.setAttribute('aria-pressed', on ? 'true' : 'false'); });
       if(save){ try{ localStorage.setItem('tablero-cur', code); }catch(e){} }
     }
     var saved = null; try{ saved = localStorage.getItem('tablero-cur'); }catch(e){}
-    var parts = (navigator.language || '').split('-');
-    var guess = parts[1] ? regionToCur[parts[1].toUpperCase()] : null;
-    var valid = function(c){ return c === 'USD' || Array.prototype.some.call(sel.options, function(o){ return o.value === c; }); };
-    var start = valid(saved) ? saved : (guess && valid(guess) ? guess : 'USD');
-    if(start === 'USD') sel.selectedIndex = Math.max(0, Array.prototype.findIndex.call(sel.options, function(o){ return o.value === guess; }));
+    var ok = function(c){ return Array.prototype.some.call(btns, function(b){ return b.getAttribute('data-cur') === c; }); };
+    var start = ok(saved) ? saved : ((navigator.language || '').toLowerCase() === 'es-ar' && ok('ARS') ? 'ARS' : 'USD');
     set(start, false);
-    btn.addEventListener('click', function(){ set('USD', true); });
-    sel.addEventListener('change', function(){ set(sel.value, true); });
+    btns.forEach(function(b){ b.addEventListener('click', function(){ set(b.getAttribute('data-cur'), true); }); });
   })();
 
   var track = document.getElementById('carTrack');

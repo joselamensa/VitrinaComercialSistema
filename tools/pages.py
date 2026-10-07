@@ -386,7 +386,7 @@ def page_about():
         title="Sobre Tablero: quién lo hace y cómo nació | Tablero",
         desc="Tablero es un sistema de gestión hecho a medida para agencias de autos usados, en funcionamiento desde comienzos de 2025. Conocé quién está detrás.",
         h1="Sobre Tablero",
-        lead="Un sistema de gestión hecho a medida para agencias de autos usados, creado en Argentina y en funcionamiento desde comienzos de 2025.",
+        lead="Un sistema de gestión hecho a medida para agencias de autos usados de cualquier país, en funcionamiento desde comienzos de 2025.",
         trail=[("Sobre Tablero", URL_ABOUT)],
         priority="0.6",
         page_type="AboutPage",
