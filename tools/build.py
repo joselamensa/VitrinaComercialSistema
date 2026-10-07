@@ -780,6 +780,23 @@ def build_home():
     return home_title, home_desc
 
 
+def llms_txt():
+    L = ["# Tablero", "",
+         "> Tablero es un sistema de gestión hecho a medida para agencias de autos usados en Argentina. Reúne inventario de autos y motos, finanzas en pesos y dólares (USD/ARS), gestoría con checklist de documentación, detailing, agenda de visitas y tareas del equipo, con ocho roles de usuario y una vitrina web sincronizada con el stock. Los precios se definen por consulta (planes Esencial, Completo y A Medida).", "",
+         "Contacto: WhatsApp %s · %s/" % (PHONE_DISPLAY, SITE_URL), "",
+         "## Qué es y para quién", "",
+         "- [Sistema de gestión para agencia de autos usados](%s/sistema-de-gestion-para-agencia-de-autos-usados/): el ciclo completo del auto, del stock a la transferencia." % SITE_URL,
+         "- [Software para concesionaria](%s/software-para-concesionaria/): equipo con roles, caja en dos monedas, trámites y vitrina conectados." % SITE_URL,
+         "- [Preguntas frecuentes](%s/preguntas-frecuentes/): precios, monedas, vitrina, roles y cómo empezar." % SITE_URL, "",
+         "## Módulos", ""]
+    for m in MODULES:
+        L.append("- [%s](%s%s): %s" % (m["name"], SITE_URL, mod_url(m["key"]), m["short"]))
+    L += ["", "## Guías del blog", ""]
+    for q in blog.POSTS:
+        L.append("- [%s](%s%s): %s" % (q["title"], SITE_URL, blog.post_url(q["slug"]), q["desc"]))
+    return "\n".join(L) + "\n"
+
+
 def build():
     all_pages = pages.all_pages()
     urls = [("/", "1.0")]
@@ -808,6 +825,7 @@ def build():
         if not (110 <= len(q["desc"]) <= 165):
             problems.append("desc de post fuera de rango (%d): %s" % (len(q["desc"]), q["slug"]))
     write("/blog/feed.xml", rss_xml())
+    write("/llms.txt", llms_txt())
     sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for u, prio in urls:
         sm.append("  <url><loc>%s%s</loc><lastmod>%s</lastmod><priority>%s</priority></url>" % (SITE_URL, u, LASTMOD, prio))

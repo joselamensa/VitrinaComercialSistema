@@ -1,0 +1,33 @@
+# Tablero
+
+> Tablero es un sistema de gestión hecho a medida para agencias de autos usados en Argentina. Reúne inventario de autos y motos, finanzas en pesos y dólares (USD/ARS), gestoría con checklist de documentación, detailing, agenda de visitas y tareas del equipo, con ocho roles de usuario y una vitrina web sincronizada con el stock. Los precios se definen por consulta (planes Esencial, Completo y A Medida).
+
+Contacto: WhatsApp +54 9 11 2269-9526 · https://www.tablero.uno/
+
+## Qué es y para quién
+
+- [Sistema de gestión para agencia de autos usados](https://www.tablero.uno/sistema-de-gestion-para-agencia-de-autos-usados/): el ciclo completo del auto, del stock a la transferencia.
+- [Software para concesionaria](https://www.tablero.uno/software-para-concesionaria/): equipo con roles, caja en dos monedas, trámites y vitrina conectados.
+- [Preguntas frecuentes](https://www.tablero.uno/preguntas-frecuentes/): precios, monedas, vitrina, roles y cómo empezar.
+
+## Módulos
+
+- [Inventario](https://www.tablero.uno/modulos/inventario-de-autos/): Fichas de autos y motos, precios en USD o ARS y stock siempre al día.
+- [Finanzas](https://www.tablero.uno/modulos/finanzas-agencia-de-autos/): Ingresos y salidas en pesos y dólares, con medios de pago y comprobantes.
+- [Gestoría](https://www.tablero.uno/modulos/gestoria-automotor/): Checklist de documentación por auto y seguimiento hasta la transferencia.
+- [Detailing](https://www.tablero.uno/modulos/detailing-de-autos/): Catálogo de servicios de preparación asignados a cada auto.
+- [Visitas](https://www.tablero.uno/modulos/visitas-y-agenda/): Agenda de visitas por vendedor, con calendario y horarios propios.
+- [Tareas](https://www.tablero.uno/modulos/tareas-del-equipo/): Tareas internas con responsable, urgencia, estado y comentarios.
+
+## Guías del blog
+
+- [Cómo llevar el stock de una agencia de autos usados](https://www.tablero.uno/blog/como-llevar-el-stock-de-una-agencia-de-autos-usados/): Guía práctica para ordenar el stock de tu agencia de autos usados: qué datos cargar, cómo registrar precios y estados y cómo evitar versiones duplicadas.
+- [Cómo manejar la caja en pesos y dólares en una agencia](https://www.tablero.uno/blog/caja-en-pesos-y-dolares-agencia-de-autos/): Cómo registrar ingresos y salidas en pesos y dólares en una agencia de autos usados sin perder el control: categorías, medios de pago y cotización.
+- [Documentación para vender un auto usado en Argentina](https://www.tablero.uno/blog/documentacion-para-vender-un-auto-usado-argentina/): Checklist de la documentación que suele pedirse para transferir un auto usado: título, cédula, formulario 08, verificación policial e informe de dominio.
+- [Formulario 08: qué es y para qué sirve en una venta](https://www.tablero.uno/blog/formulario-08-que-es-y-para-que-sirve/): Qué es el formulario 08, cuándo se usa en la transferencia de un auto usado y qué conviene controlar antes de firmarlo y guardarlo en la agencia.
+- [Cómo organizar las visitas de clientes en una agencia](https://www.tablero.uno/blog/como-organizar-las-visitas-en-una-agencia-de-autos/): Cómo organizar la agenda de visitas de una agencia de autos usados: qué datos registrar, horarios por vendedor, excepciones y seguimiento.
+- [Detailing de autos usados: cómo ordenar la preparación](https://www.tablero.uno/blog/detailing-autos-usados-preparacion-para-la-venta/): Cómo organizar el detailing y la preparación de autos usados antes de la venta: catálogo de servicios, asignación por unidad y seguimiento.
+- [Vitrina web de una agencia: cómo mostrar el stock real](https://www.tablero.uno/blog/vitrina-web-agencia-de-autos-stock-real/): Cómo lograr que la vitrina web de tu agencia de autos usados muestre siempre el stock real, sin cargar cada auto dos veces ni dejar vendidos publicados.
+- [Roles y permisos: quién debería ver la caja de la agencia](https://www.tablero.uno/blog/permisos-y-roles-quien-debe-ver-la-caja-agencia-de-autos/): Cómo definir roles y permisos en una agencia de autos usados: quién carga, quién edita, quién solo mira y quién no debería ver la plata.
+- [Cómo elegir un sistema de gestión para tu agencia de autos](https://www.tablero.uno/blog/como-elegir-sistema-de-gestion-agencia-de-autos-usados/): Las preguntas que conviene hacer antes de contratar un sistema de gestión para una agencia de autos usados: ciclo completo, monedas, trámites y permisos.
+- [Excel o sistema de gestión: cuándo dar el salto en tu agencia](https://www.tablero.uno/blog/excel-o-sistema-de-gestion-agencia-de-autos/): Cuándo una planilla deja de alcanzar para una agencia de autos usados, qué señales indican que conviene un sistema de gestión y cómo hacer la transición.
