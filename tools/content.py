@@ -12,6 +12,8 @@ LASTMOD = "2026-10-05"
 # Pegá acá el token de verificación de Google Search Console (solo el valor de content="...").
 # Si queda vacío no se emite la meta. Ver docs/search-console.md
 GSC_TOKEN = ""
+# Clave pública de IndexNow (el archivo /<clave>.txt debe existir en la raíz del sitio).
+INDEXNOW_KEY = "6ee7a279b293405a48cc1a9a537bbed0"
 
 
 def wa(text="Hola! Quiero conocer Tablero para mi agencia."):

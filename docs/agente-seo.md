@@ -21,6 +21,7 @@ Este archivo es su instrucción permanente y sus reglas. Si cambia la estrategia
 5. Registrar en `docs/seo-log.md` la fecha, los números reales del reporte y qué se cambió.
 6. `python3 tools/build.py && python3 tools/check_site.py`. **Si falla, no publicar**: revertir el cambio y dejar el motivo en `docs/seo-log.md`.
 7. Commit con mensaje claro (qué cambió y qué dato lo motivó) y push a `main`.
+8. Esperar ~2 minutos a que Vercel despliegue y correr `python3 tools/indexnow.py --changed` para avisar a Bing y otros buscadores (Google no usa IndexNow). Si falla por red, anotarlo en la bitácora y seguir.
 
 ## Reglas editoriales (no negociables)
 - **No inventar** cifras, estudios, porcentajes, clientes, testimonios, premios, precios ni funciones. Sobre Tablero solo se afirma lo que ya está en `tools/content.py` y en el sitio.
@@ -42,5 +43,5 @@ Sin ellas el agente solo hace chequeos técnicos y artículos de la lista de pen
 3. En el entorno de la nube (menú del entorno en la barra del título → Editar): guardar
    - `GSC_SERVICE_ACCOUNT_JSON` = contenido completo del JSON
    - `GSC_SITE` = `sc-domain:tablero.uno` (propiedad de dominio) o `https://www.tablero.uno/`
-4. En **Acceso a la red** del entorno: permitir `searchconsole.googleapis.com`, `oauth2.googleapis.com` y mantener la lista de gestores de paquetes (para `pip install google-auth requests`).
+4. En **Acceso a la red** del entorno: permitir `api.indexnow.org` (IndexNow),  `searchconsole.googleapis.com`, `oauth2.googleapis.com` y mantener la lista de gestores de paquetes (para `pip install google-auth requests`).
 5. **Nunca pegues la clave en el chat.**
