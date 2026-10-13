@@ -17,6 +17,8 @@ GSC_TOKEN = ""
 PRICE_ESENCIAL_USD = 100
 PRICE_COMPLETO_USD = 150
 LINKEDIN_URL = "https://www.linkedin.com/in/jose-lamensa-6a29b8236/"
+LINKEDIN_COMPANY_URL = "https://www.linkedin.com/company/tablero-uno/"
+YOUTUBE_URL = "https://www.youtube.com/@Tablero-uno"
 FOUNDER = "José Lamensa"
 INDEXNOW_KEY = "6ee7a279b293405a48cc1a9a537bbed0"
 

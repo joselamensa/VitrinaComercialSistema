@@ -18,7 +18,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from content import *  # noqa
-from content import GSC_TOKEN, PRICE_ESENCIAL_USD, PRICE_COMPLETO_USD, LINKEDIN_URL, FOUNDER  # noqa
+from content import GSC_TOKEN, PRICE_ESENCIAL_USD, PRICE_COMPLETO_USD, LINKEDIN_URL, LINKEDIN_COMPANY_URL, YOUTUBE_URL, FOUNDER  # noqa
 import pages  # noqa
 import blog  # noqa
 
@@ -159,6 +159,8 @@ def footer_html(brand_img=False):
         <a href="/#personalizacion">Personalización</a>
         <a href="/#precios">Precios</a>
         <a href="/#contacto">Contacto</a>
+        <a href="%s" target="_blank" rel="me noopener">LinkedIn</a>
+        <a href="%s" target="_blank" rel="me noopener">YouTube</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -166,7 +168,7 @@ def footer_html(brand_img=False):
       <span>Tel. <a href="%s" target="_blank" rel="noopener">%s</a></span>
     </div>
   </div>
-</footer>""" % (brand, wa(), WA_SVG, mods, recents, wa(), PHONE_DISPLAY)
+</footer>""" % (brand, wa(), WA_SVG, mods, recents, LINKEDIN_COMPANY_URL, YOUTUBE_URL, wa(), PHONE_DISPLAY)
 
 
 def faq_html(keys=None, items=None):
@@ -246,6 +248,7 @@ def org_jsonld():
         "logo": {"@type": "ImageObject", "url": SITE_URL + "/assets/logo.png", "width": 512, "height": 512},
         "description": "Sistema de gestión para agencias de autos usados.",
         "foundingDate": "2025",
+        "sameAs": [LINKEDIN_COMPANY_URL, YOUTUBE_URL],
         "areaServed": "Worldwide",
         "founder": {"@id": SITE_URL + "/#founder"},
         "contactPoint": [{

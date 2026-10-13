@@ -397,7 +397,7 @@ def page_about():
             ]),
             ("prose", "Quién está detrás", [
                 "Tablero lo creó <strong>%s</strong> junto a un amigo programador. %s es quien se ocupa de la relación con cada agencia: te escucha, define con vos cómo se arma el sistema y te acompaña en la puesta en marcha." % (FOUNDER, FOUNDER.split()[0]),
-                "Podés ver su perfil profesional en %s." % '<a href="%s" target="_blank" rel="noopener">LinkedIn</a>' % LINKEDIN_URL,
+                "Podés ver su perfil profesional en %s. Tablero también está en %s y en %s." % ('<a href="%s" target="_blank" rel="noopener">LinkedIn</a>' % LINKEDIN_URL, '<a href="%s" target="_blank" rel="me noopener">LinkedIn (página de la empresa)</a>' % LINKEDIN_COMPANY_URL, '<a href="%s" target="_blank" rel="me noopener">YouTube</a>' % YOUTUBE_URL),
             ], "alt"),
             ("prose", "Cómo trabajamos", [
                 ("ul", [
