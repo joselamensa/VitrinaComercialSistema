@@ -146,6 +146,16 @@ POSTS = [
                     "Que el resto de la documentación de la unidad esté completa (podés ver el checklist en %s)." % '<a href="/blog/documentacion-para-vender-un-auto-usado-argentina/">Documentación para vender un auto usado</a>',
                 ]),
             ]),
+            ("Preguntas rápidas sobre el 08", [
+                ("h3", "¿Qué significa «08»?"),
+                "Es el número con el que se conoce a la «Solicitud Tipo 08», el formulario del Registro del Automotor que se usa para pedir la transferencia de un vehículo. Cuando alguien habla de «el 08 del auto», se refiere a ese formulario.",
+                ("h3", "¿Quién tiene que firmarlo?"),
+                "Intervienen las dos partes de la operación: quien vende y quien compra. Por eso conviene revisar antes de la firma que los datos de ambas personas estén completos y coincidan con su documentación.",
+                ("h3", "¿El 08 es lo mismo que el boleto de compraventa?"),
+                "No. El boleto de compraventa es un contrato entre las partes; el 08 es el formulario registral con el que se solicita la transferencia. Una agencia puede usar ambos en una misma venta, y cada uno cumple una función distinta.",
+                ("h3", "¿Dónde se consigue y cuánto cuesta?"),
+                "Los detalles (formato vigente, si se completa en papel o de forma digital, costos y dónde se presenta) los define el registro automotor y pueden cambiar. Lo más seguro es confirmarlos con tu gestor o con el registro que te corresponda antes de cada operación.",
+            ]),
             ("Qué conviene registrar en la agencia", [
                 "Más allá del papel en sí, es útil que la agencia sepa en todo momento, para cada unidad, si el formulario ya está firmado, si falta, quién lo tiene y en qué etapa del trámite está el auto. Eso evita que una venta cerrada quede trabada por un documento que nadie encuentra.",
                 "En Tablero, el formulario 08 es parte del checklist de gestoría de cada auto, junto con el título, la cédula, la verificación policial y el informe de dominio. Más información en el %s." % '<a href="/modulos/gestoria-automotor/">módulo de gestoría</a>',
