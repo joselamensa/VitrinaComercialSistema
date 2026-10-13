@@ -7,7 +7,8 @@ Sitio estático (HTML + CSS + JS sin dependencias), desplegado tal cual en Verce
 - `assets/` — CSS (`css/site.css`), imágenes WebP, video del hero, favicons.
 - Carpetas con `index.html` (`modulos/`, `blog/`, etc.) — generadas; **no editar a mano**.
 - `tools/` — generador: `content.py` (módulos y FAQ), `pages.py` (páginas), `blog.py` (artículos), `build.py`.
-- `docs/` — Search Console, checklist semanal SEO y textos de difusión (no se despliegan).
+- `docs/` — Search Console, checklist semanal SEO, textos de difusión y publicación automática (no se despliegan).
+- `tools/social/` — autorización y publicación en YouTube y en la página de LinkedIn (ver `docs/publicacion-automatica.md`).
 
 ## Flujo de trabajo
 ```
