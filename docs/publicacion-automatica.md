@@ -68,6 +68,9 @@ LinkedIn solo permite publicar en páginas de empresa por API con el producto **
 No puedo asegurar que la aprueben ni cuánto tarda.
 
 ### B1. Crear la app
+> **Importante (comprobado):** LinkedIn exige que **Community Management API sea el ÚNICO producto de la app**. Si una app ya tiene otro producto
+> (por ejemplo «Share on LinkedIn», que LinkedIn agrega solo al crearla), el botón *Request access* queda bloqueado. Hay que crear una **app dedicada**,
+> con otro nombre (p. ej. «Tablero publicador»), y pedir ese producto **antes** de agregar cualquier otro. Si LinkedIn le puso «Share on LinkedIn», quitalo.
 1. linkedin.com/developers/apps → **Create app**.
 2. Nombre: «Tablero publicador». **LinkedIn Page:** elegí la página **Tablero**. Logo: `assets/logo.png`.
 3. LinkedIn genera un enlace de **verificación**: el **super administrador** de la página debe abrirlo y aprobar la asociación.
